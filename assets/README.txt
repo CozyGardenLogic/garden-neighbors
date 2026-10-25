@@ -215,3 +215,15 @@ assets/audio/music_my_garden.mp3 — user-supplied ambience_garden(1).mp3.
 Plays alone, looping, on My Garden; the original music_menu.mp3 remains
 on the start screen. Music toggle and volume control this track too.
 Opening and closing Settings preserves the current screen audio.
+
+REWARDS AND DAILY GARDEN (2026-10-25)
+Optional new UI art: assets/ui/icon_basket.png (256x256 transparent PNG).
+A drawn basket is used automatically until this image exists.
+Daily generation uses UTC dates and a shared plant pool for every player.
+DAILY_LAUNCH in index.html is fixed to 2026-10-25 and controls Daily #N.
+Stars: finish = 1; no Hint = 2; no Hint and no wilted plants = 3.
+Undo does not add penalties; Reset clears wilted plants for that attempt.
+Existing campaign stars always keep their best result.
+Unlock totals: Daily Garden 6, bench 10, scarecrow 25, pond 45 stars.
+Harvest, optional best times and daily results use separate versioned local saves.
+Campaign maps, plant rules and the solver are unchanged.
