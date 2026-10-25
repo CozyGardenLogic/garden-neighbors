@@ -219,11 +219,28 @@ Opening and closing Settings preserves the current screen audio.
 REWARDS AND DAILY GARDEN (2026-10-25)
 Optional new UI art: assets/ui/icon_basket.png (256x256 transparent PNG).
 A drawn basket is used automatically until this image exists.
-Daily generation uses UTC dates and a shared plant pool for every player.
+Daily generation uses UTC dates and a deterministic candidate sequence.
+Only plants from completed campaign gardens are accepted for each player.
 DAILY_LAUNCH in index.html is fixed to 2026-10-25 and controls Daily #N.
 Stars: finish = 1; no Hint = 2; no Hint and no wilted plants = 3.
 Undo does not add penalties; Reset clears wilted plants for that attempt.
 Existing campaign stars always keep their best result.
-Unlock totals: Daily Garden 6, bench 10, scarecrow 25, pond 45 stars.
+Daily Garden unlocks after completing garden 4.
+Decoration totals: bench 10, scarecrow 25, pond 45 stars.
 Harvest, optional best times and daily results use separate versioned local saves.
 Campaign maps, plant rules and the solver are unchanged.
+
+WAITING PLANTS AND VISIBLE REWARDS (2026-10-25)
+Basil without a tomato and peas without a pea remain sprouts in waiting state.
+They do not wilt or reduce stars; adding their partner starts normal growth.
+Wrong soil and forbidden neighbors still count as wilt errors.
+Missing map/deco_bench.png, deco_scarecrow.png and deco_pond.png use cached
+canvas illustrations, visible on the My Garden decoration shelf.
+
+CUSTOM FONT — FILES STILL REQUIRED
+The game is prepared to load Garden Neighbors Regular and Bold from:
+  assets/fonts/GardenNeighbors-Regular.ttf (or .woff2 / .otf)
+  assets/fonts/GardenNeighbors-Bold.ttf (or .woff2 / .otf)
+These custom font files were not present in the supplied assets or repository.
+The included Patrick Hand font remains the fallback until they are supplied.
+No font file has been renamed or passed off as the custom font.
