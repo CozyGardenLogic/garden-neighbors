@@ -209,3 +209,9 @@ filtered Web Audio noise (0.9 seconds). Existing audio files are unchanged.
 Plants scale from their soil anchor by 1.06, 1.12 and 1.18 after watering.
 Care uses the separate localStorage key garden-neighbors-watering-v1.
 The existing campaign save key, twenty level maps, rules and solver are unchanged.
+
+MY GARDEN AUDIO
+assets/audio/music_my_garden.mp3 — user-supplied ambience_garden(1).mp3.
+Plays alone, looping, on My Garden; the original music_menu.mp3 remains
+on the start screen. Music toggle and volume control this track too.
+Opening and closing Settings preserves the current screen audio.
