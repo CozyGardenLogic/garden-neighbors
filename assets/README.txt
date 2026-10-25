@@ -84,7 +84,7 @@ stars at 350ms intervals. File onsets and 60ms envelopes are handled in
 code; no MP3 is edited. Music and ambience stay outside the effect queue.
 The localStorage keys are deliberately unchanged to preserve existing saves:
 cozy-garden-logic-v4 and cozy-garden-settings-v1.
-All eight rules, all 15 maps/seeds, solver, victory predicate, progress
+All eight rules, all 20 maps/seeds, solver, victory predicate, progress
 schema and saving logic remain unchanged.
 
 CREDITS
@@ -190,3 +190,22 @@ ui/ui_card.png
 ui/ui_panel.png
 ui/ui_sign.png
 ui/ui_slices.json
+
+MY GARDEN — PARCELS AND DAILY CARE
+The parcel map uses a fine gravel texture generated once per page load.
+Optional override: assets/map/field_tile.png (repeatable square texture).
+Optional map decoration: assets/map/butterfly.png (transparent butterfly).
+New UI art, extracted from the user-supplied watering sheet:
+  assets/ui/icon_watering_can.png
+  assets/ui/icon_watering_can_pour.png
+  assets/ui/icon_arrow_down.png
+  assets/ui/icon_drop.png
+  assets/ui/icon_drop_empty.png
+  assets/ui/fx_sparkle.png
+All six files: 512 x 512 px, transparent PNG. They are cropped to alpha once
+in memory for display. Missing files use SVG artwork and produce a console warning.
+Optional water sound: assets/audio/sfx_water.mp3; absent files use low-pass
+filtered Web Audio noise (0.9 seconds). Existing audio files are unchanged.
+Plants scale from their soil anchor by 1.06, 1.12 and 1.18 after watering.
+Care uses the separate localStorage key garden-neighbors-watering-v1.
+The existing campaign save key, twenty level maps, rules and solver are unchanged.
