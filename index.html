@@ -968,11 +968,12 @@ function syncPortraitRules(scene){document.documentElement.dataset.portraitRules
 function isPriorityPortrait(){return window.innerHeight>=window.innerWidth;}
 function priorityMobilePlan(w,h,n,count,timer,reminder){
  const border=UI_SLICES.bed_frame.visible_border,scale=.09,edgeX=(border.left+border.right)*scale,edgeY=(border.top+border.bottom)*scale;
- const header=44+(timer?(reminder?40:28):0),ruleH=44,controlsH=52,gap=2,gaps=timer?8:6,footer=2,cols=count<=4?count:Math.ceil(count/2),rows=Math.ceil(count/cols),cardGap=4,trayPad=12;
+ const drawerW=w-8,innerW=drawerW-24,minRow=count*64,oneRowGap=minRow+(count-1)*4<=innerW?4:minRow+(count-1)*2<=innerW?2:null;
+ const header=44+(timer?(reminder?40:28):0),ruleH=44,controlsH=52,gap=2,gaps=timer?8:6,footer=2,cols=oneRowGap!==null?count:Math.ceil(count/2),rows=Math.ceil(count/cols),cardGap=oneRowGap??4,trayPad=12;
  const minCard=64,minCardH=Math.ceil(minCard*1.1),minTray=rows*minCardH+(rows-1)*cardGap+trayPad;
  const maxFrameH=h-header-ruleH-controlsH-gaps-footer-minTray,maxHole=w-24-edgeX;
  const hole=Math.min(maxHole,maxFrameH-edgeY),frameW=hole+edgeX,frameH=hole+edgeY;
- const trayH=h-header-frameH-ruleH-controlsH-gaps-footer,drawerW=w-8,innerW=drawerW-24,cell=tileGeometry(hole,n).tile;
+ const trayH=h-header-frameH-ruleH-controlsH-gaps-footer,cell=tileGeometry(hole,n).tile;
  const rowH=(trayH-trayPad-(rows-1)*cardGap)/rows,cardW=Math.max(minCard,Math.min(96,Math.floor(cell),Math.floor((innerW-(cols-1)*cardGap)/cols),Math.floor(rowH/1.1))),cardH=Math.ceil(cardW*1.1);
  return {header,ruleH,controlsH,gap,cols,rows,cardGap,trayPad,hole,frameW,frameH,trayH,drawerW,innerW,cell,cardW,cardH,scale,edgeX,edgeY};
 }
