@@ -873,7 +873,7 @@ function fitSeedDrawer(drawer,track,width,height,count,mobile=false){
  const minCard=mobile?(window.innerHeight>=window.innerWidth&&count<=4?48:count>6&&width<340?48:64):72,cols=Math.min(count,Math.max(1,Math.floor((innerW+gap)/(minCard+gap)))),rows=Math.ceil(count/cols),cardW=Math.floor(Math.min(110,(innerW-gap*(cols-1))/cols)),cardH=Math.floor(Math.min((innerH-gap*(rows-1))/rows,cardW*1.12)),compact=cardH<74,font=compact?15:mobile?16:18,nameTop=Math.max(27,cardH-21),plantH=Math.max(22,nameTop-6);
  document.documentElement.style.setProperty('--seed-type-count',count);drawer.style.padding=top+'px '+pad+'px '+bottom+'px';track.style.width=innerW+'px';track.style.height=innerH+'px';track.style.transform='translateY('+((top-bottom)/2)+'px)';
  for(const [k,v]of Object.entries({'--tray-cols':cols,'--tray-card':cardW+'px','--tray-height':cardH+'px','--tray-font':font+'px','--name-top':nameTop+'px','--plant-ui-height':plantH+'px','--count-bottom':'3px'}))track.style.setProperty(k,v);
- for(const badge of track.querySelectorAll('.neighbor-badge'))badge.style.top=Math.max(17,Math.min(cardH*.39,nameTop-cardW*.30-1))+'px';drawer.classList.toggle('compact-tray',compact);
+ for(const badge of track.querySelectorAll('.neighbor-badge')){const maxSize=Math.max(12,nameTop-18),size=Math.min(cardW*.30,maxSize);badge.style.maxWidth=maxSize+'px';badge.style.top=Math.max(17,Math.min(cardH*.39,nameTop-size-1))+'px';}drawer.classList.toggle('compact-tray',compact);
 }
 function showMobileRuleSummary(){document.documentElement.dataset.mobileRules='none';document.querySelector('.mobile-rule-summary')?.remove();return 0;}
 function portraitRuleList(scene,width){
