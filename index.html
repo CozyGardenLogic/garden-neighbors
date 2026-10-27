@@ -889,7 +889,7 @@ function seedDrawerPlan(width,count,portrait){
 }
 function fitSeedDrawer(drawer,track,width,height,count,mobile=false){
  const portrait=window.innerHeight>=window.innerWidth;
- if(!portrait&&document.documentElement.dataset.compactLandscape==='true'){fitCompactLandscapeDrawer(drawer,track,width,height,count,mobile);return;}
+ if(!portrait&&document.documentElement.dataset.compactLandscape==='true'){track.style.removeProperty('grid-template-columns');track.style.removeProperty('gap');for(const card of track.querySelectorAll('.seed-card'))card.style.removeProperty('grid-column');fitCompactLandscapeDrawer(drawer,track,width,height,count,mobile);return;}
  const p=seedDrawerPlan(width,count,portrait),nameTop=p.cardH-22,artTop=portrait?Math.max(23,p.cardW*.24+4):3,plantH=portrait?p.cardH*.60:nameTop-5;
  drawer.style.height=p.height+'px';drawer.style.padding=p.top+'px '+p.pad+'px '+p.bottom+'px';
  track.style.width=p.innerW+'px';track.style.height=(p.height-p.top-p.bottom)+'px';track.style.transform='none';
