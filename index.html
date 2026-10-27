@@ -399,6 +399,41 @@ html[data-portrait-rule-list=true] #rules-button{display:none!important}
  .seed-card.done .seed-count img,.seed-card.done .seed-count svg{width:100%!important;height:100%!important}
 }
 
+
+.seed-rule-line{display:none}
+@media(orientation:portrait){
+ html[data-priority-portrait=true] #app{padding:0 12px 2px!important;height:100dvh!important;overflow:hidden}
+ html[data-priority-portrait=true] #app .topbar{height:44px!important;min-height:44px!important}
+ html[data-priority-portrait=true] #app .topbar .round{width:40px!important;height:40px!important;min-width:40px!important;min-height:40px!important;padding:7px!important;top:2px!important}
+ html[data-priority-portrait=true] #app .top-tools{top:2px!important}
+ html[data-priority-portrait=true] #app .level-sign{height:40px!important;min-height:40px!important;top:1px!important;width:calc(100vw - 196px)!important;min-width:0!important;padding:2px 10px!important}
+ html[data-priority-portrait=true] #app .level-sign strong{font-size:18px!important;line-height:19px!important}
+ html[data-priority-portrait=true] #app .level-sign #level-name{font-size:12px!important;line-height:13px!important}
+ html[data-priority-portrait=true] #app .game-layout{margin:0!important;height:calc(100dvh - 44px)!important}
+ html[data-priority-portrait=true] #app .garden-left{height:auto!important}
+ html[data-priority-portrait=true] #app .bed-stack{width:calc(100vw - 24px)!important;max-width:none!important;gap:2px!important;align-items:center!important}
+ html[data-priority-portrait=true] #app .garden-timer{height:28px!important;min-height:28px!important;font-size:26px!important;line-height:28px!important;margin:0!important;padding:0!important;letter-spacing:1px}
+ html[data-priority-portrait=true] #app .garden-timer.has-timer-reminder{height:40px!important;min-height:40px!important;line-height:26px!important;gap:0!important}
+ html[data-priority-portrait=true] #app .timer-reminder{font-size:12px!important;line-height:12px!important;padding:0 5px!important;border:0}
+ html[data-priority-portrait=true] .teaching-bubble,html[data-priority-portrait=true] .teaching-hand{display:none!important}
+ html[data-priority-portrait=true] .rule-tap-bubble{display:none!important}
+ html[data-priority-portrait=true] #app .seed-rule-line{position:relative;display:flex;align-items:center;justify-content:center;width:calc(100vw - 24px);height:44px;min-height:44px;flex:none;gap:8px;margin:0;padding:4px 8px;isolation:isolate;color:#4A2A12;text-shadow:none}
+ html[data-priority-portrait=true] #app .seed-rule-line.has-seed{justify-content:flex-start}
+ .seed-rule-image{position:relative;z-index:1;width:34px;height:34px;flex:0 0 34px}
+ .seed-rule-copy{position:relative;z-index:1;margin:0;padding:0;font-size:16px!important;line-height:18px!important;color:#4A2A12;font-weight:400;overflow:visible;white-space:normal;min-width:0}
+ html[data-priority-portrait=true] #app #mobile-controls{width:calc(100vw - 24px)!important;height:52px!important;min-height:52px!important;max-height:52px!important;margin:0!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:4px!important}
+ html[data-priority-portrait=true] #app #mobile-controls button{height:52px!important;min-height:52px!important;padding:2px!important;min-width:0;font-size:18px!important}
+ html[data-priority-portrait=true] #app #mobile-controls .button-icon{width:18px!important;height:18px!important;flex-basis:18px!important}
+ html[data-priority-portrait=true] #app #rules-button{display:none!important}
+ html[data-priority-portrait=true] #app .seed-drawer{max-width:calc(100vw - 8px)!important;flex:none}
+ html[data-priority-portrait=true] #app .seed-card{min-height:0!important;transform:none!important}
+ html[data-priority-portrait=true] #app .seed-card.selected{transform:none!important;outline:2px solid #f1d363!important;outline-offset:-2px!important}
+ html[data-priority-portrait=true] #app .seed-card>img,html[data-priority-portrait=true] #app .seed-card>svg{top:2px!important;left:10%!important;width:80%!important;height:var(--plant-ui-height)!important}
+ html[data-priority-portrait=true] #app .seed-card .seed-name{line-height:16px!important;font-size:var(--tray-font)!important}
+ html[data-priority-portrait=true] #app .seed-card .soil-badge{left:2px;top:2px;width:20%;max-width:20%;padding:0;border-width:1px}
+ html[data-priority-portrait=true] #app .seed-card .seed-count{right:2px!important;top:2px!important;bottom:auto!important;max-width:26%;height:15px!important;font-size:12px!important;line-height:15px!important;padding:0 1px!important;min-width:0!important}
+}
+
 </style></head><body><div id="load-status" role="status">Sunny Garden</div><main id="app"><header class="topbar"><button class="round back-button" id="gardens-button" aria-label="Gardens"></button><div class="level-sign"><i class="nail tl"></i><i class="nail tr"></i><i class="nail bl"></i><i class="nail br"></i><strong id="level-number"></strong><span id="level-name"></span></div><div class="top-tools"><button class="round" id="sound-button" aria-label="Music"></button><button class="round" id="settings-button" aria-label="Settings"></button></div></header><div class="game-layout"><section class="garden-left"><div class="bed-stack"><div id="progress" class="garden-timer" role="timer" aria-live="off" hidden></div><div class="bed-frame"><div id="game" class="board-surface"></div></div><p class="instruction" id="instruction"></p><div class="seed-drawer"><div class="seed-track" id="seed-track" tabindex="0"></div></div><div class="drawer-caption" id="drawer-caption"></div><div class="controls mobile-controls" id="mobile-controls"></div><button class="rules-toggle" id="rules-button">Rules</button><p class="status" id="status" aria-live="polite"></p></div></section><aside class="sidebar"><div class="side-group"><section class="rustic"><h2 id="rules-heading"></h2><div id="rule-list"></div></section><div class="controls" id="desktop-controls"></div></div></aside></div></main><div class="modal-wrap" id="modal" hidden><section class="modal-card" role="dialog" aria-modal="true" id="modal-card"></section></div><div id="accessibility" aria-live="polite"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.90.0/phaser.min.js"></script>
 <script>
@@ -624,7 +659,7 @@ function adultURL(t){return LoadedAssets.get(t+'_adult')||svgDataURI(plantFallba
 function ruleBadgeMarkup(t){const soil=['tomato','basil','onion','pumpkin'].includes(t)?'sun':t==='lettuce'?'shade':null;return soil?'<span class="rule-badge soil-badge" aria-hidden="true">'+uiIcon(soil==='sun'?'icon_sun':'icon_shade',soil)+'</span>':'';}
 function ruleMarkup(t){const soil=['tomato','basil','onion','pumpkin'].includes(t)?'sun':t==='lettuce'?'shade':null,bg=soil?(TerrainPreviews.get('soil_'+soil+'_1')?.url||LoadedAssets.get('soil_'+soil+'_1')||svgDataURI(terrainSVG(soil))):(LoadedAssets.get('ui_card')||svgDataURI(miscSVG('panel'))),other=t==='basil'?'tomato':t==='peas'?'peas':t==='beans'?'onion':null;return `<span class="rule-icon" role="img" aria-label="${TEXT.rule[t]}"><img class="rule-ground" src="${bg}" alt=""><img class="rule-adult" src="${adultURL(t)}" alt="">${soil?`<span class="rule-soil-symbol">${uiIcon(soil==='sun'?'icon_sun':'icon_shade',soil)}</span>`:''}${other?`<span class="rule-neighbor${t==='beans'?' forbidden':''}"><img src="${adultURL(other)}" alt="${TEXT.names[other]}"></span>`:''}</span>`;}
 function attachSeedRuleHint(scene,card,type){
- const down=card.onpointerdown;let hold=null,hover=null,start=null;
+ const down=card.onpointerdown;if(isPriorityPortrait()){card.onpointerdown=e=>{down?.(e);if(!scene.modal&&!scene.winning)syncSeedRuleLine(scene,type);};card.addEventListener('contextmenu',e=>e.preventDefault());return;}let hold=null,hover=null,start=null;
  const clear=()=>{clearTimeout(hold);clearTimeout(hover);hold=hover=null;};
  card.onpointerdown=e=>{clear();start={x:e.clientX,y:e.clientY,id:e.pointerId};down?.(e);if(scene.modal||scene.winning)return;
   hold=setTimeout(()=>{hold=null;if(!card.isConnected||scene.modal||scene.winning||scene.seedGesture?.drag)return;
@@ -782,7 +817,7 @@ class Game extends (typeof Phaser!=='undefined'?Phaser.Scene:class {}){
  clientPoint(x,y){const r=$('game').getBoundingClientRect();return {x:(x-r.left)*this.bedSize/r.width,y:(y-r.top)*this.bedSize/r.height};}
  seedMove(e){const g=this.seedGesture;if(!g||g.id!==e.pointerId)return;const dx=e.clientX-g.x,dy=e.clientY-g.y;if(!g.drag&&!g.scroll&&Math.hypot(dx,dy)>9){g.drag=true;this.ruleTipDismiss?.();}if(!g.drag)return;e.preventDefault();if(!this.domGhost){this.domGhost=document.createElement('div');this.domGhost.className='drag-ghost';this.domGhost.innerHTML=`<img src="${adultURL(g.type)}" alt="">`;document.body.append(this.domGhost);}this.domGhost.style.left=e.clientX+'px';this.domGhost.style.top=e.clientY+'px';this.updateHover(this.clientPoint(e.clientX,e.clientY));}
  seedUp(e){const g=this.seedGesture;if(!g||g.id!==e.pointerId)return;const p=this.clientPoint(e.clientX,e.clientY),drag=g.drag,scroll=g.scroll,ruleHeld=g.ruleHeld,t=g.type;this.cancelDOMDrag();if(drag){const seed=this.available(t);if(seed)this.place({...seed},this.cellAt(p));}else if(!scroll&&!ruleHeld)this.selectSeed(t);}
- cancelDOMDrag(){this.domGhost?.remove();this.domGhost=null;this.seedGesture=null;this.hoverGraphics?.clear();}
+ cancelDOMDrag(){this.domGhost?.remove();this.domGhost=null;this.seedGesture=null;this.hoverGraphics?.clear();syncSeedRuleLine(this);}
  updateHover(p){const i=this.cellAt(p);this.hoverGraphics.clear();if(i>=0){this.hoverGraphics.fillStyle(0xffffff,.24);this.hoverGraphics.fillRoundedRect(i%this.l.n*this.cell+2,Math.floor(i/this.l.n)*this.cell+2,this.cell-4,this.cell-4,8);this.hoverGraphics.lineStyle(3,0xffffff,.9);this.hoverGraphics.strokeRoundedRect(i%this.l.n*this.cell+3,Math.floor(i/this.l.n)*this.cell+3,this.cell-6,this.cell-6,8);}}
  inTray(p){const r=$('game').getBoundingClientRect(),tray=$('seed-track').getBoundingClientRect(),x=r.left+p.x*r.width/this.bedSize,y=r.top+p.y*r.height/this.bedSize;return x>=tray.left&&x<=tray.right&&y>=tray.top&&y<=tray.bottom;}
  down(p){AudioGarden.unlock();if(this.winning||this.modal||this.drag||this.seedGesture)return;this.dragMoved=false;const i=this.cellAt(p);if(i>=0&&this.board[i]){AudioGarden.pickup();this.drag={pick:{id:this.board[i],type:this.type(this.board[i]),from:i},x:p.x,y:p.y,pointer:p.id,sprite:null,shadow:null};}}
@@ -930,7 +965,43 @@ function alignMapStakes(screen){
 
 function portraitRuleMetrics(count,width){const size=Math.min(44,Math.max(36,Math.floor((width-16-(count-1)*6)/count)));return {size,width:count*size+(count-1)*6};}
 function syncPortraitRules(scene){document.documentElement.dataset.portraitRules='false';document.querySelector('.rule-strip')?.remove();scene.ruleTipDismiss?.();}
+function isPriorityPortrait(){return window.innerHeight>=window.innerWidth;}
+function priorityMobilePlan(w,h,n,count,timer,reminder){
+ const border=UI_SLICES.bed_frame.visible_border,scale=.09,edgeX=(border.left+border.right)*scale,edgeY=(border.top+border.bottom)*scale;
+ const header=44+(timer?(reminder?40:28):0),ruleH=44,controlsH=52,gap=2,gaps=timer?8:6,footer=2,cols=count<=4?count:Math.ceil(count/2),rows=Math.ceil(count/cols),cardGap=4,trayPad=12;
+ const minCard=64,minCardH=Math.ceil(minCard*1.1),minTray=rows*minCardH+(rows-1)*cardGap+trayPad;
+ const maxFrameH=h-header-ruleH-controlsH-gaps-footer-minTray,maxHole=w-24-edgeX;
+ const hole=Math.min(maxHole,maxFrameH-edgeY),frameW=hole+edgeX,frameH=hole+edgeY;
+ const trayH=h-header-frameH-ruleH-controlsH-gaps-footer,drawerW=w-8,innerW=drawerW-24,cell=tileGeometry(hole,n).tile;
+ const rowH=(trayH-trayPad-(rows-1)*cardGap)/rows,cardW=Math.max(minCard,Math.min(96,Math.floor(cell),Math.floor((innerW-(cols-1)*cardGap)/cols),Math.floor(rowH/1.1))),cardH=Math.ceil(cardW*1.1);
+ return {header,ruleH,controlsH,gap,cols,rows,cardGap,trayPad,hole,frameW,frameH,trayH,drawerW,innerW,cell,cardW,cardH,scale,edgeX,edgeY};
+}
+function syncSeedRuleLine(scene,type){
+ if(!isPriorityPortrait()||!document.querySelector)return;
+ const frame=document.querySelector('.bed-frame');if(!frame)return;
+ let line=document.querySelector('.seed-rule-line');if(!line){line=document.createElement('section');line.className='seed-rule-line';line.setAttribute('aria-live','polite');line.setAttribute('aria-label','Seed rule');frame.after(line);skinElement(line,'ui_panel',.07);}
+ line.hidden=false;type=type===undefined?(scene.seedGesture?.type||scene.selected?.type||null):type;
+ const key=type||'';if(line.dataset.type!==key||!line.querySelector('.seed-rule-copy')){
+  line.dataset.type=key;line.classList.toggle('has-seed',!!type);
+  for(const child of [...line.children])if(!child.classList.contains('skin-art'))child.remove();
+  if(type){const icon=document.createElement('span');icon.className='seed-rule-image';icon.innerHTML=ruleMarkup(type);line.append(icon);}
+  const text=document.createElement('p');text.className='seed-rule-copy';text.textContent=type?TEXT.rule[type]:'Tap a seed to see its rule.';line.append(text);
+ }
+}
 function fitGarden(scene){
+ if(!isPriorityPortrait()){document.documentElement.dataset.priorityPortrait='false';document.querySelector('.seed-rule-line')?.setAttribute('hidden','');return fitWideGarden(scene);}
+ document.documentElement.dataset.priorityPortrait='true';document.documentElement.dataset.compactLandscape='false';document.documentElement.dataset.mobileRules='none';document.documentElement.dataset.portraitRuleList='false';
+ document.querySelector('.mobile-rule-summary')?.remove();document.querySelector('.portrait-rule-list')?.remove();document.querySelector('.rule-strip')?.remove();scene.ruleTipDismiss?.();
+ const frame=document.querySelector('.bed-frame'),drawer=document.querySelector('.seed-drawer'),track=$('seed-track');if(!frame||!drawer||!track)return;
+ const timer=!!((Settings.data.timer||scene.dailyDate)&&!scene.worldScreen),p=priorityMobilePlan(innerWidth,innerHeight,scene.l.n,Object.keys(scene.l.seeds).length,timer,timerReminderEnabled(scene)),root=document.documentElement,border=UI_SLICES.bed_frame.visible_border;
+ for(const [k,v]of Object.entries({'--hole':p.hole+'px','--frame-w':p.frameW+'px','--frame-h':p.frameH+'px','--frame-left':border.left*p.scale+'px','--frame-right':border.right*p.scale+'px','--frame-top':border.top*p.scale+'px','--frame-bottom':border.bottom*p.scale+'px','--bed-outer':p.frameH+'px','--mobile-gap':p.gap+'px','--teaching-gap':'0px'}))root.style.setProperty(k,v);
+ frame.style.marginBottom='';drawer.style.setProperty('--drawer-width',p.drawerW+'px');drawer.style.height=p.trayH+'px';drawer.style.padding='6px 12px';drawer.classList.remove('compact-tray');
+ const contentW=p.cols*p.cardW+(p.cols-1)*p.cardGap;track.style.width=contentW+'px';track.style.height=(p.rows*p.cardH+(p.rows-1)*p.cardGap)+'px';track.style.transform='none';track.style.setProperty('gap',p.cardGap+'px','important');track.style.gridTemplateColumns='repeat('+p.cols*2+', '+((p.cardW-p.cardGap)/2)+'px)';
+ for(const [k,v]of Object.entries({'--tray-cols':p.cols,'--tray-card':p.cardW+'px','--tray-height':p.cardH+'px','--tray-font':(p.cardW<76?14:16)+'px','--name-top':(p.cardH-18)+'px','--seed-art-top':'2px','--plant-ui-height':Math.floor(p.cardH*.65)+'px','--count-bottom':'3px'}))track.style.setProperty(k,v);
+ const cards=[...track.querySelectorAll('.seed-card')],remainder=cards.length%p.cols;cards.forEach((card,i)=>{card.style.gridColumn=remainder&&i===cards.length-remainder?(p.cols-remainder+1)+' / span 2':'span 2';});
+ skinElement(frame,'bed_frame',p.scale);const art=frame.querySelector(':scope > .skin-art');if(art)art.style.zIndex=2;skinElement(drawer,'seed_drawer',p.scale);scene.frameScale=p.scale;syncSeedRuleLine(scene);scene.updateTeachingBubble?.();themeDOM();scene.scale?.updateBounds?.();
+}
+function fitWideGarden(scene){
  if(!document.querySelector||!window.innerWidth)return;syncPortraitRules(scene);showMobileRuleSummary();document.querySelector('.portrait-rule-list')?.remove();document.documentElement.dataset.portraitRuleList='false';
  if(fitLandscapeGarden(scene))return;
  const frame=document.querySelector('.bed-frame'),drawer=document.querySelector('.seed-drawer'),track=$('seed-track');if(!frame||!drawer||!track)return;
@@ -1066,7 +1137,8 @@ function unlockText(n){return TEXT[{6:'unlockDaily',daily4:'unlockDaily',10:'unl
 function timeResultLabel(seconds,previousBest,newBest=false){return 'Time '+timeText(seconds)+(Number.isFinite(previousBest)?' · Best '+timeText(previousBest):'')+(newBest?' · '+TEXT.newBest:'');}
 Game.prototype.appendTimeResult=function(host,key){const p=document.createElement('p');p.className='time-record';p.textContent=timeResultLabel(this.attemptTime??this.challengeClock.elapsed,this.previousTimeBest,this.newTimeBest);host.insertBefore(p,host.lastChild);if(this.newTimeBest&&!this.bestSoundPlayed){this.bestSoundPlayed=true;AudioManager.effect('sfx_star');}};
 const rewardsBind=Game.prototype.bindDOM;Game.prototype.bindDOM=function(){rewardsBind.call(this);document.querySelector('.topbar .basket-button')?.remove();if(this.dailyDate){$('level-number').textContent=fmt(TEXT.dailyNumber,{n:DailyGarden.number(this.dailyDate)});$('level-name').textContent=TEXT.dailyGarden;}document.querySelector('.rule-strip')?.remove();const ruleButton=document.createElement('button');ruleButton.className='compact-rules';ruleButton.textContent=TEXT.rulesButton;ruleButton.onclick=()=>this.showRules();$('mobile-controls').append(ruleButton);};
-Game.prototype.showRuleTip=function(type,button){this.ruleTipDismiss?.();const tip=document.createElement('div');tip.className='rule-tap-bubble';tip.setAttribute('role','status');tip.textContent=TEXT.rule[type];document.body.append(tip);skinElement(tip,'ui_bubble',.15);const strip=button.closest('.seed-drawer')||button,b=strip.getBoundingClientRect(),r=tip.getBoundingClientRect();tip.style.left=Math.max(8,Math.min(innerWidth-r.width-8,b.left+b.width/2-r.width/2))+'px';tip.style.top=Math.max(4,b.top-r.height-6)+'px';this.ruleTip=tip;const clear=()=>{tip.remove();clearTimeout(this.ruleTipTimer);document.removeEventListener('pointerdown',clear,true);if(this.ruleTip===tip)this.ruleTip=null;if(this.ruleTipDismiss===clear)this.ruleTipDismiss=null;};this.ruleTipDismiss=clear;this.ruleTipTimer=setTimeout(clear,3000);setTimeout(()=>{if(tip.isConnected)document.addEventListener('pointerdown',clear,true);},0);};
+const portraitRuleDown=Game.prototype.down;Game.prototype.down=function(...args){const result=portraitRuleDown.apply(this,args);if(this.drag?.pick)syncSeedRuleLine(this,this.drag.pick.type);return result;};
+Game.prototype.showRuleTip=function(type,button){if(isPriorityPortrait()){syncSeedRuleLine(this,type);return;}this.ruleTipDismiss?.();const tip=document.createElement('div');tip.className='rule-tap-bubble';tip.setAttribute('role','status');tip.textContent=TEXT.rule[type];document.body.append(tip);skinElement(tip,'ui_bubble',.15);const strip=button.closest('.seed-drawer')||button,b=strip.getBoundingClientRect(),r=tip.getBoundingClientRect();tip.style.left=Math.max(8,Math.min(innerWidth-r.width-8,b.left+b.width/2-r.width/2))+'px';tip.style.top=Math.max(4,b.top-r.height-6)+'px';this.ruleTip=tip;const clear=()=>{tip.remove();clearTimeout(this.ruleTipTimer);document.removeEventListener('pointerdown',clear,true);if(this.ruleTip===tip)this.ruleTip=null;if(this.ruleTipDismiss===clear)this.ruleTipDismiss=null;};this.ruleTipDismiss=clear;this.ruleTipTimer=setTimeout(clear,3000);setTimeout(()=>{if(tip.isConnected)document.addEventListener('pointerdown',clear,true);},0);};
 const rewardsWorld=Game.prototype.worldBase;Game.prototype.worldBase=function(...args){this.ruleTip?.remove();const screen=rewardsWorld.apply(this,args);return screen;};
 const rewardsHome=Game.prototype.showHome;Game.prototype.showHome=function(){rewardsHome.call(this);if(!Progress.data.stars[0])return;const actions=this.worldScreen.querySelector('.home-actions'),b=document.createElement('button'),locked=!DailyGarden.unlocked();b.className='wood-button daily-button'+(locked?' daily-locked':'');b.textContent=TEXT.dailyGarden;if(locked){b.innerHTML=uiIcon('icon_lock','help')+' '+TEXT.dailyGarden;b.setAttribute('aria-label',TEXT.dailyLocked);}b.onclick=()=>{if(locked){modalContent(this,TEXT.dailyGarden,TEXT.dailyLocked,null,[[TEXT.close,()=>this.dismissPanel(),true]]);ModalState.dismiss=()=>this.dismissPanel();}else this.startDaily();};actions.append(b);const streak=DailyGarden.streak();if(streak){const p=document.createElement('p');p.className='daily-meta';p.textContent=(streak===1?TEXT.streakOne:fmt(TEXT.streak,{n:streak}));actions.append(p);}themeDOM();};
 const MissingMapDecorationWarnings=new Set();
@@ -1100,5 +1172,6 @@ if(typeof Phaser!=='undefined'){
  const resize=new ResizeObserver(entries=>{const next=Math.round(entries[0].contentRect.width);if(next>0&&window.gardenGame.isBooted&&window.gardenGame.canvas&&window.gardenGame.scale.width!==next)window.gardenGame.scale.resize(next,next);});resize.observe(boardElement);
 }else showStartupError(new Error(TEXT.loadError));
 </script></body></html>
+
 
 
