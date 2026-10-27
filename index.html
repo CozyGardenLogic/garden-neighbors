@@ -382,6 +382,23 @@ html[data-portrait-rule-list=true] #rules-button{display:none!important}
  .seed-drawer{max-width:calc(100vw - 24px)!important}
 }
 
+
+/* Restored soil illustrations, shared by the sidebar and the Rules dialog. */
+.rule-icon .rule-adult{left:0;top:5%;width:100%;height:95%}
+.rule-icon .rule-soil-symbol{left:2%;top:2%;width:28%;height:28%}
+.seed-card .rule-badge{display:none!important}
+.portrait-rule-list{display:none!important}
+@media(orientation:portrait){
+ .seed-drawer{max-width:calc(100vw - 8px)!important}
+ .seed-card{transform:none!important}
+ .seed-card.selected{transform:translateY(-4px)!important}
+ .seed-card>img,.seed-card>svg{top:var(--seed-art-top)!important;height:var(--plant-ui-height)!important;left:12%!important;width:76%!important}
+ .seed-card .soil-badge{display:grid!important;left:3px;top:3px;width:22%;max-width:24%;height:auto}
+ .seed-card .seed-count{top:3px!important;right:3px!important;bottom:auto!important;max-width:24%;min-width:0!important;height:18px!important;min-height:0!important;font-size:14px!important;line-height:18px!important;padding:0 1px!important;text-align:center}
+ .seed-card.done .seed-count{width:22%;height:auto!important;aspect-ratio:1}
+ .seed-card.done .seed-count img,.seed-card.done .seed-count svg{width:100%!important;height:100%!important}
+}
+
 </style></head><body><div id="load-status" role="status">Sunny Garden</div><main id="app"><header class="topbar"><button class="round back-button" id="gardens-button" aria-label="Gardens"></button><div class="level-sign"><i class="nail tl"></i><i class="nail tr"></i><i class="nail bl"></i><i class="nail br"></i><strong id="level-number"></strong><span id="level-name"></span></div><div class="top-tools"><button class="round" id="sound-button" aria-label="Music"></button><button class="round" id="settings-button" aria-label="Settings"></button></div></header><div class="game-layout"><section class="garden-left"><div class="bed-stack"><div id="progress" class="garden-timer" role="timer" aria-live="off" hidden></div><div class="bed-frame"><div id="game" class="board-surface"></div></div><p class="instruction" id="instruction"></p><div class="seed-drawer"><div class="seed-track" id="seed-track" tabindex="0"></div></div><div class="drawer-caption" id="drawer-caption"></div><div class="controls mobile-controls" id="mobile-controls"></div><button class="rules-toggle" id="rules-button">Rules</button><p class="status" id="status" aria-live="polite"></p></div></section><aside class="sidebar"><div class="side-group"><section class="rustic"><h2 id="rules-heading"></h2><div id="rule-list"></div></section><div class="controls" id="desktop-controls"></div></div></aside></div></main><div class="modal-wrap" id="modal" hidden><section class="modal-card" role="dialog" aria-modal="true" id="modal-card"></section></div><div id="accessibility" aria-live="polite"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.90.0/phaser.min.js"></script>
 <script>
@@ -604,22 +621,8 @@ function bedDrawing(t,ripe=true){const stem=(d,w=7)=>`<path d="${d}" fill="none"
  else if(t==='pumpkin'){b=stem('M132 215Q53 195 49 127Q37 81 68 71',6);for(const [x,y,r]of [[78,167,-58],[185,159,55],[71,98,10],[166,92,-10]])b+=l(x,y,r,false,1.14);b+=`<g transform="translate(23 55) scale(.82)">${innerSVG(plantDrawing('pumpkin','fruit'))}</g>`;b+=stem('M183 204Q227 167 233 198Q234 220 215 214Q205 208 218 199',4);}
  return svg(b);}
 function adultURL(t){return LoadedAssets.get(t+'_adult')||svgDataURI(plantFallbackSVG(t,'adult'));}
-const RuleBadgeArt={spacing:null};
-function emptyNeighborBadge(){
- if(RuleBadgeArt.spacing)return RuleBadgeArt.spacing;
- const canvas=document.createElement('canvas');canvas.width=canvas.height=96;const c=canvas.getContext('2d');
- c.strokeStyle='#765135';c.lineWidth=4;c.strokeRect(35,35,26,26);c.setLineDash([2,6]);c.lineCap='round';
- for(const [x,y]of [[35,5],[35,65],[5,35],[65,35]])c.strokeRect(x,y,26,26);
- return RuleBadgeArt.spacing=canvas.toDataURL('image/png');
-}
-function ruleBadgeMarkup(t){
- const soil=['tomato','basil','onion','pumpkin'].includes(t)?'sun':t==='lettuce'?'shade':null;
- const neighbor=t==='basil'?'tomato':t==='peas'?'peas':t==='beans'?'onion':null;
- return (soil?'<span class="rule-badge soil-badge" aria-hidden="true">'+uiIcon(soil==='sun'?'icon_sun':'icon_shade',soil)+'</span>':'')+
- (neighbor?'<span class="rule-badge neighbor-badge'+(t==='beans'?' forbidden':'')+'" aria-hidden="true"><img src="'+adultURL(neighbor)+'" alt=""></span>':
- ['mint','pumpkin'].includes(t)?'<span class="rule-badge neighbor-badge spacing-badge" aria-hidden="true"><img src="'+emptyNeighborBadge()+'" alt=""></span>':'');
-}
-function ruleMarkup(t){return '<span class="rule-icon" role="img" aria-label="'+TEXT.rule[t]+'"><img class="rule-ground" src="'+(LoadedAssets.get('ui_card')||svgDataURI(miscSVG('panel')))+'" alt=""><img class="rule-adult" src="'+adultURL(t)+'" alt="">'+ruleBadgeMarkup(t)+'</span>';}
+function ruleBadgeMarkup(t){const soil=['tomato','basil','onion','pumpkin'].includes(t)?'sun':t==='lettuce'?'shade':null;return soil?'<span class="rule-badge soil-badge" aria-hidden="true">'+uiIcon(soil==='sun'?'icon_sun':'icon_shade',soil)+'</span>':'';}
+function ruleMarkup(t){const soil=['tomato','basil','onion','pumpkin'].includes(t)?'sun':t==='lettuce'?'shade':null,bg=soil?(TerrainPreviews.get('soil_'+soil+'_1')?.url||LoadedAssets.get('soil_'+soil+'_1')||svgDataURI(terrainSVG(soil))):(LoadedAssets.get('ui_card')||svgDataURI(miscSVG('panel'))),other=t==='basil'?'tomato':t==='peas'?'peas':t==='beans'?'onion':null;return `<span class="rule-icon" role="img" aria-label="${TEXT.rule[t]}"><img class="rule-ground" src="${bg}" alt=""><img class="rule-adult" src="${adultURL(t)}" alt="">${soil?`<span class="rule-soil-symbol">${uiIcon(soil==='sun'?'icon_sun':'icon_shade',soil)}</span>`:''}${other?`<span class="rule-neighbor${t==='beans'?' forbidden':''}"><img src="${adultURL(other)}" alt="${TEXT.names[other]}"></span>`:''}</span>`;}
 function attachSeedRuleHint(scene,card,type){
  const down=card.onpointerdown;let hold=null,hover=null,start=null;
  const clear=()=>{clearTimeout(hold);clearTimeout(hover);hold=hover=null;};
@@ -868,13 +871,35 @@ function uiIcon(key,fallback='check'){return assetMarkup(key,glyph(fallback));}
 function skinElement(el,key,scale=.3){if(!el||!LoadedAssets.has(key))return;const spec=UI_SLICES[key];if(!spec)return;el.classList.add('skin-ready');el.dataset.skin=key;let art=Array.from(el.children).find(x=>x.classList?.contains('skin-art'));if(!art){art=document.createElement('span');art.className='skin-art';art.setAttribute('aria-hidden','true');el.prepend(art);}const paint=()=>{const h=el.clientHeight||el.getBoundingClientRect().height;if(!h)return;if(spec.stretch===false){Object.assign(art.style,{border:'none',backgroundImage:`url("${LoadedAssets.get(key)}")`,backgroundRepeat:'no-repeat',backgroundSize:'contain',backgroundPosition:'center'});return;}const k=spec.top===0&&spec.bottom===0?(key==='seed_drawer'?Math.min(h/spec.h,.4):h/spec.h):scale,m=[spec.top,spec.right,spec.bottom,spec.left];Object.assign(art.style,{borderStyle:'solid',borderColor:'transparent',borderWidth:m.map(n=>n*k+'px').join(' '),borderImageSource:`url("${LoadedAssets.get(key)}")`,borderImageSlice:m.join(' ')+' fill',borderImageWidth:'1',borderImageRepeat:'stretch'});};el._paintSkin=paint;paint();if(typeof ResizeObserver!=='undefined'&&!el._skinObserver){el._skinObserver=new ResizeObserver(()=>{window.cancelAnimationFrame(el._skinFrame);el._skinFrame=window.requestAnimationFrame(()=>{if(el.isConnected)el._paintSkin?.();});});el._skinObserver.observe(el);}}
 function tileGeometry(side,n){const padding=side*.01,ideal=(side-2*padding)/(n+(n-1)*.015),gap=Math.max(2,ideal*.015),tile=(side-2*padding-(n-1)*gap)/n;return{padding,gap,tile,cells:Array.from({length:n*n},(_,i)=>({x:padding+(i%n)*(tile+gap),y:padding+Math.floor(i/n)*(tile+gap)}))};}
 function timerReminderEnabled(scene){return Settings.data.timer&&!scene.dailyDate&&!scene.worldScreen&&[0,6,12].includes(scene.level);}
-function fitSeedDrawer(drawer,track,width,height,count,mobile=false){
+function fitCompactLandscapeDrawer(drawer,track,width,height,count,mobile=false){
  const gap=6,pad=Math.min(height/259,.4)*90+5,innerW=Math.max(72,width-pad*2),top=mobile?4:8,bottom=mobile?Math.max(8,height*.12):Math.max(16,height*.22),innerH=Math.max(56,height-top-bottom);
  const minCard=mobile?(window.innerHeight>=window.innerWidth&&count<=4?48:count>6&&width<340?48:64):72,cols=Math.min(count,Math.max(1,Math.floor((innerW+gap)/(minCard+gap)))),rows=Math.ceil(count/cols),cardW=Math.floor(Math.min(110,(innerW-gap*(cols-1))/cols)),cardH=Math.floor(Math.min((innerH-gap*(rows-1))/rows,cardW*1.12)),compact=cardH<74,font=compact?15:mobile?16:18,nameTop=Math.max(27,cardH-21),plantH=Math.max(22,nameTop-6);
  document.documentElement.style.setProperty('--seed-type-count',count);drawer.style.padding=top+'px '+pad+'px '+bottom+'px';track.style.width=innerW+'px';track.style.height=innerH+'px';track.style.transform='translateY('+((top-bottom)/2)+'px)';
  for(const [k,v]of Object.entries({'--tray-cols':cols,'--tray-card':cardW+'px','--tray-height':cardH+'px','--tray-font':font+'px','--name-top':nameTop+'px','--plant-ui-height':plantH+'px','--count-bottom':'3px'}))track.style.setProperty(k,v);
  for(const badge of track.querySelectorAll('.neighbor-badge')){const maxSize=Math.max(12,nameTop-18),size=Math.min(cardW*.30,maxSize);badge.style.maxWidth=maxSize+'px';badge.style.top=Math.max(17,Math.min(cardH*.39,nameTop-size-1))+'px';}drawer.classList.toggle('compact-tray',compact);
 }
+function seedDrawerPlan(width,count,portrait){
+ const gap=portrait?2:6,pad=portrait?12:41,innerW=width-pad*2;
+ const wanted=portrait?(count<=4?count:Math.ceil(count/2)):count;
+ const cols=portrait?Math.min(wanted,Math.max(1,Math.floor((innerW+gap)/(88+gap)))):count;
+ const rows=Math.ceil(count/cols),cardW=(innerW-gap*(cols-1))/cols;
+ const cardH=portrait?Math.ceil(Math.max(cardW*1.27,(cardW*.24+28)/.4)):Math.min(84,Math.floor(cardW*1.12));
+ const top=portrait?6:8,bottom=portrait?16:24,height=rows*cardH+(rows-1)*gap+top+bottom;
+ return {gap,pad,innerW,cols,rows,cardW,cardH,top,bottom,height};
+}
+function fitSeedDrawer(drawer,track,width,height,count,mobile=false){
+ const portrait=window.innerHeight>=window.innerWidth;
+ if(!portrait&&document.documentElement.dataset.compactLandscape==='true'){fitCompactLandscapeDrawer(drawer,track,width,height,count,mobile);return;}
+ const p=seedDrawerPlan(width,count,portrait),nameTop=p.cardH-22,artTop=portrait?Math.max(23,p.cardW*.24+4):3,plantH=portrait?p.cardH*.60:nameTop-5;
+ drawer.style.height=p.height+'px';drawer.style.padding=p.top+'px '+p.pad+'px '+p.bottom+'px';
+ track.style.width=p.innerW+'px';track.style.height=(p.height-p.top-p.bottom)+'px';track.style.transform='none';
+ track.style.setProperty('gap',p.gap+'px','important');track.style.gridTemplateColumns=portrait?'repeat('+p.cols*2+', '+((p.cardW-p.gap)/2)+'px)':'repeat('+p.cols+', '+p.cardW+'px)';
+ for(const [k,v]of Object.entries({'--tray-cols':p.cols,'--tray-card':p.cardW+'px','--tray-height':p.cardH+'px','--tray-font':portrait?'17px':p.cardW<80?'15px':'18px','--name-top':nameTop+'px','--seed-art-top':artTop+'px','--plant-ui-height':plantH+'px','--count-bottom':'3px'}))track.style.setProperty(k,v);
+ const cards=[...track.querySelectorAll('.seed-card')],remainder=count%p.cols;
+ cards.forEach((card,i)=>{card.style.gridColumn=portrait?(remainder&&i===count-remainder?(p.cols-remainder+1)+' / span 2':'span 2'):'auto';});
+ drawer.classList.toggle('compact-tray',!portrait&&p.cardW<80);document.documentElement.style.setProperty('--seed-type-count',count);
+}
+
 function showMobileRuleSummary(){document.documentElement.dataset.mobileRules='none';document.querySelector('.mobile-rule-summary')?.remove();return 0;}
 function portraitRuleList(scene,width){
  let panel=document.querySelector('.portrait-rule-list');
@@ -905,13 +930,18 @@ function alignMapStakes(screen){
 
 function portraitRuleMetrics(count,width){const size=Math.min(44,Math.max(36,Math.floor((width-16-(count-1)*6)/count)));return {size,width:count*size+(count-1)*6};}
 function syncPortraitRules(scene){document.documentElement.dataset.portraitRules='false';document.querySelector('.rule-strip')?.remove();scene.ruleTipDismiss?.();}
-function fitGarden(scene){if(!document.querySelector||!window.innerWidth)return;syncPortraitRules(scene);showMobileRuleSummary();document.querySelector('.portrait-rule-list')?.setAttribute('hidden','');document.documentElement.dataset.portraitRuleList='false';if(fitLandscapeGarden(scene))return;const frame=document.querySelector('.bed-frame'),drawer=document.querySelector('.seed-drawer'),track=$('seed-track');if(!frame||!drawer||!track)return;const mobile=window.matchMedia('(orientation: portrait), (max-width:650px)').matches,w=window.innerWidth,h=window.innerHeight,count=Object.keys(scene.l.seeds).length,cols=mobile?(count<=4?count:Math.ceil(count/2)):(count<=6?count:Math.ceil(count/2)),rows=Math.ceil(count/cols),edges=UI_SLICES.bed_frame.visible_border,edgeX=edges.left+edges.right,edgeY=edges.top+edges.bottom,scale=mobile?.09:.19,teachingSpace=scene.level<2&&!scene.teachingDone&&!scene.board.some(Boolean)?60:0,timerSpace=(Settings.data.timer||scene.dailyDate)&&!scene.worldScreen?(mobile?32:56)+(timerReminderEnabled(scene)?24:0):0,header=(mobile?56:64)+teachingSpace+(teachingSpace?12:0)+timerSpace,gap=mobile?(timerSpace&&h<700?0:2):8,controls=mobile?52:0,zone=mobile?w-24:(Math.min(1320,w-32)-24)*45/93;
-let trayH,outerW,hole,outerH,cardH;if(mobile){const drawerW=w-24,minCard=count<=4?48:count>6&&drawerW<340?48:64,drawerCols=Math.min(count,Math.max(1,Math.floor((drawerW-82+6)/(minCard+6)))),drawerRows=Math.ceil(count/drawerCols),desired=Math.min(h<700&&count>4?48:h<650?56:h<750?72:96,Math.floor(Math.min(110,(drawerW-82-(drawerCols-1)*6)/drawerCols)*1.12));trayH=Math.ceil((drawerRows*desired+(drawerRows-1)*6+8)/.78);const previousRulesW=Math.min(132,Math.round((w-24)*.36)),previousBed=Math.min(w-24-previousRulesW-8,h-header-trayH-controls-gap*3-12);
-const availableBed=h-header-trayH-controls-gap*3-12,maxBed=Math.min(w-32,availableBed);
-let listH=0;if(w>=600&&h>w&&h>=700){const measured=portraitRuleList(scene,drawerW);if(Math.min(w-32,availableBed-measured-6)>=previousBed){listH=measured+6;document.documentElement.dataset.portraitRuleList='true';}else document.querySelector('.portrait-rule-list').hidden=true;}
-hole=Math.max(120,Math.min(w-32,availableBed-listH)-edgeX*scale);outerW=hole+edgeX*scale;outerH=hole+edgeY*scale;cardH=desired;}else{const drawerCols=Math.min(count,Math.max(1,Math.floor((zone-82+6)/78))),drawerRows=Math.ceil(count/drawerCols),desired=h<650?64:84;trayH=Math.ceil((drawerRows*desired+(drawerRows-1)*6+8)/.78);const maxFrameH=h-header-18-trayH-gap;hole=Math.min(zone-edgeX*scale,maxFrameH-edgeY*scale);outerW=hole+edgeX*scale;outerH=hole+edgeY*scale;cardH=Math.min(112,Math.floor((trayH-16-(rows-1)*6)*.78/rows));}
-if(!mobile)showMobileRuleSummary(scene,0);const cardW=Math.min(Math.max(70,cardH*.98),(outerW-24-(cols-1)*6)/cols),root=document.documentElement,nameTop=Math.max(29,Math.min(Math.round(cardH*.65-6),cardH-43));for(const [key,val]of Object.entries({'--mobile-rule-timer-space':timerSpace+'px','--teaching-gap':teachingSpace+'px','--hole':hole+'px','--frame-w':outerW+'px','--frame-h':outerH+'px','--frame-left':edges.left*scale+'px','--frame-top':edges.top*scale+'px','--frame-right':edges.right*scale+'px','--frame-bottom':edges.bottom*scale+'px','--mobile-gap':gap+'px','--bed-outer':outerH+'px','--rule-icon-size':Math.max(48,Math.min(80,Math.floor((h-header-18-56-10-100-(count-1)*6)/count)))+'px'}))root.style.setProperty(key,val);
-frame.style.marginBottom='';drawer.style.setProperty('--drawer-width',(mobile?w-24:zone)+'px');drawer.style.height=trayH+'px';drawer.style.padding='6px 12px';for(const [key,val]of Object.entries({'--tray-cols':cols,'--tray-card':cardW+'px','--tray-height':cardH+'px','--tray-font':(mobile?16:18)+'px','--name-top':nameTop+'px','--plant-ui-height':Math.max(24,nameTop-4)+'px','--count-bottom':(cardH<70?2:7)+'px'}))track.style.setProperty(key,val);fitSeedDrawer(drawer,track,mobile?w-24:zone,trayH,count,mobile);skinElement(frame,'bed_frame',scale);const art=frame.querySelector(':scope > .skin-art');if(art)art.style.zIndex=2;skinElement(drawer,'seed_drawer',scale);scene.frameScale=scale;scene.updateTeachingBubble?.();themeDOM();scene.scale?.updateBounds?.();}
+function fitGarden(scene){
+ if(!document.querySelector||!window.innerWidth)return;syncPortraitRules(scene);showMobileRuleSummary();document.querySelector('.portrait-rule-list')?.remove();document.documentElement.dataset.portraitRuleList='false';
+ if(fitLandscapeGarden(scene))return;
+ const frame=document.querySelector('.bed-frame'),drawer=document.querySelector('.seed-drawer'),track=$('seed-track');if(!frame||!drawer||!track)return;
+ const w=innerWidth,h=innerHeight,mobile=h>=w,count=Object.keys(scene.l.seeds).length,edges=UI_SLICES.bed_frame.visible_border,edgeX=edges.left+edges.right,edgeY=edges.top+edges.bottom,scale=mobile?.09:.19;
+ const teachingSpace=scene.level<2&&!scene.teachingDone&&!scene.board.some(Boolean)?60:0,timerSpace=(Settings.data.timer||scene.dailyDate)&&!scene.worldScreen?(mobile?32:56)+(timerReminderEnabled(scene)?24:0):0,header=(mobile?56:64)+teachingSpace+(teachingSpace?12:0)+timerSpace,gap=mobile?(timerSpace&&h<700?0:2):8,controls=mobile?52:0,zone=mobile?w-32:(Math.min(1320,w-32)-24)*45/93;
+ const drawerW=mobile?w-8:Math.max(zone,count*64+(count-1)*6+82),plan=seedDrawerPlan(drawerW,count,mobile),trayH=plan.height;
+ const hole=mobile?Math.max(120,Math.min(w-32-edgeX*scale,h-header-trayH-controls-gap*3-12-edgeY*scale)):Math.min(zone-edgeX*scale,h-header-18-trayH-gap-edgeY*scale),outerW=hole+edgeX*scale,outerH=hole+edgeY*scale,root=document.documentElement;
+ for(const [key,val]of Object.entries({'--mobile-rule-timer-space':timerSpace+'px','--teaching-gap':teachingSpace+'px','--hole':hole+'px','--frame-w':outerW+'px','--frame-h':outerH+'px','--frame-left':edges.left*scale+'px','--frame-top':edges.top*scale+'px','--frame-right':edges.right*scale+'px','--frame-bottom':edges.bottom*scale+'px','--mobile-gap':gap+'px','--bed-outer':outerH+'px','--rule-icon-size':Math.max(48,Math.min(80,Math.floor((h-header-18-56-10-100-(count-1)*6)/count)))+'px'}))root.style.setProperty(key,val);
+ frame.style.marginBottom='';drawer.style.setProperty('--drawer-width',drawerW+'px');fitSeedDrawer(drawer,track,drawerW,trayH,count,mobile);
+ skinElement(frame,'bed_frame',scale);const art=frame.querySelector(':scope > .skin-art');if(art)art.style.zIndex=2;skinElement(drawer,'seed_drawer',scale);scene.frameScale=scale;scene.updateTeachingBubble?.();themeDOM();scene.scale?.updateBounds?.();
+}
 
 function themeDOM(){if(!document.querySelectorAll)return;for(const el of document.querySelectorAll('.level-sign,.world-sign,.modal-card>h1'))skinElement(el,'ui_sign');for(const el of document.querySelectorAll('.rustic,.modal-card'))skinElement(el,'ui_panel',.32);for(const el of document.querySelectorAll('.round'))skinElement(el,'ui_button_round');for(const el of document.querySelectorAll('.seed-card'))skinElement(el,'ui_card');for(const el of document.querySelectorAll('.hint-bubble,.plant-error-bubble'))skinElement(el,'ui_bubble',.16);for(const el of document.querySelectorAll('.map-stake'))skinElement(el,'ui_sign');for(const el of document.querySelectorAll('.mini-bed'))skinElement(el,'bed_frame',.035);for(const el of document.querySelectorAll('.wood-button,.action,.rules-toggle,.map-skip,.settings-actions button'))skinElement(el,'ui_button_green');for(const el of document.querySelectorAll('.controls button')){const name=el.textContent.trim(),kind=name===TEXT.hint?'ui_button_gold':'ui_button';skinElement(el,kind);if(!el.querySelector('.button-label')){const label=document.createElement('span');label.className='button-label';label.textContent=name;const art=document.createElement('span');art.className='button-icon';const key=name===TEXT.hint?'icon_hint':name===TEXT.undo?'icon_undo_light':'icon_reset_light';art.innerHTML=uiIcon(key,name===TEXT.hint?'help':'back');for(const node of Array.from(el.childNodes))if(node.nodeType===3)node.remove();el.append(art,label);}}}
 function startTheme(){themeDOM();if(typeof MutationObserver!=='undefined'){let pending=false;const observer=new MutationObserver(changes=>{if(!changes.some(x=>x.addedNodes.length)||pending)return;pending=true;window.requestAnimationFrame(()=>{pending=false;themeDOM();});});observer.observe(document.body,{childList:true,subtree:true});}document.addEventListener('pointerdown',e=>{const b=e.target.closest?.('button');if(!b||b.disabled||Motion.reduced)return;b.classList.add('pressed');window.setTimeout(()=>b.classList.remove('pressed'),80);},true);document.addEventListener('click',e=>{const b=e.target.closest?.('button');if(b&&!b.disabled)buttonSound();});}
@@ -1070,4 +1100,5 @@ if(typeof Phaser!=='undefined'){
  const resize=new ResizeObserver(entries=>{const next=Math.round(entries[0].contentRect.width);if(next>0&&window.gardenGame.isBooted&&window.gardenGame.canvas&&window.gardenGame.scale.width!==next)window.gardenGame.scale.resize(next,next);});resize.observe(boardElement);
 }else showStartupError(new Error(TEXT.loadError));
 </script></body></html>
+
 
