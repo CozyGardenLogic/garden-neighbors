@@ -29,9 +29,9 @@ function core() {
   const start = code.indexOf('const TEXT=');
   const end = code.indexOf('const Settings=');
   if (start < 0 || end <= start) throw new Error('Cannot locate the unchanged core');
-  vm.runInContext(code.slice(start, end) + `
+  vm.runInContext(code.slice(start, end) + line(code, 'function attemptStars(') + `
     globalThis.model = { TEXT, TYPES, LEVELS, neighbors, soilOK, ruleOK, complete,
-      solve, hintPlan, Progress, SAVE_KEY, ChallengeClock, attemptTimePenalty };
+      solve, hintPlan, Progress, SAVE_KEY, ChallengeClock, attemptTimePenalty, attemptStars };
   `, context);
   return { ...context.model, saved, storage, context };
 }

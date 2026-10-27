@@ -90,3 +90,11 @@ test('the clock starts explicitly, pauses, and keeps an earned timeout penalty u
     assert(Math.abs(c.elapsed - 10) < 1e-9);
   }
 });
+
+test('hints, wilting and timeout preserve star scoring and its one-star minimum', () => {
+  const m = core();
+  for (const [hints, wilts, timeout, expected] of [
+    [0, 0, false, 3], [0, 1, false, 2], [1, 0, false, 1],
+    [0, 0, true, 2], [0, 1, true, 1], [1, 0, true, 1], [2, 3, true, 1]
+  ]) assert.equal(m.attemptStars(hints, wilts, timeout), expected);
+});
