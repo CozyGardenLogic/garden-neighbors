@@ -1,0 +1,37 @@
+/* Language presentation: no changes to board, drawer, timer or map geometry. */
+html[lang] body,html[lang] body *{font-family:var(--language-font,'Garden Neighbors','Patrick Hand',cursive)!important}
+html[lang] .seed-card .seed-name{padding:0 4px;white-space:nowrap;max-width:100%;text-align:center}
+html[lang] .button-label,html[lang] .i18n-button-copy{min-width:0;position:relative;z-index:1;display:block;max-width:100%;text-align:center;white-space:nowrap;line-height:1.15!important}
+html[lang] .level-sign>span{width:100%;min-width:0;text-align:center;white-space:nowrap;line-height:1.15!important}
+html[lang] .level-sign strong{max-width:100%;text-align:center;white-space:nowrap}
+html[lang] .world-sign h1,html[lang] .map-bed-name{white-space:nowrap;text-align:center;max-width:100%}
+html[lang] .modal-card>h1{display:flex;align-items:center;justify-content:center;text-align:center;white-space:nowrap}
+html[lang] .modal-card p,html[lang] .garden-tip{overflow-wrap:anywhere;text-align:center}
+html[lang] .rule-row{min-width:0}
+html[lang] .rule-row p{min-width:0;flex:1;overflow-wrap:anywhere;text-align:left}
+html[lang] .settings-row{min-width:0;gap:8px}
+html[lang] .settings-row>label,html[lang] .settings-row>span{min-width:0;flex:1;overflow-wrap:anywhere;text-align:left;line-height:1.15}
+html[lang] .settings-row select{min-width:0;width:auto;max-width:60%;text-align:center}
+html[lang] .language-row select{width:56%;font-family:Arial,'PingFang SC','Apple SD Gothic Neo','Microsoft YaHei','Malgun Gothic',sans-serif!important}
+html[lang] .language-row option{font-family:Arial,'PingFang SC','Apple SD Gothic Neo','Microsoft YaHei','Malgun Gothic',sans-serif!important}
+html[lang] .settings-audio{min-width:0;max-width:58%}
+html[lang] .home-logo{position:relative}
+html[lang] .localized-subtitle{position:absolute;z-index:2;left:9%;bottom:0;width:83%;height:29%;padding:3% 8%;display:flex;align-items:center;justify-content:center;text-align:center;background:url('assets/ui/ui_sign.png') center/100% 100% no-repeat;color:#FFF6DC;text-shadow:0 2px 2px #4A2A12;font-size:24px;line-height:1.12}
+html[lang=zh-Hans] .rule-row p,html[lang=ko] .rule-row p{line-height:1.3!important}
+html[lang=zh-Hans] .seed-rule-copy,html[lang=ko] .seed-rule-copy{word-break:normal;line-break:auto}
+html[lang] .timer-reminder{white-space:normal;text-align:center;max-width:100%;letter-spacing:normal}
+html[lang=zh-Hans] .level-sign strong,html[lang=ko] .level-sign strong{font-size:20px!important}
+@media(orientation:portrait){
+ html[lang] .seed-rule-copy{flex:1;text-align:center}
+ html[lang] .timer-reminder{font-size:11px!important;line-height:12px!important}
+ html[lang] .settings-row{font-size:17px!important}
+ html[lang] .settings-audio input[type=range]{min-width:30px;max-width:68px}
+ html[lang] .settings-row input[type=checkbox]{width:36px;height:36px;min-height:36px}
+ html[lang] .settings-audio output{min-width:28px;font-size:14px}
+ html[lang] .modal-card .modal-actions{flex-wrap:wrap}
+ html[lang] .modal-card .modal-actions .action{min-width:0;max-width:100%;flex:1 1 auto}
+}
+html[lang=ko] .rule-row p,html[lang=ko] .seed-rule-copy{word-break:keep-all;overflow-wrap:break-word}
+
+html[lang=ko] .modal-card p{word-break:keep-all;overflow-wrap:break-word}
+html[lang=de] .modal-card p{hyphens:auto}

@@ -1,0 +1,119 @@
+{
+  "_info": "Margenes en pixeles de la imagen original para estirar sin deformar (9-slice). left/right/top/bottom = zona fija de cada borde. Si top y bottom son 0, la pieza solo se estira a lo ancho y su alto se escala de forma proporcional.",
+  "ui_panel": {
+    "w": 403,
+    "h": 496,
+    "left": 70,
+    "right": 70,
+    "top": 70,
+    "bottom": 70,
+    "use": "Panel Rules, ventanas (Settings, How to play, planta nueva, victoria)"
+  },
+  "ui_button": {
+    "w": 610,
+    "h": 182,
+    "left": 80,
+    "right": 80,
+    "top": 0,
+    "bottom": 0,
+    "use": "Botones Undo y Reset"
+  },
+  "ui_button_gold": {
+    "w": 610,
+    "h": 184,
+    "left": 80,
+    "right": 80,
+    "top": 0,
+    "bottom": 0,
+    "use": "Boton Hint"
+  },
+  "ui_button_green": {
+    "w": 682,
+    "h": 222,
+    "left": 90,
+    "right": 90,
+    "top": 0,
+    "bottom": 0,
+    "use": "Play, My Garden, Next garden, Got it!"
+  },
+  "ui_sign": {
+    "w": 1187,
+    "h": 245,
+    "left": 170,
+    "right": 170,
+    "top": 0,
+    "bottom": 0,
+    "use": "Cartel Level X, titulo de My Garden y de victoria"
+  },
+  "ui_bubble": {
+    "w": 350,
+    "h": 219,
+    "left": 110,
+    "right": 60,
+    "top": 60,
+    "bottom": 80,
+    "use": "Bocadillos de pista y de error (la cola queda abajo a la izquierda)"
+  },
+  "ui_button_round": {
+    "w": 259,
+    "h": 258,
+    "stretch": false,
+    "use": "Botones redondos: atras, altavoz, ajustes (icono encima)"
+  },
+  "ui_card": {
+    "w": 214,
+    "h": 219,
+    "stretch": false,
+    "use": "Tarjetas del cajon de semillas (planta, nombre y xN encima)"
+  },
+  "_iconos": {
+    "info": "Iconos 256x256 px, fondo transparente, centrados. Sobre madera (botones redondos y rectangulares) usar SIEMPRE la version _light (crema), que se lee mucho mejor; la version marron normal, solo sobre papel crema (paneles, tarjetas, bocadillos).",
+    "icon_back": "boton atras",
+    "icon_sound_on": "musica activada",
+    "icon_sound_off": "musica desactivada",
+    "icon_settings": "ajustes",
+    "icon_undo": "Undo",
+    "icon_reset": "Reset",
+    "icon_hint": "Hint (ya es de color, no tiene version _light)",
+    "icon_check": "semilla completada / correcto",
+    "icon_lock": "nivel bloqueado en My Garden",
+    "icon_star": "estrella ganada",
+    "icon_star_empty": "estrella no ganada",
+    "icon_question": "How to play / nivel desconocido",
+    "icon_sun": "casilla de sol en reglas y en la casilla",
+    "icon_shade": "casilla de sombra en reglas y en la casilla"
+  },
+  "bed_frame": {
+    "file": "assets/bed_frame.png",
+    "w": 824,
+    "h": 775,
+    "left": 110,
+    "right": 110,
+    "top": 125,
+    "bottom": 140,
+    "visible_border": {
+      "left": 91,
+      "right": 91,
+      "top": 105,
+      "bottom": 118
+    },
+    "use": "Marco del bancal (3x3 y 4x4). Estirar con estos margenes para que el HUECO interior sea un CUADRADO exacto del tamano de la cuadricula. El hueco interior empieza a 'visible_border' px de cada borde (en px de la imagen original, escalar en proporcion). Debajo del marco, rellenar el hueco con un fondo de tierra oscura (#46301C) y encima dibujar las casillas; el marco se dibuja por ENCIMA de las casillas."
+  },
+  "seed_drawer": {
+    "file": "assets/seed_drawer.png",
+    "w": 870,
+    "h": 259,
+    "left": 90,
+    "right": 90,
+    "top": 0,
+    "bottom": 0,
+    "use": "Cajon de semillas. Solo se estira a lo ancho; las tarjetas van centradas sobre el fondo oscuro del cajon. Con mas de 4 tipos de semilla en movil, usar 2 cajones uno encima de otro o 2 filas dentro de uno mas alto (escalar el alto proporcionalmente)."
+  },
+  "tile_layout": {
+    "use": "Colocacion de las casillas dentro del hueco del marco: deben quedar CASI PEGADAS, como en un bancal real, solo separadas por un surco estrecho de tierra oscura.",
+    "crop": "Antes de dibujar cada casilla, recortar su margen transparente: calcular al cargar el rectangulo de los pixeles con alfa > 128 y usar solo esa parte. Asi la tierra llega hasta el borde de la celda.",
+    "gap": "Separacion entre casillas = 1,5% del lado de la casilla (minimo 2 px de pantalla).",
+    "padding": "Margen entre las casillas y el borde interior del marco = 1% del lado del hueco.",
+    "underlay": "Debajo de todo, el hueco se rellena con tierra oscura #46301C, que es lo que se ve en el surco."
+  }
+}
