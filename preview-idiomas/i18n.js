@@ -1563,3 +1563,19 @@ const catalogs={
  const observer=new MutationObserver(()=>api.schedule());observer.observe(document.body,{childList:true,subtree:true,characterData:true});
  window.addEventListener('resize',api.schedule);document.fonts?.ready.then(api.schedule);api.schedule();
 })();
+
+/* Re-apply cover after iPhone orientation changes, when browser safe-area insets settle. */
+(function(){
+ let pending;
+ function refresh(){
+  const old=document.querySelector('meta[name="viewport"]');if(!old)return;
+  const meta=old.cloneNode(false),value=old.content||'width=device-width, initial-scale=1';
+  meta.content=/viewport-fit\s*=/i.test(value)?value.replace(/viewport-fit\s*=\s*[^,]+/i,'viewport-fit=cover'):value+', viewport-fit=cover';
+  old.parentNode.replaceChild(meta,old);document.documentElement.dataset.edgeToEdge='cover';
+  window.requestAnimationFrame(()=>window.dispatchEvent(new Event('resize')));
+ }
+ function schedule(){window.clearTimeout(pending);pending=window.setTimeout(refresh,250);}
+ window.addEventListener('pageshow',schedule);window.addEventListener('orientationchange',schedule);
+ window.screen?.orientation?.addEventListener('change',schedule);
+ if(document.readyState==='complete')schedule();else window.addEventListener('load',schedule,{once:true});
+})();
