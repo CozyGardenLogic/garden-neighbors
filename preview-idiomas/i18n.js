@@ -1510,7 +1510,8 @@ const catalogs={
 /* Local catalogs: no translation service, network request, or browser-language override. */
 (function(){
  const supported=Object.freeze({en:'English',es:'Español',de:'Deutsch',pt:'Português',zh:'中文',ko:'한국어'});
- const key='sunny-garden-language-v1';let language='en';
+ // Ignore legacy preview preferences; only choices made in the current Settings are restored.
+ const key='sunny-garden-language-v2';let language='en';
  try{const saved=localStorage.getItem(key);if(Object.hasOwn(supported,saved))language=saved;}catch(e){}
  const fonts={zh:'"PingFang SC","Microsoft YaHei","Noto Sans CJK SC","Noto Sans SC",sans-serif',ko:'"Apple SD Gothic Neo","Malgun Gothic","Noto Sans CJK KR","Noto Sans KR",sans-serif'};
  let frame=0,context;
