@@ -1,0 +1,33 @@
+SUNNY GARDEN — PRIMERA ETAPA DE REFACTORIZACIÓN
+
+Referencia: 71b250a7deb342e3f4ad340520fcea22c013e998 (main publicada).
+
+Alcance de esta etapa:
+- index.html mantiene el mismo marcado y el mismo orden de ejecución.
+- game.css contiene exactamente el estilo inline anterior, en su orden original.
+- game.js contiene exactamente el script inline anterior, como script clásico.
+- Los dos archivos siguen en la raíz para conservar las rutas relativas.
+- Phaser permanece en 3.90.0 y todos los recursos originales se conservan byte a byte.
+- No se integra todavía el SDK, ni se optimizan recursos, ni se migra el guardado.
+
+Comprobar:
+  npm test
+No necesita instalar dependencias; requiere Node.js 20 o posterior.
+Las pruebas reconstruyen el HTML publicado y comparan su SHA-256, además de
+comprobar campaña, reglas, soluciones, pistas, guardado y tamaños de móvil.
+
+Previsualizar:
+  python3 -m http.server 8000
+  Abrir http://localhost:8000
+Se mantiene la dependencia CDN de Phaser del juego original.
+
+Revertir la extracción:
+- La referencia Git anterior contiene el index.html original completo.
+- Se pueden revertir los commits de esta rama, sin cambiar datos guardados.
+
+Pendiente para etapas posteriores:
+- Consolidar estilos y parches de Game.prototype de uno en uno.
+- Auditar recursos duplicados y rutas de fuentes que ya fallan en la referencia.
+- Medir la descarga real y preparar un paquete limpio para CrazyGames.
+- Integrar SDK v3, ciclo de partida, muteAudio y guardado en cambios separados.
+- Validar finalmente en el portal CrazyGames y a DPR 1 antes de la entrega.

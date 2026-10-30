@@ -1,0 +1,8 @@
+{
+  "name": "sunny-garden",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Behavior-preserving first-stage source extraction",
+  "scripts": { "test": "node --test" },
+  "engines": { "node": ">=20" }
+}
