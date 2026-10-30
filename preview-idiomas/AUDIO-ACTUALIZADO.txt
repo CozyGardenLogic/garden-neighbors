@@ -1,0 +1,26 @@
+SUNNY GARDEN — AUDIO ACTUALIZADO
+
+Revisión de audio 10: pausa de 200 ms entre conseguido y primera estrella (150 ms más), sin cambiar el ritmo entre estrellas.
+Revisión de audio 9: se bloquea el salto accidental de recogida al soltar la última semilla. Recogida con sonido, acorde único de conseguido de 280 ms y después ding de estrella cada 180 ms, sin solaparse.
+Revisión de audio 8: vuelve la imagen y animación de recogida hacia la cesta antes del cartel. Sonido breve de recolección, seguido de exactamente tres ding si se ganan tres estrellas; las estrellas mantienen intervalos de 270 ms. Con Reduce motion se muestra una imagen estática de la recogida.
+Revisión de audio 7: estrellas cada 270 ms, tres estrellas en 540 ms; notas de 220 ms con su tono original y sin solaparse. Cartel tras 1050 ms; primera estrella tras 1100 ms.
+Revisión de audio 6: al completar un nivel solo suena un ding por estrella ganada. No hay jingles de victoria, recolección, récord ni desbloqueo en esa pantalla; los efectos de My Garden se conservan.
+Revisión de audio 5: en My Garden solo suena Background Music como música; regar y recoger tienen sus efectos. El riego del mapa dura 0,9 s para dejar sitio a la recogida. Las pestañas actualizadas se ceden el audio al interactuar y se silencian al quedar ocultas.
+Revisión de audio 4: estrellas sincronizadas con sus notas; recolección y victoria deben terminar antes de las estrellas; la cola espera el final real del efecto.
+Revisión anterior: grow recortado a 0,32 s; la bocina silencia música, efectos, reloj y colas; se detienen los efectos pendientes del nivel al entrar en My Garden.
+
+16 efectos aprobados; button 0,095 s, harvest 0,55 s y water de riego continuo 2,6 s.
+Botones: button. Coger semilla: pickup. Plantar: drop_1/drop_2. Brotación: pop_1/pop_2. Crecer: grow. Fruto: fruit. Marchitarse: wilt. Volver al cajón: return. Regar: water seguido de grow. Cosecha: harvest. Pista: hint. Estrellas y récord mejorado: star. Victoria: win. Nuevo desbloqueo: unlock.
+
+MÚSICA ORIGINAL FACILITADA POR EVA
+Inicio: Sunny Garden Main Theme.
+Juego: Sunny Garden Puzzle Music 1, 2, 3, alternadas por nivel (1→2→3→1).
+My Garden: Sunny Garden Background Music.
+Se han conservado los archivos completos, sin recortarlos con los puntos de bucle antiguos. La pista antigua de ambiente ya no se reproduce.
+
+Fuentes y permisos de efectos CC0 en assets/audio/licenses. Las músicas facilitadas por Eva se documentan aparte en music-manifest.json; no se les atribuye la licencia CC0 de los efectos.
+
+Verificación: 32 pruebas automáticas. Navegador: niveles 1 y 19, seis idiomas, 360×640, 390×844 y 1366×768; controles, cronómetro, tarjetas y ausencia de scroll revisados. 16 WAV decodificados por el navegador. Secuencia de plantación/cosecha/victoria/estrellas y transición de músicas verificadas.
+No es una prueba exhaustiva de cada nivel en cada dispositivo físico ni una escucha crítica de oído.
+
+Abrir con un servidor web. index.html sigue usando Phaser desde CDN, como la versión de partida.

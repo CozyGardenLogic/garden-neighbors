@@ -1,0 +1,37 @@
+[
+  {
+    "key": "music_menu",
+    "original_filename": "Sunny Garden Main Theme.mp3",
+    "file": "assets/audio/music_menu.mp3",
+    "origin": "Original music supplied by Eva",
+    "sha256": "33c7c5c27ac0cb183bb5f15bf91592c2e880beba2fc6a944d3a8025c3e0539e1"
+  },
+  {
+    "key": "music_my_garden",
+    "original_filename": "Sunny Garden Background Music.mp3",
+    "file": "assets/audio/music_my_garden.mp3",
+    "origin": "Original music supplied by Eva",
+    "sha256": "3375a1ce86ad3c7a883958a3da34f7adb10e712203bd6d5d0da5c611b4f08d66"
+  },
+  {
+    "key": "music_game_1",
+    "original_filename": "Sunny Garden Puzzle Music-1.mp3",
+    "file": "assets/audio/music_game_1.mp3",
+    "origin": "Original music supplied by Eva",
+    "sha256": "840e2befaa405734793fa7ecc757ee814f2457e965b4f00c7824cfde747c872f"
+  },
+  {
+    "key": "music_game_2",
+    "original_filename": "Sunny Garden Puzzle Music-2.mp3",
+    "file": "assets/audio/music_game_2.mp3",
+    "origin": "Original music supplied by Eva",
+    "sha256": "6eb6c9736147d8f23d6a4c0514926e3125294f555558d435cb9948829a77f023"
+  },
+  {
+    "key": "music_game_3",
+    "original_filename": "Sunny Garden Puzzle Music-3.mp3",
+    "file": "assets/audio/music_game_3.mp3",
+    "origin": "Original music supplied by Eva",
+    "sha256": "72bd2e22783dbac8987f6b113cb75227b9a443e8aeed0820c74852f29a5c515d"
+  }
+]

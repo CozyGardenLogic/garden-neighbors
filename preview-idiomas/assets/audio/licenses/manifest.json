@@ -1,0 +1,373 @@
+[
+  {
+    "effect": "button",
+    "description": "Clic rápido de madera para botones e iconos",
+    "seconds": 0.09501133786848072,
+    "file": "audio/sfx_button.wav",
+    "sources": [
+      {
+        "key": "recorded100",
+        "author": "rubberduck",
+        "page": "https://opengameart.org/content/100-cc0-sfx",
+        "download": "https://opengameart.org/sites/default/files/100-CC0-SFX_0.zip",
+        "license": "CC0-1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "downloaded_file": "work/natural-sfx/sources/recorded100/100-CC0-SFX_0.zip",
+        "sha256": "a5c135878c132f1c59cca54e60061c296cd0ac27ad031ca2c41b8cd5cab3c706",
+        "bytes": 2921904
+      }
+    ],
+    "source_files_and_edits": [
+      "wooden_01.ogg; recorte y fundidos",
+      "Revisión breve: ventana 0.0151–0.1101 s del montaje anterior, a velocidad original; fundidos 2 ms / 18 ms"
+    ],
+    "peak_dbfs": -7.0,
+    "sha256": "84a798ab6684aeaabd7744a2147acf375fe4298c5ac4ab1537047aedc3c0db21"
+  },
+  {
+    "effect": "pickup",
+    "description": "Movimiento suave de un sobre de papel",
+    "seconds": 0.5455,
+    "file": "audio/sfx_pickup.wav",
+    "sources": [
+      {
+        "key": "paper",
+        "author": "Luckius",
+        "page": "https://opengameart.org/content/various-paper-sound-effects",
+        "download": "https://opengameart.org/sites/default/files/sounds_6.zip",
+        "license": "CC0-1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "downloaded_file": "work/natural-sfx/sources/paper/sounds_6.zip",
+        "sha256": "aa1889414310c7cfdd8dc291c19d4e4fc21ec987e9238b0d961fb72449c263a4",
+        "bytes": 974191
+      }
+    ],
+    "source_files_and_edits": [
+      "Paper Sound - 2.wav"
+    ],
+    "peak_dbfs": -7,
+    "sha256": "e2d9d9821b76048543d4948cce75d389bbddf8cacf1614fab8d7de5f0afa90f7"
+  },
+  {
+    "effect": "drop_1",
+    "description": "Caída breve de tierra y granos",
+    "seconds": 0.52,
+    "file": "audio/sfx_drop_1.wav",
+    "sources": [
+      {
+        "author": "lolamadeus",
+        "page": "https://freesound.org/people/lolamadeus/sounds/179341/",
+        "license": "CC0-1.0"
+      }
+    ],
+    "source_files_and_edits": [
+      "gravel preview HQ; 0.32–0.97 s"
+    ],
+    "peak_dbfs": -7,
+    "sha256": "626386b66f9c37b60d95bfbecf0610417b82782b529e75c041925690c3a3adec"
+  },
+  {
+    "effect": "drop_2",
+    "description": "Segunda caída de tierra y granos",
+    "seconds": 0.75,
+    "file": "audio/sfx_drop_2.wav",
+    "sources": [
+      {
+        "author": "lolamadeus",
+        "page": "https://freesound.org/people/lolamadeus/sounds/179341/",
+        "license": "CC0-1.0"
+      }
+    ],
+    "source_files_and_edits": [
+      "gravel preview HQ; 7.50–8.25 s"
+    ],
+    "peak_dbfs": -7,
+    "sha256": "f302e53e854fb63d546c19a0298143fe75db8d26aef3406766e622a2cda2e155"
+  },
+  {
+    "effect": "pop_1",
+    "description": "Pop pequeño",
+    "seconds": 0.0874,
+    "file": "audio/sfx_pop_1.wav",
+    "sources": [
+      {
+        "key": "recorded100",
+        "author": "rubberduck",
+        "page": "https://opengameart.org/content/100-cc0-sfx",
+        "download": "https://opengameart.org/sites/default/files/100-CC0-SFX_0.zip",
+        "license": "CC0-1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "downloaded_file": "work/natural-sfx/sources/recorded100/100-CC0-SFX_0.zip",
+        "sha256": "a5c135878c132f1c59cca54e60061c296cd0ac27ad031ca2c41b8cd5cab3c706",
+        "bytes": 2921904
+      }
+    ],
+    "source_files_and_edits": [
+      "plop_01.ogg"
+    ],
+    "peak_dbfs": -7,
+    "sha256": "d763c507cd735363207c05956fc7941026babbe27bdf4da0919ac4d5f3412863"
+  },
+  {
+    "effect": "pop_2",
+    "description": "Segundo pop pequeño",
+    "seconds": 0.1726,
+    "file": "audio/sfx_pop_2.wav",
+    "sources": [
+      {
+        "key": "recorded100",
+        "author": "rubberduck",
+        "page": "https://opengameart.org/content/100-cc0-sfx",
+        "download": "https://opengameart.org/sites/default/files/100-CC0-SFX_0.zip",
+        "license": "CC0-1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "downloaded_file": "work/natural-sfx/sources/recorded100/100-CC0-SFX_0.zip",
+        "sha256": "a5c135878c132f1c59cca54e60061c296cd0ac27ad031ca2c41b8cd5cab3c706",
+        "bytes": 2921904
+      }
+    ],
+    "source_files_and_edits": [
+      "plop_02.ogg"
+    ],
+    "peak_dbfs": -7,
+    "sha256": "3adc00da0518579fad1fba0b81855211c36284dfbe1fe2b81b1a00fb9791a7bf"
+  },
+  {
+    "effect": "grow",
+    "description": "Movimiento breve de hojas",
+    "seconds": 0.32,
+    "file": "audio/sfx_grow.wav",
+    "sources": [
+      {
+        "key": "leaves",
+        "author": "Augmentality (Brandon Morris)",
+        "page": "https://opengameart.org/content/random-sounds-samples",
+        "download": "https://opengameart.org/sites/default/files/moving%20leaves%20stereo.ogg",
+        "license": "CC0-1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "downloaded_file": "work/natural-sfx/sources/leaves/moving leaves stereo.ogg",
+        "sha256": "678c0da00ef1092f4be7c2d8c7b22c1c91c5fc8ca1f3f9570ce59de995c0138c",
+        "bytes": 22317
+      }
+    ],
+    "source_files_and_edits": [
+      "moving leaves stereo.ogg; 0.08–1.23 s",
+      "Recorte breve de 0,32 s a velocidad natural, con fundidos."
+    ],
+    "peak_dbfs": -7,
+    "sha256": "72154fb23058ed5f0ae2ff48103f8afce308bbfd83d0e6bf1a5535f02b5db984"
+  },
+  {
+    "effect": "fruit",
+    "description": "Hoja y pequeño desprendimiento del tallo",
+    "seconds": 0.53,
+    "file": "audio/sfx_fruit.wav",
+    "sources": [
+      {
+        "key": "leaves",
+        "author": "Augmentality (Brandon Morris)",
+        "page": "https://opengameart.org/content/random-sounds-samples",
+        "download": "https://opengameart.org/sites/default/files/moving%20leaves%20stereo.ogg",
+        "license": "CC0-1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "downloaded_file": "work/natural-sfx/sources/leaves/moving leaves stereo.ogg",
+        "sha256": "678c0da00ef1092f4be7c2d8c7b22c1c91c5fc8ca1f3f9570ce59de995c0138c",
+        "bytes": 22317
+      },
+      {
+        "key": "recorded100",
+        "author": "rubberduck",
+        "page": "https://opengameart.org/content/100-cc0-sfx",
+        "download": "https://opengameart.org/sites/default/files/100-CC0-SFX_0.zip",
+        "license": "CC0-1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "downloaded_file": "work/natural-sfx/sources/recorded100/100-CC0-SFX_0.zip",
+        "sha256": "a5c135878c132f1c59cca54e60061c296cd0ac27ad031ca2c41b8cd5cab3c706",
+        "bytes": 2921904
+      }
+    ],
+    "source_files_and_edits": [
+      "hojas 0.30–0.80 s + wooden_03 a volumen bajo"
+    ],
+    "peak_dbfs": -7,
+    "sha256": "056cb9e36f655060510949cf4e6f9984c69530dab94dd613d74b5219b42c2648"
+  },
+  {
+    "effect": "wilt",
+    "description": "Arrugado seco: foley de hojas y papel",
+    "seconds": 0.7966,
+    "file": "audio/sfx_wilt.wav",
+    "sources": [
+      {
+        "key": "leaves",
+        "author": "Augmentality (Brandon Morris)",
+        "page": "https://opengameart.org/content/random-sounds-samples",
+        "download": "https://opengameart.org/sites/default/files/moving%20leaves%20stereo.ogg",
+        "license": "CC0-1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "downloaded_file": "work/natural-sfx/sources/leaves/moving leaves stereo.ogg",
+        "sha256": "678c0da00ef1092f4be7c2d8c7b22c1c91c5fc8ca1f3f9570ce59de995c0138c",
+        "bytes": 22317
+      },
+      {
+        "key": "paper",
+        "author": "Luckius",
+        "page": "https://opengameart.org/content/various-paper-sound-effects",
+        "download": "https://opengameart.org/sites/default/files/sounds_6.zip",
+        "license": "CC0-1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "downloaded_file": "work/natural-sfx/sources/paper/sounds_6.zip",
+        "sha256": "aa1889414310c7cfdd8dc291c19d4e4fc21ec987e9238b0d961fb72449c263a4",
+        "bytes": 974191
+      }
+    ],
+    "source_files_and_edits": [
+      "hojas 0.55–1.25 s + Paper Crushed - 2; foley, no grabación literal de marchitarse"
+    ],
+    "peak_dbfs": -7,
+    "sha256": "958f27ec3e1513555b0d7fce8493d7a7e3fbee7ecb44a9a2d60b772d02448ba9"
+  },
+  {
+    "effect": "return",
+    "description": "Movimiento de una caja de madera",
+    "seconds": 0.3136,
+    "file": "audio/sfx_return.wav",
+    "sources": [
+      {
+        "key": "recorded100",
+        "author": "rubberduck",
+        "page": "https://opengameart.org/content/100-cc0-sfx",
+        "download": "https://opengameart.org/sites/default/files/100-CC0-SFX_0.zip",
+        "license": "CC0-1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "downloaded_file": "work/natural-sfx/sources/recorded100/100-CC0-SFX_0.zip",
+        "sha256": "a5c135878c132f1c59cca54e60061c296cd0ac27ad031ca2c41b8cd5cab3c706",
+        "bytes": 2921904
+      }
+    ],
+    "source_files_and_edits": [
+      "wooded_box_open.ogg"
+    ],
+    "peak_dbfs": -7,
+    "sha256": "a7f913af9e2ba2ac16346ba23943f87cdf4759245469c11624d3d0afb4892884"
+  },
+  {
+    "effect": "water",
+    "description": "Chorro continuo de agua: riego de un arbusto",
+    "seconds": 2.6,
+    "file": "audio/sfx_water.wav",
+    "sources": [
+      {
+        "author": "BigSoundBank / Joseph SARDIN",
+        "page": "https://bigsoundbank.com/watering-2-s1303.html",
+        "license": "CC0-1.0",
+        "source_sha256": "bbe2d37688b06eafdd98c249abb6a5bff237ee00afa5941281c57952d1c0e4a2"
+      }
+    ],
+    "source_files_and_edits": [
+      "Watering #2; 8.00–10.60 s; mono, volumen y fundidos"
+    ],
+    "peak_dbfs": -7,
+    "sha256": "e4b56783801f2c23299b2c54cd3f80e71c5658d1b1bda7d84fdc4dd783aed01d"
+  },
+  {
+    "effect": "harvest",
+    "description": "Gesto breve de bolsa de papel/cartón",
+    "seconds": 0.55,
+    "file": "audio/sfx_harvest.wav",
+    "sources": [
+      {
+        "key": "paper",
+        "author": "Luckius",
+        "page": "https://opengameart.org/content/various-paper-sound-effects",
+        "download": "https://opengameart.org/sites/default/files/sounds_6.zip",
+        "license": "CC0-1.0",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "downloaded_file": "work/natural-sfx/sources/paper/sounds_6.zip",
+        "sha256": "aa1889414310c7cfdd8dc291c19d4e4fc21ec987e9238b0d961fb72449c263a4",
+        "bytes": 974191
+      }
+    ],
+    "source_files_and_edits": [
+      "Paper Crushed - 1 + Paper Sound - 4; simulación de bolsa con grabaciones de papel, no bolsa de cartón grabada literalmente",
+      "Revisión breve: ventana 0.0476–0.5976 s del montaje anterior, a velocidad original; fundidos 2 ms / 50 ms"
+    ],
+    "peak_dbfs": -7.0,
+    "sha256": "9a1109da389d2f4d781cba6079689baaf25bde2eb426a6b7892b95994c83d020"
+  },
+  {
+    "effect": "hint",
+    "description": "Campanilla suave de jardín",
+    "seconds": 1.75,
+    "file": "audio/sfx_hint.wav",
+    "sources": [
+      {
+        "author": "Versilian Studios / Sam Gossner",
+        "page": "https://github.com/sgossner/VCSL",
+        "license": "CC0-1.0"
+      }
+    ],
+    "source_files_and_edits": [
+      "glock_soft_C6_01.wav; cola atenuada"
+    ],
+    "peak_dbfs": -7,
+    "sha256": "e2043aac178de51b0b7d95084921051fe4cc01943b4230e45eeaec9d2aa11a41"
+  },
+  {
+    "effect": "star",
+    "description": "Una nota de kalimba",
+    "seconds": 0.14,
+    "file": "audio/sfx_star.wav",
+    "sources": [
+      {
+        "author": "Versilian Studios / Sam Gossner",
+        "page": "https://github.com/sgossner/VCSL",
+        "license": "CC0-1.0"
+      }
+    ],
+    "source_files_and_edits": [
+      "Kalimba A4; cola atenuada",
+      "Cola abreviada a 0,22 s, sin cambiar tono ni velocidad; fundido de 40 ms.",
+      "Révision: note 140 ms, même hauteur."
+    ],
+    "peak_dbfs": -7,
+    "sha256": "e394348437b149cd645cf721018e1e33aac0f312ce6cc1da7c6a420e69c40014"
+  },
+  {
+    "effect": "win",
+    "description": "Tres notas alegres de glockenspiel",
+    "seconds": 0.28,
+    "file": "audio/sfx_win.wav",
+    "sources": [
+      {
+        "author": "Versilian Studios / Sam Gossner",
+        "page": "https://github.com/sgossner/VCSL",
+        "license": "CC0-1.0"
+      }
+    ],
+    "source_files_and_edits": [
+      "C5 / G5 / C6 grabados; entradas a 0, 0.22, 0.44 s",
+      "C5/G5/C6 simultanés: un accord de réussite 280 ms, sans trois notes successives."
+    ],
+    "peak_dbfs": -7,
+    "sha256": "5277371b70099173c27be087e64e852d276124c500477445187c639620064250"
+  },
+  {
+    "effect": "unlock",
+    "description": "Tres notas ascendentes de kalimba",
+    "seconds": 0.8668,
+    "file": "audio/sfx_unlock.wav",
+    "sources": [
+      {
+        "author": "Versilian Studios / Sam Gossner",
+        "page": "https://github.com/sgossner/VCSL",
+        "license": "CC0-1.0"
+      }
+    ],
+    "source_files_and_edits": [
+      "F#4 / A4 / B4 grabados; entradas a 0, 0.20, 0.40 s"
+    ],
+    "peak_dbfs": -7,
+    "sha256": "d392afdfa80f84ca290b19751225d589cf353fd8b4839086453631a37afac3f8"
+  }
+]

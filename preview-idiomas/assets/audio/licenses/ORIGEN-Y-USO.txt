@@ -1,0 +1,9 @@
+SUNNY GARDEN — EFECTOS BASADOS EN GRABACIONES REALES
+
+16 WAV mono, 44.1 kHz, 16 bits. Cada efecto dura como máximo 3 segundos.
+Fuentes CC0; autores y enlaces en manifest.json. Estos efectos están integrados en esta versión del juego.
+Edición: recorte, mezcla, conversión a mono, ajuste de volumen y fundidos. Water: grabación de riego BigSoundBank #1303, CC0, recorte 8.00–10.60 s.
+Harvest es foley de una bolsa usando papel grabado; no es una grabación literal de una bolsa de cartón. Wilt y fruit son también composiciones foley.
+No se han añadido osciladores ni ruido sintetizado.
+La selección requiere tu escucha: los controles técnicos no equivalen a una evaluación de oído.
+CC0: https://creativecommons.org/publicdomain/zero/1.0/
