@@ -1,0 +1,7 @@
+SUNNY GARDEN — ENTREGA OPTIMIZADA
+
+Juego HTML5 completo. Servir index.html mediante un servidor web. Phaser está incluido localmente: no requiere el CDN.
+
+Músicas completas en AAC-LC estéreo, objetivo 48 kb/s. Los originales MP3 y PNG se conservan fuera de esta entrega. Las imágenes WebP mantienen exactamente los píxeles RGBA originales y sus dimensiones. Los 16 efectos WAV, niveles, textos, fuente, reglas, puntuación y distribución se conservan. Cada pantalla carga solo su música. Inicio carga solo sus imágenes; el nivel incorpora sus plantas y terreno al entrar, y My Garden carga sus propios recursos. Las ilustraciones de reserva solo se generan cuando falta el original. Se han eliminado las referencias a dos fuentes inexistentes, conservando Patrick Hand y los estilos.
+
+Procedencia: assets/audio/licenses y optimization-manifest.json. No contiene herramientas QA, tests, duplicados de la raíz ni originales de edición. No incluye todavía integración del SDK de CrazyGames ni una certificación en móviles físicos.

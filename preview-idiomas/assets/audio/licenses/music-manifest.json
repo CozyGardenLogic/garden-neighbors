@@ -2,36 +2,46 @@
   {
     "key": "music_menu",
     "original_filename": "Sunny Garden Main Theme.mp3",
-    "file": "assets/audio/music_menu.mp3",
+    "file": "assets/audio/music_menu.m4a",
     "origin": "Original music supplied by Eva",
-    "sha256": "33c7c5c27ac0cb183bb5f15bf91592c2e880beba2fc6a944d3a8025c3e0539e1"
+    "sha256": "f52f4d4c53c30df322b774c5e1623594101b96a70f6e295321e9b9c981e2d2db",
+    "original_sha256": "33c7c5c27ac0cb183bb5f15bf91592c2e880beba2fc6a944d3a8025c3e0539e1",
+    "encoding": "AAC-LC, 48 kb/s target, 44.1 kHz, stereo; full track retained"
   },
   {
     "key": "music_my_garden",
     "original_filename": "Sunny Garden Background Music.mp3",
-    "file": "assets/audio/music_my_garden.mp3",
+    "file": "assets/audio/music_my_garden.m4a",
     "origin": "Original music supplied by Eva",
-    "sha256": "3375a1ce86ad3c7a883958a3da34f7adb10e712203bd6d5d0da5c611b4f08d66"
+    "sha256": "a59a65abfd7472bdd86c8bcbc50869db316679718d651e759838a7036ca8cb0d",
+    "original_sha256": "3375a1ce86ad3c7a883958a3da34f7adb10e712203bd6d5d0da5c611b4f08d66",
+    "encoding": "AAC-LC, 48 kb/s target, 44.1 kHz, stereo; full track retained"
   },
   {
     "key": "music_game_1",
     "original_filename": "Sunny Garden Puzzle Music-1.mp3",
-    "file": "assets/audio/music_game_1.mp3",
+    "file": "assets/audio/music_game_1.m4a",
     "origin": "Original music supplied by Eva",
-    "sha256": "840e2befaa405734793fa7ecc757ee814f2457e965b4f00c7824cfde747c872f"
+    "sha256": "432966272a07ea5ee5984f8844c810b8af6c48d756ff7bd16c8697229179a2cf",
+    "original_sha256": "840e2befaa405734793fa7ecc757ee814f2457e965b4f00c7824cfde747c872f",
+    "encoding": "AAC-LC, 48 kb/s target, 44.1 kHz, stereo; full track retained"
   },
   {
     "key": "music_game_2",
     "original_filename": "Sunny Garden Puzzle Music-2.mp3",
-    "file": "assets/audio/music_game_2.mp3",
+    "file": "assets/audio/music_game_2.m4a",
     "origin": "Original music supplied by Eva",
-    "sha256": "6eb6c9736147d8f23d6a4c0514926e3125294f555558d435cb9948829a77f023"
+    "sha256": "05056d707bf9b3fd8f07c83e1c720abbae0fb1d8640d6d1f89a18afbf4ecf206",
+    "original_sha256": "6eb6c9736147d8f23d6a4c0514926e3125294f555558d435cb9948829a77f023",
+    "encoding": "AAC-LC, 48 kb/s target, 44.1 kHz, stereo; full track retained"
   },
   {
     "key": "music_game_3",
     "original_filename": "Sunny Garden Puzzle Music-3.mp3",
-    "file": "assets/audio/music_game_3.mp3",
+    "file": "assets/audio/music_game_3.m4a",
     "origin": "Original music supplied by Eva",
-    "sha256": "72bd2e22783dbac8987f6b113cb75227b9a443e8aeed0820c74852f29a5c515d"
+    "sha256": "789aea24bbcd671dcc0d768c5d70e5e2db42227e32b76cc3de932905936b6408",
+    "original_sha256": "72bd2e22783dbac8987f6b113cb75227b9a443e8aeed0820c74852f29a5c515d",
+    "encoding": "AAC-LC, 48 kb/s target, 44.1 kHz, stereo; full track retained"
   }
 ]
