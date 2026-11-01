@@ -273,6 +273,8 @@ function button(s,x,y,w,label,fn,primary=false,h=44){const c=s.add.container(x,y
 // URLs therefore throw inside XHRLoader before the load queue can complete.
 function svgDataURI(source){const bytes=new TextEncoder().encode(source);let binary='';for(const byte of bytes)binary+=String.fromCharCode(byte);return 'data:image/svg+xml;base64,'+btoa(binary);}
 function showStartupError(error){console.error('Garden startup failed:',error);let status=document.getElementById('load-status');if(!status){status=document.createElement('div');status.id='load-status';document.body.appendChild(status);}status.textContent=TEXT.startupError;status.style.zIndex='9999';status.style.background='#e8eddd';const retry=document.createElement('button');retry.textContent=TEXT.retry;retry.onclick=()=>location.reload();status.appendChild(retry);}
+function appleTouchDevice(nav=typeof navigator==='undefined'?{}:navigator){return /iPhone|iPad|iPod/.test(nav.userAgent||'')||(nav.platform==='MacIntel'&&nav.maxTouchPoints>1);}
+function gameLoaderConfig(nav){return {imageLoadType:appleTouchDevice(nav)?'XHR':'HTMLImageElement',maxParallelDownloads:appleTouchDevice(nav)?4:32,timeout:20000,crossOrigin:null};}
 /* Screen-scoped loading. Artwork and model data are unchanged. */
 const AssetLoading={
  failed:new Set(),
@@ -296,9 +298,16 @@ const AssetLoading={
   });
  },
  missing(mode,level){return this.plan(mode,level).filter(f=>!LoadedAssets.has(f.key)&&!this.failed.has(f.key));},
+ fallbackKeys(scene,mode,level,planned=new Set(this.missing(mode,level).map(f=>f.key))){
+  if(mode==='home'||mode==='result')return [];
+  const types=mode==='map'?TYPES:Object.keys(level?.seeds||{});
+  const keys=[...MISC_KEYS,...(mode==='game'||mode==='map'?PLANT_FILES.filter(f=>f.key==='seed'||types.some(t=>f.key.startsWith(t+'_'))).map(f=>f.key):[])];
+  if([...this.failed].some(k=>k.startsWith('soil_')))for(const kind of ['sun','shade','rocks'])for(let v=0;v<SOIL_VARIANTS;v++)keys.push(`soil_${kind}_v${v}`);
+  return [...new Set(keys)].filter(k=>!scene.textures.exists(k)&&!LoadedAssets.has(k)&&!planned.has(k));
+ },
  queue(scene,mode,level){
   const items=this.missing(mode,level),planned=new Set(items.map(f=>f.key)),fallbacks=new Set();
-  if(mode==='home'&&!items.length)return items;
+  const requiredFallbacks=this.fallbackKeys(scene,mode,level,planned);if(!items.length&&!requiredFallbacks.length)return items;
   const fallback=key=>{
    if(scene.textures.exists(key)||fallbacks.has(key))return;
    fallbacks.add(key);const size=key==='seed'||TYPES.some(t=>key.startsWith(t+'_'))?512:256;
@@ -310,18 +319,13 @@ const AssetLoading={
     const key=file.key.slice(7);this.failed.add(key);console.warn('Missing image: '+(IMAGE_FILES.find(f=>f.key===key)?.path||file.url)+' — using fallback.');
     if(ART_KEYS.includes(key))fallback(key);
     if(key.startsWith('soil_'))terrainFallback();
-   }else{scene.assetFailed=true;showStartupError(new Error('Fallback texture failed: '+file.key));}
+   }else{scene.assetFailed=true;if(!scene.assetBatchActive)showStartupError(new Error('Fallback texture failed: '+file.key));else console.warn('Fallback texture failed: '+file.key);}
   };
   scene.load.on('loaderror',onError);
-  const cleanup=()=>{scene.load.off('loaderror',onError);scene.events.off('shutdown',cleanup);};
+  const cleanup=()=>{scene.load.off('loaderror',onError);scene.load.off('complete',cleanup);scene.events.off('shutdown',cleanup);if(scene.assetQueueCleanup===cleanup)scene.assetQueueCleanup=null;};scene.assetQueueCleanup=cleanup;
   scene.load.once('complete',cleanup);scene.events.once('shutdown',cleanup);
   for(const item of items)scene.load.image('asset__'+item.key,item.path);
-  if(mode!=='home'){
-   const types=mode==='map'?TYPES:Object.keys(level?.seeds||{});
-   const keys=[...MISC_KEYS,...(mode==='game'||mode==='map'?PLANT_FILES.filter(f=>f.key==='seed'||types.some(t=>f.key.startsWith(t+'_'))).map(f=>f.key):[])];
-   for(const key of keys)if(!LoadedAssets.has(key)&&!planned.has(key))fallback(key);
-   if([...this.failed].some(key=>key.startsWith('soil_')))terrainFallback();
-  }
+  for(const key of requiredFallbacks)fallback(key);
   return items;
  },
  install(scene){
@@ -336,17 +340,23 @@ const AssetLoading={
  },
  ensure(scene,mode,level=scene.l){
   if(scene.active===false)return Promise.resolve(false);
-  if(!this.missing(mode,level).length)return Promise.resolve(true);
+  if(!this.missing(mode,level).length&&!this.fallbackKeys(scene,mode,level).length)return Promise.resolve(true);
   if(scene.assetLoadPromise)return scene.assetLoadPromise.then(ok=>ok?this.ensure(scene,mode,level):false);
   const promise=new Promise(resolve=>{
-   let ended=false;
-   const finish=ok=>{if(ended)return;ended=true;scene.load.off('complete',done);scene.events.off('shutdown',cancel);if(ok)this.install(scene);resolve(ok&&!scene.assetFailed);};
+   let ended=false,timer=null;scene.assetFailed=false;scene.assetBatchActive=true;
+   const arm=()=>{window.clearTimeout(timer);timer=window.setTimeout(stalled,30000);};
+   const stalled=()=>{if(document.hidden){arm();return;}finish(false,true);};
+   const finish=(ok,reset=false)=>{
+    if(ended)return;ended=true;window.clearTimeout(timer);scene.load.off('progress',arm);scene.load.off('filecomplete',arm);scene.load.off('complete',done);scene.events.off('shutdown',cancel);document.removeEventListener?.('visibilitychange',arm);scene.assetQueueCleanup?.();
+    if(ok||reset)this.install(scene);if(reset)scene.load.reset?.();scene.assetBatchActive=false;resolve(ok&&!scene.assetFailed);
+   };
    const done=()=>finish(true),cancel=()=>finish(false);
-   scene.events.once('shutdown',cancel);this.queue(scene,mode,level);scene.load.once('complete',done);scene.load.start();
+   scene.events.once('shutdown',cancel);this.queue(scene,mode,level);scene.load.once('complete',done);scene.load.on('progress',arm);scene.load.on('filecomplete',arm);document.addEventListener?.('visibilitychange',arm);arm();scene.load.start();
   });
   const tracked=promise.finally(()=>{if(scene.assetLoadPromise===tracked)scene.assetLoadPromise=null;});
   scene.assetLoadPromise=tracked;return tracked;
  }
+
 };
 
 class Boot extends (typeof Phaser!=='undefined'?Phaser.Scene:class {}){
@@ -828,8 +838,8 @@ Game.prototype.placeMapDecorations=function(world,viewport,geometry,decorations)
 const rewardsMap=Game.prototype.showMap;Game.prototype.showMap=function(options){const pending=Rewards.pending();this.pendingUnlockNotice=pending;rewardsMap.call(this,options);if(pending.length){this.showMapMessage(pending.map(unlockText).join('\n'),4500,true);Rewards.seen(pending);this.newUnlocks=[];}else Rewards.seen([10,25,45].filter(n=>Rewards.totalStars()>=n));};
 const rewardsMapFinish=Game.prototype.finishMapTransition;Game.prototype.finishMapTransition=function(){rewardsMapFinish.call(this);if(this.pendingUnlockNotice?.length){this.showMapMessage(this.pendingUnlockNotice.map(unlockText).join('\n'),4500,true);this.pendingUnlockNotice=[];}Rewards.seen([10,25,45].filter(n=>Rewards.totalStars()>=n));};
 const rewardsWater=Game.prototype.waterParcel;Game.prototype.waterParcel=function(i){const before=Watering.get(i).lastDay;rewardsWater.call(this,i);if(Watering.get(i).lastDay!==before){const board=Progress.data.layouts[i]||solve(LEVELS[i]);Rewards.award('water:'+i+':'+Watering.today(),board);const node=this.mapNodes?.[i],items=[];for(const p of node?.querySelectorAll('.mini-plant')||[]){const r=p.getBoundingClientRect();items.push({type:p.dataset.type,x:r.left+r.width/2-23,y:r.top+r.height/2-23});}const total=Rewards.total(),count=Object.values(boardCounts(board)).reduce((a,b)=>a+b,0),badge=this.worldScreen?.querySelector('.basket-count');if(badge)badge.textContent=total-count;this.mapDelay(()=>this.flyToBasket(items,{onCount:()=>this.refreshBasket()}),Math.min(900,Motion.reduced?0:900));}};
-Game.prototype.startDaily=async function(){if(!DailyGarden.unlocked())return;const day=DailyGarden.today();if(DailyGarden.data.results[day]){this.showDailyResult(day);return;}modalContent(this,TEXT.dailyGarden,TEXT.dailyGenerating);try{const l=await DailyGarden.puzzle(day);if(!l){modalContent(this,TEXT.dailyGarden,TEXT.dailyNeedMore,null,[[TEXT.close,()=>this.dismissPanel(),true]]);ModalState.dismiss=()=>this.dismissPanel();return;}if(day!==DailyGarden.today()){this.dismissPanel();return this.startDaily();}this.closeWorld();this.clearHarvest();closeModal(this);AudioGarden.clearEffects();this.scene.restart({level:0,daily:l});}catch(e){console.error(e);modalContent(this,TEXT.dailyGarden,TEXT.retry,null,[[TEXT.retry,()=>this.startDaily(),true],[TEXT.close,()=>this.dismissPanel()]]);}};
-const rewardsCreate=Game.prototype.create;Game.prototype.create=function(){rewardsCreate.call(this);if(this.dailyDate){this.teachingDone=true;this.updateTeachingBubble();this.updateClockUI();this.layoutMetrics();const unfamiliar=Object.keys(this.l.seeds).filter(t=>!DailyGarden.knownTypes().includes(t));if(unfamiliar.length){modalContent(this,TEXT.dailyRules,TEXT.dailyRulesHelp,null,[[TEXT.got,()=>this.dismissPanel(),true]]);const grid=document.createElement('div');grid.className='daily-rules-intro';for(const t of unfamiliar){const row=document.createElement('div');row.innerHTML=assetMarkup(t+'_adult',plantFallbackSVG(t,'adult'));const p=document.createElement('p');p.textContent=TEXT.rule[t];row.append(p);grid.append(row);}$('modal-card').insertBefore(grid,$('modal-card').lastChild);}}this.events.once('shutdown',()=>{this.ruleTip?.remove();clearTimeout(this.ruleTipTimer);document.querySelectorAll('.collection-flight').forEach(e=>e.remove());});};
+Game.prototype.startDaily=async function(){if(!DailyGarden.unlocked())return;const day=DailyGarden.today();if(DailyGarden.data.results[day]){this.showDailyResult(day);return;}modalContent(this,TEXT.dailyGarden,TEXT.dailyGenerating);try{const l=await DailyGarden.puzzle(day);if(!l){modalContent(this,TEXT.dailyGarden,TEXT.dailyNeedMore,null,[[TEXT.close,()=>this.dismissPanel(),true]]);ModalState.dismiss=()=>this.dismissPanel();return;}if(day!==DailyGarden.today()){this.dismissPanel();return this.startDaily();}return this.withScreenAssets('game',()=>{this.closeWorld();this.clearHarvest();closeModal(this);AudioGarden.clearEffects();this.scene.restart({level:0,daily:l});},l);}catch(e){console.error(e);modalContent(this,TEXT.dailyGarden,TEXT.retry,null,[[TEXT.retry,()=>this.startDaily(),true],[TEXT.close,()=>this.dismissPanel()]]);}};
+const rewardsCreate=Game.prototype.create;Game.prototype.create=function(){rewardsCreate.call(this);if(this.assetFailed)return;this.assetLoadingStatus?.remove();this.assetLoadingStatus=null;if(this.dailyDate){this.teachingDone=true;this.updateTeachingBubble();this.updateClockUI();this.layoutMetrics();const unfamiliar=Object.keys(this.l.seeds).filter(t=>!DailyGarden.knownTypes().includes(t));if(unfamiliar.length){modalContent(this,TEXT.dailyRules,TEXT.dailyRulesHelp,null,[[TEXT.got,()=>this.dismissPanel(),true]]);const grid=document.createElement('div');grid.className='daily-rules-intro';for(const t of unfamiliar){const row=document.createElement('div');row.innerHTML=assetMarkup(t+'_adult',plantFallbackSVG(t,'adult'));const p=document.createElement('p');p.textContent=TEXT.rule[t];row.append(p);grid.append(row);}$('modal-card').insertBefore(grid,$('modal-card').lastChild);}}this.events.once('shutdown',()=>{this.ruleTip?.remove();clearTimeout(this.ruleTipTimer);document.querySelectorAll('.collection-flight').forEach(e=>e.remove());});};
 const rewardsClock=Game.prototype.updateClockUI;Game.prototype.updateClockUI=function(){if(!this.dailyDate)return rewardsClock.call(this);const clock=$('progress'),enabled=!this.worldScreen,key=timeText(this.challengeClock.elapsed);clock.hidden=!enabled;clock.classList.remove('time-reached');clock.textContent=key;clock.setAttribute('aria-label',TEXT.timer+' '+key);clock.title=TEXT.dailyGarden;AudioManager.stopClockTick();};
 const rewardsWin=Game.prototype.checkWin;Game.prototype.checkWin=function(){if(this.dailyDate&&this.dailyDate!==DailyGarden.today()&&!this.winning){if(!this.modal){modalContent(this,TEXT.dailyExpired,'',null,[[TEXT.play,()=>this.startDaily(),true]]);}return;}rewardsWin.call(this);};
 Game.prototype.showDailyResult=function(day=this.dailyDate||DailyGarden.today()){const r=DailyGarden.data.results[day];if(!r)return;this.clearHarvest();if(this.dailyDate===day)for(const v of this.views.values()){v.cancel();v.phase('adult');v.restoreColor();}modalContent(this,fmt(TEXT.dailyNumber,{n:DailyGarden.number(day)}),TEXT.dailyReturn,null,[[TEXT.myGarden,()=>this.showMap({animate:false}),true],[TEXT.home,()=>this.showHome(),false]]);const host=$('modal-card'),stars=document.createElement('div');stars.className='stars skip';for(let i=0;i<3;i++){const span=document.createElement('span');span.innerHTML=uiIcon(i<r.stars?'icon_star':'icon_star_empty');stars.append(span);}host.insertBefore(stars,host.lastChild);if(r.stars<3){const advice=document.createElement('p');advice.className='star-advice';advice.textContent=r.stars===1?TEXT.starHintAdvice:TEXT.starWiltAdvice;host.insertBefore(advice,host.lastChild);}const p=document.createElement('p');p.className='time-record';p.textContent=timeResultLabel(r.time,this.dailyDate===day?this.previousTimeBest:r.previousBest,this.dailyDate===day&&this.newTimeBest);if(this.dailyDate===day&&this.newTimeBest)this.bestSoundPlayed=true;host.insertBefore(p,host.lastChild);const streak=document.createElement('p');streak.className='daily-meta';streak.textContent=(DailyGarden.streak()===1?TEXT.streakOne:fmt(TEXT.streak,{n:DailyGarden.streak()}));host.insertBefore(streak,host.lastChild);if(this.dailyDate===day&&this.winning)this.syncCompletionStars();themeDOM();};
@@ -847,24 +857,29 @@ Game.prototype.changeLanguage=function(code){
  this.showSettings();window.GardenI18n.schedule();
 };
 /* Deferred screens keep their owner and cannot reopen after cancellation/shutdown. */
-Game.prototype.withScreenAssets=function(mode,fn){
- if(!AssetLoading.missing(mode,this.l).length)return fn();
+Game.prototype.withScreenAssets=function(mode,fn,level=this.l){
+ if(!AssetLoading.missing(mode,level).length&&!AssetLoading.fallbackKeys(this,mode,level).length)return fn();
  const token={};this.pendingAssetAction=token;
  const cancel=()=>{if(this.pendingAssetAction===token)this.pendingAssetAction=null;closeModal(this);};
  modalContent(this,TEXT.loading,TEXT.loading,null,[[TEXT.cancel,cancel,false]]);ModalState.dismiss=cancel;
- return AssetLoading.ensure(this,mode,this.l).then(ok=>{
-  if(!ok||!this.active||this.pendingAssetAction!==token||ModalState.owner!==this)return;
-  this.pendingAssetAction=null;closeModal(this);applyAssetDecor(false);return fn();
- });
+ const progress=value=>{if(this.pendingAssetAction!==token||ModalState.owner!==this)return;const text=$('modal-card').querySelector('p');if(text)text.textContent=TEXT.loading+' '+Math.round(value*100)+'%';};this.load.on('progress',progress);progress(0);
+ return AssetLoading.ensure(this,mode,level).then(ok=>{
+  if(!this.active||this.pendingAssetAction!==token||ModalState.owner!==this)return;
+  this.pendingAssetAction=null;
+  if(!ok){modalContent(this,TEXT.loadError,TEXT.startupError,null,[[TEXT.retry,()=>this.withScreenAssets(mode,fn,level),true],[TEXT.cancel,cancel,false]]);ModalState.dismiss=cancel;return;}
+  closeModal(this);applyAssetDecor(false);return fn();
+ }).finally(()=>this.load.off('progress',progress));
 };
 for(const [method,mode]of [['showMap','map'],['showHelpInSettings','rules'],['showDailyResult','result']]){
  const show=Game.prototype[method];Game.prototype[method]=function(...args){return this.withScreenAssets(mode,()=>show.apply(this,args));};
 }
+const readyLoadGarden=Game.prototype.loadGarden;
+Game.prototype.loadGarden=function(level,restoreCompleted=false){return this.withScreenAssets('game',()=>readyLoadGarden.call(this,level,restoreCompleted),LEVELS[level]);};
 window.GardenI18n.apply(TEXT);
 window.GardenModel={plantState,plantRuleMessage,Rewards,DailyGarden,attemptStars,attemptTimePenalty,countGardenSolutions,generateDaily,TEXT,LEVELS,ChallengeClock,Watering,soilOK,ruleOK,neighbors,complete,solve,ART_KEYS,plantDrawing,terrainSVG,miscSVG,svgDataURI,equationSVG,glyph,bedDrawing,ruleCardSVG,textureSVG,seedLayout,AUDIO_FILES,mobileLayout,smallVariation,hintPlan,SFX_LIMITS,SFX_ONSETS,soundOnset,mapGeometry,PLANT_FILES,IMAGE_FILES,alphaBounds,soilVariant,terrainKey,terrainURL,AdultPreviews,cacheAdultPreview};
 if(typeof Phaser!=='undefined'){
  const boardElement=$('game'),size=Math.round(boardElement.getBoundingClientRect().width)||400;
  window.addEventListener('error',event=>{if(/^ResizeObserver loop/.test(event.message||''))return;showStartupError(event.error||event.message);});window.addEventListener('unhandledrejection',event=>showStartupError(event.reason));
- window.gardenGame=new Phaser.Game({type:Phaser.AUTO,parent:'game',width:size,height:size,transparent:true,backgroundColor:'rgba(0,0,0,0)',loader:{imageLoadType:'HTMLImageElement',crossOrigin:null},scale:{mode:Phaser.Scale.NONE},input:{activePointers:2},render:{antialias:true},scene:[Boot,Game,LevelComplete]});
+ window.gardenGame=new Phaser.Game({type:Phaser.AUTO,parent:'game',width:size,height:size,transparent:true,backgroundColor:'rgba(0,0,0,0)',loader:gameLoaderConfig(),scale:{mode:Phaser.Scale.NONE},input:{activePointers:2},render:{antialias:true},scene:[Boot,Game,LevelComplete]});
  const resize=new ResizeObserver(entries=>{const next=Math.round(entries[0].contentRect.width);if(next>0&&window.gardenGame.isBooted&&window.gardenGame.canvas&&window.gardenGame.scale.width!==next)window.gardenGame.scale.resize(next,next);});resize.observe(boardElement);
 }else showStartupError(new Error(TEXT.loadError));
