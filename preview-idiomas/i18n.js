@@ -1560,7 +1560,8 @@ const catalogs={
   }
  };
  window.GardenI18n=api;
- const observer=new MutationObserver(()=>api.schedule());observer.observe(document.body,{childList:true,subtree:true,characterData:true});
+ // The timer is not fitted text; its ticks must not remeasure every label.
+ const observer=new MutationObserver(changes=>{if(changes.every(change=>{const el=change.target.nodeType===1?change.target:change.target.parentElement;return el?.closest?.('#progress');}))return;api.schedule();});observer.observe(document.body,{childList:true,subtree:true,characterData:true});
  window.addEventListener('resize',api.schedule);document.fonts?.ready.then(api.schedule);api.schedule();
 })();
 

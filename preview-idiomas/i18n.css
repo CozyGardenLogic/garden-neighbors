@@ -40,8 +40,8 @@ html[lang=de] .modal-card p{hyphens:auto}
    This is background painting only; the existing game layout remains unchanged. */
 @media (orientation:landscape) and (max-width:1100px) and (max-height:600px){
  html,body{background-color:#657f3c!important}
- html{background-image:var(--bg-game-landscape,url('assets/bg_game_landscape.jpg'))!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}
- html[data-screen=home]{background-image:var(--bg-start-landscape,url('assets/bg_start_landscape.jpg'))!important}
+ html{background-image:var(--bg-game-landscape,var(--garden-fallback,none))!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}
+ html[data-screen=home]{background-image:var(--bg-start-landscape,var(--garden-fallback,none))!important}
  html::before{content:'';position:fixed;top:calc(0px - env(safe-area-inset-top,0px));right:calc(0px - env(safe-area-inset-right,0px));bottom:calc(0px - env(safe-area-inset-bottom,0px));left:calc(0px - env(safe-area-inset-left,0px));z-index:-1;pointer-events:none;background:inherit;background-color:#657f3c}
 }
 
