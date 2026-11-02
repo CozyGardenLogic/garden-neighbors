@@ -1,0 +1,680 @@
+[
+  {
+    "map": [
+      "SHH",
+      "HHH",
+      "HHS"
+    ],
+    "seeds": {
+      "tomato": 2
+    },
+    "new": [
+      "tomato"
+    ],
+    "id": 0,
+    "title": "First Tomatoes",
+    "n": 3,
+    "terrain": [
+      "S",
+      "H",
+      "H",
+      "H",
+      "H",
+      "H",
+      "H",
+      "H",
+      "S"
+    ]
+  },
+  {
+    "map": [
+      "SHS",
+      "HRH",
+      "SHS"
+    ],
+    "seeds": {
+      "tomato": 2,
+      "lettuce": 3
+    },
+    "new": [
+      "lettuce"
+    ],
+    "id": 1,
+    "title": "Sunny Corners",
+    "n": 3,
+    "terrain": [
+      "S",
+      "H",
+      "S",
+      "H",
+      "R",
+      "H",
+      "S",
+      "H",
+      "S"
+    ]
+  },
+  {
+    "map": [
+      "SSH",
+      "HSH",
+      "SHS"
+    ],
+    "seeds": {
+      "tomato": 2,
+      "basil": 2,
+      "lettuce": 4
+    },
+    "new": [
+      "basil"
+    ],
+    "id": 2,
+    "title": "Basil Buddy",
+    "n": 3,
+    "terrain": [
+      "S",
+      "S",
+      "H",
+      "H",
+      "S",
+      "H",
+      "S",
+      "H",
+      "S"
+    ]
+  },
+  {
+    "map": [
+      "SSS",
+      "SSS",
+      "HHH"
+    ],
+    "seeds": {
+      "tomato": 2,
+      "basil": 4,
+      "lettuce": 3
+    },
+    "id": 3,
+    "title": "Herb Row",
+    "n": 3,
+    "terrain": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "S",
+      "H",
+      "H",
+      "H"
+    ]
+  },
+  {
+    "map": [
+      "SSH",
+      "HHH",
+      "HRS"
+    ],
+    "seeds": {
+      "tomato": 1,
+      "basil": 1,
+      "mint": 1,
+      "lettuce": 3
+    },
+    "new": [
+      "mint"
+    ],
+    "id": 4,
+    "title": "Mint Alone",
+    "n": 3,
+    "terrain": [
+      "S",
+      "S",
+      "H",
+      "H",
+      "H",
+      "H",
+      "H",
+      "R",
+      "S"
+    ]
+  },
+  {
+    "map": [
+      "SRH",
+      "SSS",
+      "HSH"
+    ],
+    "seeds": {
+      "tomato": 2,
+      "basil": 2,
+      "mint": 1,
+      "lettuce": 2
+    },
+    "id": 5,
+    "title": "Quiet Corner",
+    "n": 3,
+    "terrain": [
+      "S",
+      "R",
+      "H",
+      "S",
+      "S",
+      "S",
+      "H",
+      "S",
+      "H"
+    ]
+  },
+  {
+    "map": [
+      "SSH",
+      "HRH",
+      "HHS"
+    ],
+    "seeds": {
+      "peas": 4,
+      "tomato": 2,
+      "lettuce": 2
+    },
+    "new": [
+      "peas"
+    ],
+    "id": 6,
+    "title": "Pea Pals",
+    "n": 3,
+    "terrain": [
+      "S",
+      "S",
+      "H",
+      "H",
+      "R",
+      "H",
+      "H",
+      "H",
+      "S"
+    ]
+  },
+  {
+    "map": [
+      "SSS",
+      "SHH",
+      "HRS"
+    ],
+    "seeds": {
+      "onion": 2,
+      "tomato": 1,
+      "basil": 2,
+      "lettuce": 2
+    },
+    "new": [
+      "onion"
+    ],
+    "id": 7,
+    "title": "Sunny Onions",
+    "n": 3,
+    "terrain": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "H",
+      "H",
+      "H",
+      "R",
+      "S"
+    ]
+  },
+  {
+    "map": [
+      "SSHH",
+      "SSHH",
+      "HHRH",
+      "HHHS"
+    ],
+    "seeds": {
+      "pumpkin": 1,
+      "tomato": 2,
+      "basil": 2,
+      "mint": 1,
+      "lettuce": 5
+    },
+    "new": [
+      "pumpkin"
+    ],
+    "id": 8,
+    "title": "Pumpkin Patch",
+    "n": 4,
+    "terrain": [
+      "S",
+      "S",
+      "H",
+      "H",
+      "S",
+      "S",
+      "H",
+      "H",
+      "H",
+      "H",
+      "R",
+      "H",
+      "H",
+      "H",
+      "H",
+      "S"
+    ]
+  },
+  {
+    "map": [
+      "SSSS",
+      "HHRS",
+      "HHHS",
+      "SSHH"
+    ],
+    "seeds": {
+      "pumpkin": 2,
+      "tomato": 2,
+      "basil": 1,
+      "lettuce": 3
+    },
+    "id": 9,
+    "title": "Room to Grow",
+    "n": 4,
+    "terrain": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "H",
+      "H",
+      "R",
+      "S",
+      "H",
+      "H",
+      "H",
+      "S",
+      "S",
+      "S",
+      "H",
+      "H"
+    ]
+  },
+  {
+    "map": [
+      "RSSR",
+      "HHSH",
+      "HRHH",
+      "SHHH"
+    ],
+    "seeds": {
+      "tomato": 2,
+      "basil": 2,
+      "mint": 1,
+      "lettuce": 4,
+      "peas": 2
+    },
+    "id": 10,
+    "title": "Rocky Bed",
+    "n": 4,
+    "terrain": [
+      "R",
+      "S",
+      "S",
+      "R",
+      "H",
+      "H",
+      "S",
+      "H",
+      "H",
+      "R",
+      "H",
+      "H",
+      "S",
+      "H",
+      "H",
+      "H"
+    ]
+  },
+  {
+    "map": [
+      "SSHH",
+      "SRHS",
+      "HHRS",
+      "HSSS"
+    ],
+    "seeds": {
+      "tomato": 2,
+      "basil": 2,
+      "peas": 2,
+      "onion": 1,
+      "mint": 1,
+      "lettuce": 3
+    },
+    "id": 11,
+    "title": "Kitchen Garden",
+    "n": 4,
+    "terrain": [
+      "S",
+      "S",
+      "H",
+      "H",
+      "S",
+      "R",
+      "H",
+      "S",
+      "H",
+      "H",
+      "R",
+      "S",
+      "H",
+      "S",
+      "S",
+      "S"
+    ]
+  },
+  {
+    "map": [
+      "SHSS",
+      "HHHH",
+      "RSHR",
+      "HSHH"
+    ],
+    "seeds": {
+      "tomato": 2,
+      "basil": 1,
+      "onion": 2,
+      "beans": 3,
+      "lettuce": 6
+    },
+    "new": [
+      "beans"
+    ],
+    "id": 12,
+    "title": "Busy Rows",
+    "n": 4,
+    "terrain": [
+      "S",
+      "H",
+      "S",
+      "S",
+      "H",
+      "H",
+      "H",
+      "H",
+      "R",
+      "S",
+      "H",
+      "R",
+      "H",
+      "S",
+      "H",
+      "H"
+    ]
+  },
+  {
+    "map": [
+      "SHHH",
+      "HSRR",
+      "HSSH",
+      "HHSS"
+    ],
+    "seeds": {
+      "pumpkin": 1,
+      "tomato": 1,
+      "onion": 3,
+      "peas": 2,
+      "beans": 3,
+      "lettuce": 2
+    },
+    "id": 13,
+    "title": "Market Rows",
+    "n": 4,
+    "terrain": [
+      "S",
+      "H",
+      "H",
+      "H",
+      "H",
+      "S",
+      "R",
+      "R",
+      "H",
+      "S",
+      "S",
+      "H",
+      "H",
+      "H",
+      "S",
+      "S"
+    ]
+  },
+  {
+    "map": [
+      "HHHH",
+      "SSSS",
+      "HSHS",
+      "RHSR"
+    ],
+    "seeds": {
+      "tomato": 2,
+      "basil": 3,
+      "peas": 2,
+      "beans": 2,
+      "onion": 2,
+      "lettuce": 2
+    },
+    "id": 14,
+    "title": "Packed Patch",
+    "n": 4,
+    "terrain": [
+      "H",
+      "H",
+      "H",
+      "H",
+      "S",
+      "S",
+      "S",
+      "S",
+      "H",
+      "S",
+      "H",
+      "S",
+      "R",
+      "H",
+      "S",
+      "R"
+    ]
+  },
+  {
+    "map": [
+      "SSRS",
+      "HHHH",
+      "HHHS",
+      "RSSH"
+    ],
+    "seeds": {
+      "mint": 1,
+      "tomato": 2,
+      "basil": 2,
+      "peas": 2,
+      "beans": 3,
+      "onion": 1,
+      "lettuce": 2
+    },
+    "id": 15,
+    "title": "Mint Borders",
+    "n": 4,
+    "terrain": [
+      "S",
+      "S",
+      "R",
+      "S",
+      "H",
+      "H",
+      "H",
+      "H",
+      "H",
+      "H",
+      "H",
+      "S",
+      "R",
+      "S",
+      "S",
+      "H"
+    ]
+  },
+  {
+    "map": [
+      "RHSS",
+      "HRHH",
+      "SSSS",
+      "HHHS"
+    ],
+    "seeds": {
+      "pumpkin": 1,
+      "tomato": 2,
+      "basil": 2,
+      "peas": 2,
+      "onion": 1,
+      "beans": 2,
+      "mint": 1,
+      "lettuce": 1
+    },
+    "id": 16,
+    "title": "Mixed Harvest",
+    "n": 4,
+    "terrain": [
+      "R",
+      "H",
+      "S",
+      "S",
+      "H",
+      "R",
+      "H",
+      "H",
+      "S",
+      "S",
+      "S",
+      "S",
+      "H",
+      "H",
+      "H",
+      "S"
+    ]
+  },
+  {
+    "map": [
+      "SSSS",
+      "HRSS",
+      "SHHR",
+      "HHHS"
+    ],
+    "seeds": {
+      "pumpkin": 1,
+      "tomato": 2,
+      "basil": 2,
+      "beans": 2,
+      "onion": 2,
+      "lettuce": 3
+    },
+    "id": 17,
+    "title": "Pumpkin Corners",
+    "n": 4,
+    "terrain": [
+      "S",
+      "S",
+      "S",
+      "S",
+      "H",
+      "R",
+      "S",
+      "S",
+      "S",
+      "H",
+      "H",
+      "R",
+      "H",
+      "H",
+      "H",
+      "S"
+    ]
+  },
+  {
+    "map": [
+      "SHHH",
+      "SHHS",
+      "SHHH",
+      "SHRH"
+    ],
+    "seeds": {
+      "pumpkin": 1,
+      "mint": 1,
+      "tomato": 1,
+      "basil": 2,
+      "beans": 3,
+      "onion": 1,
+      "peas": 2,
+      "lettuce": 1
+    },
+    "id": 18,
+    "title": "Patient Planting",
+    "n": 4,
+    "terrain": [
+      "S",
+      "H",
+      "H",
+      "H",
+      "S",
+      "H",
+      "H",
+      "S",
+      "S",
+      "H",
+      "H",
+      "H",
+      "S",
+      "H",
+      "R",
+      "H"
+    ]
+  },
+  {
+    "map": [
+      "HHHS",
+      "SHHS",
+      "SRHH",
+      "SSHS"
+    ],
+    "seeds": {
+      "tomato": 2,
+      "basil": 2,
+      "peas": 2,
+      "onion": 1,
+      "beans": 2,
+      "mint": 1,
+      "pumpkin": 1,
+      "lettuce": 1
+    },
+    "id": 19,
+    "title": "Grand Garden",
+    "n": 4,
+    "terrain": [
+      "H",
+      "H",
+      "H",
+      "S",
+      "S",
+      "H",
+      "H",
+      "S",
+      "S",
+      "R",
+      "H",
+      "H",
+      "S",
+      "S",
+      "H",
+      "S"
+    ]
+  }
+]
