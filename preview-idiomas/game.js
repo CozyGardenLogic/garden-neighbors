@@ -286,7 +286,7 @@ function appleTouchDevice(nav=typeof navigator==='undefined'?{}:navigator){retur
 function gameLoaderConfig(nav){return {imageLoadType:appleTouchDevice(nav)?'XHR':'HTMLImageElement',maxParallelDownloads:appleTouchDevice(nav)?4:32,timeout:20000,crossOrigin:null};}
 /* Screen-scoped loading. Artwork and model data are unchanged. */
 const AssetLoading={
- failed:new Set(),
+ failed:new Set(),loadedByURL:new Map(),
  plan(mode,level=LEVELS[0]){
   const home=new Set(['logo','bg_start_landscape','bg_start_portrait','ui_button_round','ui_button_green','ui_panel','panel','ui_sign','level_sign','icon_lock','icon_back','icon_back_light','icon_settings','icon_settings_light','icon_sound','icon_mute','icon_sound_on_light','icon_sound_off_light']);
   const map=new Set(['icon_basket','icon_watering_can','icon_watering_can_pour','icon_arrow_down','icon_drop','icon_drop_empty','fx_sparkle','field_tile','map_butterfly','stepping_stone_1','stepping_stone_2','stepping_stone_3','deco_bench','deco_scarecrow','deco_pond']);
@@ -325,24 +325,30 @@ const AssetLoading={
   const terrainFallback=()=>{for(const kind of ['sun','shade','rocks'])for(let v=0;v<SOIL_VARIANTS;v++)fallback(`soil_${kind}_v${v}`);};
   const onError=file=>{
    if(file.key.startsWith('asset__')){
-    const key=file.key.slice(7);this.failed.add(key);console.warn('Missing image: '+(IMAGE_FILES.find(f=>f.key===key)?.path||file.url)+' — using fallback.');
-    if(ART_KEYS.includes(key))fallback(key);
-    if(key.startsWith('soil_'))terrainFallback();
+    const key=file.key.slice(7),item=IMAGE_FILES.find(f=>f.key===key),group=item?IMAGE_FILES.filter(f=>f.path===item.path):[{key}];
+    console.warn('Missing image: '+(item?.path||file.url)+' — using fallback.');
+    for(const alias of group){this.failed.add(alias.key);if(ART_KEYS.includes(alias.key))fallback(alias.key);}
+    if(group.some(alias=>alias.key.startsWith('soil_')))terrainFallback();
    }else{scene.assetFailed=true;if(!scene.assetBatchActive)showStartupError(new Error('Fallback texture failed: '+file.key));else console.warn('Fallback texture failed: '+file.key);}
   };
   scene.load.on('loaderror',onError);
   const cleanup=()=>{scene.load.off('loaderror',onError);scene.load.off('complete',cleanup);scene.events.off('shutdown',cleanup);if(scene.assetQueueCleanup===cleanup)scene.assetQueueCleanup=null;};scene.assetQueueCleanup=cleanup;
   scene.load.once('complete',cleanup);scene.events.once('shutdown',cleanup);
-  for(const item of items)scene.load.image('asset__'+item.key,item.path);
+  const queuedURLs=new Set();
+  for(const item of items){if(this.loadedByURL.has(item.path)||queuedURLs.has(item.path))continue;queuedURLs.add(item.path);scene.load.image('asset__'+item.key,item.path);}
   for(const key of requiredFallbacks)fallback(key);
   return items;
  },
  install(scene){
+  // A single image download can satisfy several stable texture keys.
+  const staged=new Map();
+  for(const {key,path}of IMAGE_FILES){const override='asset__'+key;if(scene.textures.exists(override)){const image=scene.textures.get(override).source[0].image;staged.set(path,{key,override,image});this.loadedByURL.set(path,image);}}
   for(const {key,path}of IMAGE_FILES){
-   const override='asset__'+key;if(!scene.textures.exists(override))continue;
+   const entry=staged.get(path),image=entry?.image||this.loadedByURL.get(path);if(!image)continue;
+   if(LoadedAssets.get(key)===path&&AssetImages.get(key)===image&&scene.textures.exists(key))continue;
    if(scene.textures.exists(key))scene.textures.remove(key);
-   scene.textures.renameTexture(override,key);LoadedAssets.set(key,path);
-   const image=scene.textures.get(key).source[0].image;AssetImages.set(key,image);
+   if(entry?.key===key)scene.textures.renameTexture(entry.override,key);else scene.textures.addImage(key,image);
+   LoadedAssets.set(key,path);AssetImages.set(key,image);this.failed.delete(key);
    const type=TYPES.find(t=>key===t+'_adult');if(type){AdultPreviews.delete(type);cacheAdultPreview(type,image);}
    if(TERRAIN_FILES.some(f=>f.key===key)){TerrainPreviews.delete(key);cacheTerrainPreview(key,image);}
   }
@@ -364,6 +370,14 @@ const AssetLoading={
   });
   const tracked=promise.finally(()=>{if(scene.assetLoadPromise===tracked)scene.assetLoadPromise=null;});
   scene.assetLoadPromise=tracked;return tracked;
+ },
+ warmedURLs:new Set(),
+ async warm(scene,level,signal){
+  if(typeof fetch!=='function'||signal.aborted||!scene.active)return false;
+  const urls=[...new Set(this.missing('game',level).map(f=>f.path))].filter(url=>!url.startsWith('data:')&&!this.warmedURLs.has(url));let next=0;
+  await Promise.all(Array.from({length:Math.min(2,urls.length)},async()=>{
+   while(next<urls.length&&!signal.aborted&&scene.active){const url=urls[next++];try{const response=await fetch(url,{signal,credentials:'same-origin',cache:'default',priority:'low'});if(!response.ok)continue;await response.arrayBuffer();if(!signal.aborted&&scene.active)this.warmedURLs.add(url);}catch(e){if(signal.aborted)return;}}
+  }));return !signal.aborted&&scene.active;
  }
 
 };
@@ -866,8 +880,25 @@ Game.prototype.changeLanguage=function(code){
  }
  this.showSettings();window.GardenI18n.schedule();
 };
+/* Optional HTTP-cache warming never owns the Phaser loader or changes game state. */
+Game.prototype.cancelGardenWarmup=function(){window.clearTimeout(this.warmJob);this.warmJob=null;this.warmToken=null;this.warmAbort?.abort();this.warmAbort=null;};
+Game.prototype.scheduleGardenWarmup=function(){
+ this.cancelGardenWarmup();if(!this.active||this.dailyDate||typeof fetch!=='function'||typeof AbortController==='undefined')return;
+ const token={};this.warmToken=token;const run=()=>{
+  this.warmJob=null;if(this.warmToken!==token||!this.active||this.dailyDate)return;
+  const home=this.worldScreen?.classList.contains('home-screen');if(this.worldScreen&&!home||!home&&this.level>=LEVELS.length-1||this.completedView)return;
+  if(document.hidden||this.drag||this.seedGesture||this.modal&&!this.winning){this.warmJob=window.setTimeout(run,700);return;}
+  const level=home?Progress.next():this.level+1;if(!LEVELS[level])return;
+  const controller=new AbortController();this.warmAbort=controller;
+  AssetLoading.warm(this,LEVELS[level],controller.signal).catch(()=>{}).finally(()=>{if(this.warmToken===token)this.warmAbort=null;});
+ };
+ this.warmJob=window.setTimeout(run,700);if(this.warmShutdown)this.events.off('shutdown',this.warmShutdown);this.warmShutdown=()=>this.cancelGardenWarmup();this.events.once('shutdown',this.warmShutdown);
+};
+const warmCreate=Game.prototype.create;Game.prototype.create=function(){warmCreate.call(this);if(!this.assetFailed)this.scheduleGardenWarmup();};
+const warmHome=Game.prototype.showHome;Game.prototype.showHome=function(...args){const result=warmHome.apply(this,args);this.scheduleGardenWarmup();return result;};
 /* Deferred screens keep their owner and cannot reopen after cancellation/shutdown. */
 Game.prototype.withScreenAssets=function(mode,fn,level=this.l){
+ this.cancelGardenWarmup?.();
  if(!AssetLoading.missing(mode,level).length&&!AssetLoading.fallbackKeys(this,mode,level).length)return fn();
  const token={};this.pendingAssetAction=token;
  const cancel=()=>{if(this.pendingAssetAction===token)this.pendingAssetAction=null;closeModal(this);};
