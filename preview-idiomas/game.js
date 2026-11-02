@@ -314,7 +314,7 @@ const AssetLoading={
   if([...this.failed].some(k=>k.startsWith('soil_')))for(const kind of ['sun','shade','rocks'])for(let v=0;v<SOIL_VARIANTS;v++)keys.push(`soil_${kind}_v${v}`);
   return [...new Set(keys)].filter(k=>!scene.textures.exists(k)&&!LoadedAssets.has(k)&&!planned.has(k));
  },
- queue(scene,mode,level){
+ queue(scene,mode,level,optional=false){
   const items=this.missing(mode,level),planned=new Set(items.map(f=>f.key)),fallbacks=new Set();
   const requiredFallbacks=this.fallbackKeys(scene,mode,level,planned);if(!items.length&&!requiredFallbacks.length)return items;
   const fallback=key=>{
@@ -324,6 +324,8 @@ const AssetLoading={
   };
   const terrainFallback=()=>{for(const kind of ['sun','shade','rocks'])for(let v=0;v<SOIL_VARIANTS;v++)fallback(`soil_${kind}_v${v}`);};
   const onError=file=>{
+   // Optional Home preparation keeps successful files and lets Play retry failures.
+   if(optional){console.warn('Could not prepare image: '+file.key+' — it will be retried when needed.');return;}
    if(file.key.startsWith('asset__')){
     const key=file.key.slice(7),item=IMAGE_FILES.find(f=>f.key===key),group=item?IMAGE_FILES.filter(f=>f.path===item.path):[{key}];
     console.warn('Missing image: '+(item?.path||file.url)+' — using fallback.');
@@ -353,20 +355,20 @@ const AssetLoading={
    if(TERRAIN_FILES.some(f=>f.key===key)){TerrainPreviews.delete(key);cacheTerrainPreview(key,image);}
   }
  },
- ensure(scene,mode,level=scene.l){
+ ensure(scene,mode,level=scene.l,optional=false){
   if(scene.active===false)return Promise.resolve(false);
   if(!this.missing(mode,level).length&&!this.fallbackKeys(scene,mode,level).length)return Promise.resolve(true);
-  if(scene.assetLoadPromise)return scene.assetLoadPromise.then(ok=>ok?this.ensure(scene,mode,level):false);
+  if(scene.assetLoadPromise){const preparing=scene.assetBatchOptional;return scene.assetLoadPromise.then(ok=>ok||preparing?this.ensure(scene,mode,level,optional):false);}
   const promise=new Promise(resolve=>{
-   let ended=false,timer=null;scene.assetFailed=false;scene.assetBatchActive=true;
+   let ended=false,timer=null;scene.assetFailed=false;scene.assetBatchActive=true;scene.assetBatchOptional=optional;
    const arm=()=>{window.clearTimeout(timer);timer=window.setTimeout(stalled,30000);};
    const stalled=()=>{if(document.hidden){arm();return;}finish(false,true);};
    const finish=(ok,reset=false)=>{
     if(ended)return;ended=true;window.clearTimeout(timer);scene.load.off('progress',arm);scene.load.off('filecomplete',arm);scene.load.off('complete',done);scene.events.off('shutdown',cancel);document.removeEventListener?.('visibilitychange',arm);scene.assetQueueCleanup?.();
-    if(ok||reset)this.install(scene);if(reset)scene.load.reset?.();scene.assetBatchActive=false;resolve(ok&&!scene.assetFailed);
+    if(ok||reset)this.install(scene);if(reset)scene.load.reset?.();scene.assetBatchActive=false;scene.assetBatchOptional=false;resolve(ok&&!scene.assetFailed&&(!optional||!this.missing(mode,level).length&&!this.fallbackKeys(scene,mode,level).length));
    };
    const done=()=>finish(true),cancel=()=>finish(false);
-   scene.events.once('shutdown',cancel);this.queue(scene,mode,level);scene.load.once('complete',done);scene.load.on('progress',arm);scene.load.on('filecomplete',arm);document.addEventListener?.('visibilitychange',arm);arm();scene.load.start();
+   scene.events.once('shutdown',cancel);this.queue(scene,mode,level,optional);scene.load.once('complete',done);scene.load.on('progress',arm);scene.load.on('filecomplete',arm);document.addEventListener?.('visibilitychange',arm);arm();scene.load.start();
   });
   const tracked=promise.finally(()=>{if(scene.assetLoadPromise===tracked)scene.assetLoadPromise=null;});
   scene.assetLoadPromise=tracked;return tracked;
@@ -595,7 +597,7 @@ class LevelComplete extends (typeof Phaser!=='undefined'?Phaser.Scene:class {}){
 }
 
 /* Presentation only: shared source margins, full plant canvases, unchanged model. */
-function cacheTerrainPreview(key,image){if(TerrainPreviews.has(key))return;try{const c=document.createElement('canvas');c.width=image.naturalWidth||image.width;c.height=image.naturalHeight||image.height;const ctx=c.getContext('2d',{willReadFrequently:true});ctx.drawImage(image,0,0);const b=alphaBounds(ctx.getImageData(0,0,c.width,c.height).data,c.width,c.height,128),crop=document.createElement('canvas');crop.width=b.width;crop.height=b.height;crop.getContext('2d').drawImage(c,b.x,b.y,b.width,b.height,0,0,b.width,b.height);TerrainPreviews.set(key,{url:crop.toDataURL('image/png'),bounds:b});}catch(e){console.warn('Could not crop terrain alpha: '+key,e);}}
+function cacheTerrainPreview(key,image){if(TerrainPreviews.has(key))return;try{const url=LoadedAssets.get(key),width=image.naturalWidth||image.width,height=image.naturalHeight||image.height;if(/^soil_(?:sun_[12]|shade_[12]|rocks)$/.test(key)&&width===512&&height===512&&typeof url==='string'&&url.split('?')[0]===`assets/${key}.webp`){TerrainPreviews.set(key,{url,bounds:{x:0,y:0,width,height}});return;}const c=document.createElement('canvas');c.width=width;c.height=height;const ctx=c.getContext('2d',{willReadFrequently:true});ctx.drawImage(image,0,0);const b=alphaBounds(ctx.getImageData(0,0,c.width,c.height).data,c.width,c.height,128),crop=document.createElement('canvas');crop.width=b.width;crop.height=b.height;crop.getContext('2d').drawImage(c,b.x,b.y,b.width,b.height,0,0,b.width,b.height);TerrainPreviews.set(key,{url:crop.toDataURL('image/png'),bounds:b});}catch(e){console.warn('Could not crop terrain alpha: '+key,e);}}
 function uiIcon(key,fallback='check'){return assetMarkup(key,glyph(fallback));}
 function skinElement(el,key,scale=.3){if(!el||!LoadedAssets.has(key))return;const spec=UI_SLICES[key];if(!spec)return;el.classList.add('skin-ready');el.dataset.skin=key;let art=Array.from(el.children).find(x=>x.classList?.contains('skin-art'));if(!art){art=document.createElement('span');art.className='skin-art';art.setAttribute('aria-hidden','true');el.prepend(art);}const paint=()=>{const h=el.clientHeight||el.getBoundingClientRect().height;if(!h)return;if(spec.stretch===false){Object.assign(art.style,{border:'none',backgroundImage:`url("${LoadedAssets.get(key)}")`,backgroundRepeat:'no-repeat',backgroundSize:'contain',backgroundPosition:'center'});return;}const k=spec.top===0&&spec.bottom===0?(key==='seed_drawer'?Math.min(h/spec.h,.4):h/spec.h):scale,m=[spec.top,spec.right,spec.bottom,spec.left];Object.assign(art.style,{borderStyle:'solid',borderColor:'transparent',borderWidth:m.map(n=>n*k+'px').join(' '),borderImageSource:`url("${LoadedAssets.get(key)}")`,borderImageSlice:m.join(' ')+' fill',borderImageWidth:'1',borderImageRepeat:'stretch'});};el._paintSkin=paint;paint();if(typeof ResizeObserver!=='undefined'&&!el._skinObserver){el._skinObserver=new ResizeObserver(()=>{window.cancelAnimationFrame(el._skinFrame);el._skinFrame=window.requestAnimationFrame(()=>{if(el.isConnected)el._paintSkin?.();});});el._skinObserver.observe(el);}}
 function tileGeometry(side,n){const padding=side*.01,ideal=(side-2*padding)/(n+(n-1)*.015),gap=Math.max(2,ideal*.015),tile=(side-2*padding-(n-1)*gap)/n;return{padding,gap,tile,cells:Array.from({length:n*n},(_,i)=>({x:padding+(i%n)*(tile+gap),y:padding+Math.floor(i/n)*(tile+gap)}))};}
@@ -880,7 +882,7 @@ Game.prototype.changeLanguage=function(code){
  }
  this.showSettings();window.GardenI18n.schedule();
 };
-/* Optional HTTP-cache warming never owns the Phaser loader or changes game state. */
+/* Home prepares the Play target through the shared loader; in-game warming stays download-only. */
 Game.prototype.cancelGardenWarmup=function(){window.clearTimeout(this.warmJob);this.warmJob=null;this.warmToken=null;this.warmAbort?.abort();this.warmAbort=null;};
 Game.prototype.scheduleGardenWarmup=function(){
  this.cancelGardenWarmup();if(!this.active||this.dailyDate||typeof fetch!=='function'||typeof AbortController==='undefined')return;
@@ -890,9 +892,11 @@ Game.prototype.scheduleGardenWarmup=function(){
   if(document.hidden||this.drag||this.seedGesture||this.modal&&!this.winning){this.warmJob=window.setTimeout(run,700);return;}
   const level=home?Progress.next():this.level+1;if(!LEVELS[level])return;
   const controller=new AbortController();this.warmAbort=controller;
-  AssetLoading.warm(this,LEVELS[level],controller.signal).catch(()=>{}).finally(()=>{if(this.warmToken===token)this.warmAbort=null;});
+  // Play joins this preparation instead of cancelling and repeating image decoding.
+  const ready=home?AssetLoading.ensure(this,'game',LEVELS[level],true):AssetLoading.warm(this,LEVELS[level],controller.signal);
+  ready.catch(()=>{}).finally(()=>{if(this.warmToken===token)this.warmAbort=null;});
  };
- this.warmJob=window.setTimeout(run,700);if(this.warmShutdown)this.events.off('shutdown',this.warmShutdown);this.warmShutdown=()=>this.cancelGardenWarmup();this.events.once('shutdown',this.warmShutdown);
+ this.warmJob=window.setTimeout(run,this.worldScreen?.classList.contains('home-screen')?150:700);if(this.warmShutdown)this.events.off('shutdown',this.warmShutdown);this.warmShutdown=()=>this.cancelGardenWarmup();this.events.once('shutdown',this.warmShutdown);
 };
 const warmCreate=Game.prototype.create;Game.prototype.create=function(){warmCreate.call(this);if(!this.assetFailed)this.scheduleGardenWarmup();};
 const warmHome=Game.prototype.showHome;Game.prototype.showHome=function(...args){const result=warmHome.apply(this,args);this.scheduleGardenWarmup();return result;};
