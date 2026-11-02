@@ -43,708 +43,1584 @@
   ],
   "images": [
     {
-      "source": "assets/bed_frame.png",
-      "target": "assets/bed_frame.webp",
-      "before": 450796,
-      "after": 341606,
-      "lossless": true,
-      "source_sha256": "cc4bc6b8d21d166abd00665d5c427bea979674bd0efc6ccb793049ecc7fb7c37",
-      "sha256": "0df978c2124c0d7a38b6cd6115d84525b76a7a8222d85a5b3d683ff3edc796d2"
-    },
-    {
-      "source": "assets/logo.png",
-      "target": "assets/logo.webp",
-      "before": 1969593,
-      "after": 1462558,
-      "lossless": true,
-      "source_sha256": "dc703472c8ca6d33326ac2551da43c130a6f3c7222d5ff3556b2bebd91f6e6ab",
-      "sha256": "71b845d9a7e8198da6da8b05ba8aab23a45de7ec109bf5ee7559d68ba593471f"
-    },
-    {
-      "source": "assets/plants/basil_adult.png",
-      "target": "assets/plants/basil_adult.webp",
-      "before": 167769,
-      "after": 126300,
-      "lossless": true,
-      "source_sha256": "57ca40540379f7f367bf62c53af7ad8ca6f09d521338bb710ac4752d21702ac8",
-      "sha256": "2ce1bcf2d3df132ae870b0fb6f7562245d6914b1d80fd2fb75a50defe51d66b1"
-    },
-    {
-      "source": "assets/plants/basil_sprout.png",
-      "target": "assets/plants/basil_sprout.webp",
-      "before": 25525,
-      "after": 17724,
-      "lossless": true,
-      "source_sha256": "d1786b58d9766d91606bf27b90a5c53dff9991a7247d8aec2eee1f478156485d",
-      "sha256": "301831434df85e8c1f813233c1e33c313539fd7e9961494b579c71f2e3ff8203"
-    },
-    {
-      "source": "assets/plants/basil_wilted.png",
-      "target": "assets/plants/basil_wilted.webp",
-      "before": 107724,
-      "after": 78288,
-      "lossless": true,
-      "source_sha256": "141c7333e8b11e41cbb8bd144547ce656e0e36fa2454013bc44cd0b202625f84",
-      "sha256": "306cc75f8d30f05078c252ce9bfc7f54ab7402302ec82326a63aeb6b72e97bcb"
-    },
-    {
-      "source": "assets/plants/basil_young.png",
-      "target": "assets/plants/basil_young.webp",
-      "before": 74461,
-      "after": 54018,
-      "lossless": true,
-      "source_sha256": "275d4cb8b2e1d1871795ce955040e9193e61cef6fc5dc7aa3922631dbcd25287",
-      "sha256": "dc3ca0a1b080c7ff9f020ee523cea84184b14234e7b4cda6aba1f7126892204c"
-    },
-    {
-      "source": "assets/plants/beans_adult.png",
-      "target": "assets/plants/beans_adult.webp",
-      "before": 197475,
-      "after": 147944,
-      "lossless": true,
-      "source_sha256": "157b73789fe1fe3e00992338f54fb79fa0517692c9bee1256931a61f067e8d6d",
-      "sha256": "d5595c9ef3c072c64499df54504f72882edc219c3b0e01a4a49551eafd531135"
-    },
-    {
-      "source": "assets/plants/beans_sprout.png",
-      "target": "assets/plants/beans_sprout.webp",
-      "before": 27167,
-      "after": 18806,
-      "lossless": true,
-      "source_sha256": "168e6ab9d90c3b98f1cef4fdf1ab50b77edd93a34e60170c8cc5352a6a7ec6f5",
-      "sha256": "faefd19f44b53b567e0cb7ed2730b278758b5d549b3f43e76cdf21a04ac8c762"
-    },
-    {
-      "source": "assets/plants/beans_wilted.png",
-      "target": "assets/plants/beans_wilted.webp",
-      "before": 129125,
-      "after": 94940,
-      "lossless": true,
-      "source_sha256": "066404c71993f3f2d33e66027f39e28e854cd2e87520b7f9fadc6f3110c54bc5",
-      "sha256": "f6289993ecf0937010dc75fcf4dde4c43739085c60faf5c1b8a9baa8db7581a9"
-    },
-    {
-      "source": "assets/plants/beans_young.png",
-      "target": "assets/plants/beans_young.webp",
-      "before": 100818,
-      "after": 74468,
-      "lossless": true,
-      "source_sha256": "6b49f5bf3e87311f924c3fd74fbed6096c4dbecbe420d290a1469728c4f3f00d",
-      "sha256": "20c67b79229c6cd422b23ebfa0b475a4c7426b38dc742c86d00ff163f73765a1"
-    },
-    {
-      "source": "assets/plants/lettuce_adult.png",
-      "target": "assets/plants/lettuce_adult.webp",
-      "before": 209300,
-      "after": 158578,
-      "lossless": true,
-      "source_sha256": "0a48c1cc06f0d09c72c9b3bd994f9789d2c81dcf8f3b13c6507e0a6721a48a53",
-      "sha256": "89bb6d2ce1a13dc1eed9517f3c9b5ad3f8cd019c5c4f0c686b6a60e177a628bd"
-    },
-    {
-      "source": "assets/plants/lettuce_sprout.png",
-      "target": "assets/plants/lettuce_sprout.webp",
-      "before": 27641,
-      "after": 19050,
-      "lossless": true,
-      "source_sha256": "f25ce27aeec8f127322fb1bfd4faae15e897623d2323750cd095acf15ee1f479",
-      "sha256": "34b2e26810e97adc26a954f4a3a29717e56aaa4914508b1b0d16aa89df413142"
-    },
-    {
-      "source": "assets/plants/lettuce_wilted.png",
-      "target": "assets/plants/lettuce_wilted.webp",
-      "before": 146902,
-      "after": 110022,
-      "lossless": true,
-      "source_sha256": "f659cdd739addcedab6e78f182a4d15db293798dad86fe0a258f8721ba82bb49",
-      "sha256": "ac36d2002e6b9b47e5d3c8cb67143307b1f79373a7798baa5a8889e156c15c76"
-    },
-    {
-      "source": "assets/plants/lettuce_young.png",
-      "target": "assets/plants/lettuce_young.webp",
-      "before": 78179,
-      "after": 57572,
-      "lossless": true,
-      "source_sha256": "d24c7fbcbb3eb4bb4e55a8bba4ae5336e0358cce0526d6e16ef87922dc6d1609",
-      "sha256": "5af73cb6e8e3a64e407718634ea52af92232437a3bf5635e9315794d9aefc69a"
-    },
-    {
-      "source": "assets/plants/mint_adult.png",
-      "target": "assets/plants/mint_adult.webp",
-      "before": 181664,
-      "after": 136174,
-      "lossless": true,
-      "source_sha256": "d641bcb0113e11ad5a097ca2dc20d5ddfe429f06a28f71d977d8f5ff408bcb19",
-      "sha256": "052ffb670e0e653f87002f95816b3899056127b020f04802c2db29684a0b3776"
-    },
-    {
-      "source": "assets/plants/mint_sprout.png",
-      "target": "assets/plants/mint_sprout.webp",
-      "before": 18390,
-      "after": 12288,
-      "lossless": true,
-      "source_sha256": "fa37cc45c88f7d84a9af7dcf44c6d7ad9c06a4fc769ac2729917975beb04064d",
-      "sha256": "f06623a7944218d5193a150fedfce05df1dbc1651be22f8daa9890c17f99980c"
-    },
-    {
-      "source": "assets/plants/mint_wilted.png",
-      "target": "assets/plants/mint_wilted.webp",
-      "before": 104954,
-      "after": 76246,
-      "lossless": true,
-      "source_sha256": "2d39d46bbfa2baaab400d4861060c3170a2c7b0c862c673c85a6816cab9bb749",
-      "sha256": "c1437322e13e252edffdeadbf128db72bfae2089a8bdc8a948b50519baaafd54"
-    },
-    {
-      "source": "assets/plants/mint_young.png",
-      "target": "assets/plants/mint_young.webp",
-      "before": 72610,
-      "after": 53738,
-      "lossless": true,
-      "source_sha256": "af962bae8f770e6c4f9f14125b3527127def57579db042a918bdc8202ba7c7d5",
-      "sha256": "61283738ecd95e77f5da61355c0d5583be6b05acb2760091ff5b8e4322406b20"
-    },
-    {
-      "source": "assets/plants/onion_adult.png",
-      "target": "assets/plants/onion_adult.webp",
-      "before": 133772,
-      "after": 98368,
-      "lossless": true,
-      "source_sha256": "f52884857afd786343dc9198994fd30d71ed3cace512701980fc55b7fc7c802e",
-      "sha256": "c477d9200343c3d2c444acf8778a7df0649263e76e954820357d1a6d426af7b9"
-    },
-    {
-      "source": "assets/plants/onion_sprout.png",
-      "target": "assets/plants/onion_sprout.webp",
-      "before": 17489,
-      "after": 12270,
-      "lossless": true,
-      "source_sha256": "ab0923b9b44d3b5511ee85ed80c002d16c5ddf44ae8ded8be7c8b1abc71c7bde",
-      "sha256": "5f21d1388cd6e6f029e1de6ffef5d65e2223d87b61cce34a3a28dffec8e8514e"
-    },
-    {
-      "source": "assets/plants/onion_wilted.png",
-      "target": "assets/plants/onion_wilted.webp",
-      "before": 120595,
-      "after": 90042,
-      "lossless": true,
-      "source_sha256": "6d86267ea184d092f3ad26282e0f1f2fc242e1e41a108e4d371648bab7890e21",
-      "sha256": "7a18043cec6e27bfd68fc2a11357ede595b1442cec2fec176f379b983607c624"
-    },
-    {
-      "source": "assets/plants/onion_young.png",
-      "target": "assets/plants/onion_young.webp",
-      "before": 52960,
-      "after": 39350,
-      "lossless": true,
-      "source_sha256": "501384325121c7022a7f605867d3ac8d2c215b80c912eebf3aec7fbc21316662",
-      "sha256": "c0f0208905a1d2b54fa6d071f433959a016de59408716d95495afeaa4f6e2831"
-    },
-    {
-      "source": "assets/plants/peas_adult.png",
-      "target": "assets/plants/peas_adult.webp",
-      "before": 260025,
-      "after": 194282,
-      "lossless": true,
-      "source_sha256": "73c10d4ae6396fe469aee62679c02608f96a7b393809ae4a0c96f85b85eabe30",
-      "sha256": "f98be046ae84b556ece556e2148338d24ffe025c7444d3e42995f5c5132b74fd"
-    },
-    {
-      "source": "assets/plants/peas_sprout.png",
-      "target": "assets/plants/peas_sprout.webp",
-      "before": 40096,
-      "after": 28300,
-      "lossless": true,
-      "source_sha256": "2cbed029f5d98c0fabf2893f5fbdace0386a6afca835b93eac91cd110632e433",
-      "sha256": "4fb487599ba7090b24e491a885b1a84e709c6d1c3915e6069039f081b464b3fc"
-    },
-    {
-      "source": "assets/plants/peas_wilted.png",
-      "target": "assets/plants/peas_wilted.webp",
-      "before": 187369,
-      "after": 138920,
-      "lossless": true,
-      "source_sha256": "a0d959df1f56cec5dcd1a33c888a990b8eb653a98dd2cd9b6d0d560543c0e617",
-      "sha256": "77b37628626368fd81325a5bce861d13f8ede7737d10465c02ac3040c27fe477"
-    },
-    {
-      "source": "assets/plants/peas_young.png",
-      "target": "assets/plants/peas_young.webp",
-      "before": 134312,
-      "after": 98788,
-      "lossless": true,
-      "source_sha256": "3b024c37bcf8fd97b3dbe1f497e46d900589a34085a1154e1164a85fe5c8e893",
-      "sha256": "9a309d510e876da89ee600ab8a6ca167d72685d741d9fa1c61cebad05c5c3ac2"
-    },
-    {
-      "source": "assets/plants/pumpkin_adult.png",
-      "target": "assets/plants/pumpkin_adult.webp",
-      "before": 228785,
-      "after": 173862,
-      "lossless": true,
-      "source_sha256": "23813776db7e5cea9c034655350dcfdbd86db2ff2893db30d00fb0fc8a10a5f9",
-      "sha256": "3974bf4cb1cd970f4e8185cbc6d2b3c3bb1d3535fbf2f6c3c216c7bba66f58f8"
-    },
-    {
-      "source": "assets/plants/pumpkin_sprout.png",
-      "target": "assets/plants/pumpkin_sprout.webp",
-      "before": 31670,
-      "after": 21648,
-      "lossless": true,
-      "source_sha256": "ce8974868374184675c4bc8d674afbbbfd32af5f1965df71b8ac432e0fc9e45a",
-      "sha256": "8e8e086c353a3ef10af6b16ccf021a47823cb50234c2e0df21c7546585f245cc"
-    },
-    {
-      "source": "assets/plants/pumpkin_wilted.png",
-      "target": "assets/plants/pumpkin_wilted.webp",
-      "before": 140037,
-      "after": 102826,
-      "lossless": true,
-      "source_sha256": "3d6c054007df64a6b535b6ab9b06714e0709760afb25ed34de793885480f54e7",
-      "sha256": "3425356061e5b1066607b65acb2c13f84237ca5fe29b9daaf048b5f19203f2a5"
-    },
-    {
-      "source": "assets/plants/pumpkin_young.png",
-      "target": "assets/plants/pumpkin_young.webp",
-      "before": 117675,
-      "after": 87780,
-      "lossless": true,
-      "source_sha256": "dc5e6ac6492b8faf5c82ed5497e65b6409b30f84c0bf2bd1eb426375b780ce64",
-      "sha256": "5132b67b6d071033077a3a0cb05d8cc96c6afec07cbf0b99f8c795800086ad52"
-    },
-    {
-      "source": "assets/plants/seed.png",
-      "target": "assets/plants/seed.webp",
-      "before": 115364,
-      "after": 82438,
-      "lossless": true,
-      "source_sha256": "10fd6ccd856c864c0ca7df9016c6bf449238e6a030684271470e34cc729ffae2",
-      "sha256": "0ea5cade6a51a1a7e95a86416a6ce34d828915068611ac4eb95159323413f7bf"
-    },
-    {
-      "source": "assets/plants/tomato_adult.png",
-      "target": "assets/plants/tomato_adult.webp",
-      "before": 243837,
-      "after": 185344,
-      "lossless": true,
-      "source_sha256": "51e318a3eee152cf4fb5e2bc13973a2a6ada5665a4fac63c4d6e2e49e4456d15",
-      "sha256": "909a2b9300290287260a9dedfeec2095b758aa0d198061fe0ed935b728e38861"
-    },
-    {
-      "source": "assets/plants/tomato_sprout.png",
-      "target": "assets/plants/tomato_sprout.webp",
-      "before": 37823,
-      "after": 26644,
-      "lossless": true,
-      "source_sha256": "732c49b9bc6a5689701ff74ed992a845a203b4e2671d5350ed6ff800141444d0",
-      "sha256": "29092591a91d1a1aec4634c934b20c5443b13bbb768bf3553184503b12816d44"
-    },
-    {
-      "source": "assets/plants/tomato_wilted.png",
-      "target": "assets/plants/tomato_wilted.webp",
-      "before": 155339,
-      "after": 113844,
-      "lossless": true,
-      "source_sha256": "a47205a0b85d7f25571d35f98ab653eea2990be08a2f9652a23bbfb3907bc5f5",
-      "sha256": "4f7de92ab8ff6f079630dcd8d4f7cad65764e2248161a7ce033fd0fc139b63c4"
-    },
-    {
-      "source": "assets/plants/tomato_young.png",
-      "target": "assets/plants/tomato_young.webp",
-      "before": 129944,
-      "after": 97562,
-      "lossless": true,
-      "source_sha256": "0cbc452d5761a9eada57d13d8fc8c31001ffbe94dd541b58118f663baccbdddd",
-      "sha256": "c6cbf839a0cf3a7270da6095c75be4febb5168fc7237af5e2189fdb6a109cd57"
-    },
-    {
-      "source": "assets/seed_drawer.png",
-      "target": "assets/seed_drawer.webp",
-      "before": 341764,
-      "after": 263970,
-      "lossless": true,
-      "source_sha256": "5bce44fbd72fc13b9991e9825a2fb4016a057db87c510a8e4d8834cebe11aac8",
-      "sha256": "cdf42e1c47bc686e898af8b7034346196cff3456495e888f2634d1fd8bc00512"
-    },
-    {
-      "source": "assets/soil_rocks.png",
-      "target": "assets/soil_rocks.webp",
-      "before": 667377,
-      "after": 459652,
-      "lossless": true,
-      "source_sha256": "399d99c868111a45ba766828ef56de5a7e997f81ebf8b13c7e70dc2418889b05",
-      "sha256": "c3c33d052e4c57b7f694ecc7fbb7f1835d431ceaa91a3ab2dd51c50274a75d4a"
-    },
-    {
-      "source": "assets/soil_shade_1.png",
-      "target": "assets/soil_shade_1.webp",
-      "before": 620320,
-      "after": 434800,
-      "lossless": true,
-      "source_sha256": "fb1b0d0da7c76ff67e104b4c00b510da11566acf6c99d5425577ccf15ff273d3",
-      "sha256": "053166443c6411ed46e5f91b7f3a82fa1522200bd08749f6a347333ad916c1c9"
-    },
-    {
-      "source": "assets/soil_shade_2.png",
-      "target": "assets/soil_shade_2.webp",
-      "before": 618802,
-      "after": 442396,
-      "lossless": true,
-      "source_sha256": "a7deba96826a5c309ab1d4beb0dc5dfd9f21f1a5da6cd0e0e33af39c879fb6d1",
-      "sha256": "3abd54727f329cb59af72cb63368f3a37876b3be13f465442985d8b2505382d9"
-    },
-    {
       "source": "assets/soil_sun_1.png",
       "target": "assets/soil_sun_1.webp",
       "before": 698243,
-      "after": 504838,
-      "lossless": true,
+      "previous_bytes": 504838,
+      "after": 160282,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
       "source_sha256": "135ee901d0db7c52e4ec62cb2f9226cbeef3671f87d45de413625ce1fe547e3e",
-      "sha256": "3473ab0c777da338158202ccda945833cf8e93f879d97f45388d5a1b3b180859"
+      "sha256": "54fdd7a924ec49dac3cac1b573f8143dc3609cc6a38faf9028455064a5bd3027"
     },
     {
       "source": "assets/soil_sun_2.png",
       "target": "assets/soil_sun_2.webp",
       "before": 668263,
-      "after": 496266,
-      "lossless": true,
+      "previous_bytes": 496266,
+      "after": 154342,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
       "source_sha256": "347bf61236a145188ac2433a89c5ed0fad45959311ac25bd2896c2b94a3f0a32",
-      "sha256": "6a9df8981f857531eff880d618bcfa6e1fcecb4d9f6ed15b36e6fd3f397f8df1"
+      "sha256": "2e8bc3c7b330360992370b7206c093e5e9bea6be0212e1c9e7f192495fc53d11"
     },
     {
-      "source": "assets/ui/fx_sparkle.png",
-      "target": "assets/ui/fx_sparkle.webp",
-      "before": 104632,
-      "after": 73224,
-      "lossless": true,
-      "source_sha256": "c5dfc082b56d938c72dd6b29debdc1252f247f0c418a23c7c0880b244afd258e",
-      "sha256": "9e0be1bf872685d4b40edb18a6d765873fedd8afefe63a8e668762bf1888cb93"
+      "source": "assets/soil_rocks.png",
+      "target": "assets/soil_rocks.webp",
+      "before": 667377,
+      "previous_bytes": 459652,
+      "after": 141746,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "399d99c868111a45ba766828ef56de5a7e997f81ebf8b13c7e70dc2418889b05",
+      "sha256": "30d0c73305e1ab32bc2ff88feb70a97275d55c83131132ed414bd5ba672cd208"
     },
     {
-      "source": "assets/ui/icon_arrow_down.png",
-      "target": "assets/ui/icon_arrow_down.webp",
-      "before": 166650,
-      "after": 109402,
-      "lossless": true,
-      "source_sha256": "649ba79e6ce7bbb045f79b67aba70b4df3a1c0d3ca59a257bac493a459dded5a",
-      "sha256": "0f67be80351cd08afd74ab2afb52573e3ddb418de4bb70815b538b3421f33d18"
+      "source": "assets/soil_shade_2.png",
+      "target": "assets/soil_shade_2.webp",
+      "before": 618802,
+      "previous_bytes": 442396,
+      "after": 134510,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "a7deba96826a5c309ab1d4beb0dc5dfd9f21f1a5da6cd0e0e33af39c879fb6d1",
+      "sha256": "e01312bc1a520613973ab9e787db1fe8e8e87f08215d875352e8810d7fbcbc77"
     },
     {
-      "source": "assets/ui/icon_back.png",
-      "target": "assets/ui/icon_back.webp",
-      "before": 65761,
-      "after": 47132,
-      "lossless": true,
-      "source_sha256": "987a6d92bd16668c7f03c28d390f149694b1e12d93a46a355612e166e23f8b02",
-      "sha256": "80f70ac81b7e8575bcddf2e1267c1ffb3f74abcb081c69e306f79df5dc40bbd2"
-    },
-    {
-      "source": "assets/ui/icon_back_light.png",
-      "target": "assets/ui/icon_back_light.webp",
-      "before": 51965,
-      "after": 30260,
-      "lossless": true,
-      "source_sha256": "ae23568dd82e5b2d531e2b0ebe7c0528502bd64afc914b41e8fc2505dbb73794",
-      "sha256": "f4ba21d786c59136c610a958c2ef04f8f70752bc846273daecdaa6e4c08c4d87"
-    },
-    {
-      "source": "assets/ui/icon_check.png",
-      "target": "assets/ui/icon_check.webp",
-      "before": 70308,
-      "after": 46994,
-      "lossless": true,
-      "source_sha256": "f78e037e7cd52494e1bb4ffaa655cc74e536ddf8e1ffdf97b8f63ee3479bd1e9",
-      "sha256": "dac95bb609e03a710ae3fd3675e012725041937b1c77cb604f6902d06d89a17e"
-    },
-    {
-      "source": "assets/ui/icon_drop.png",
-      "target": "assets/ui/icon_drop.webp",
-      "before": 160437,
-      "after": 112738,
-      "lossless": true,
-      "source_sha256": "b092df8391d3c3b827917980cd3612e630a5535de90d68b79fc5a48403ce20f2",
-      "sha256": "56c7636a55affa6e66e0a6f3a0604b7970e860eb4ea44e6faad849a1eb4ed0db"
-    },
-    {
-      "source": "assets/ui/icon_drop_empty.png",
-      "target": "assets/ui/icon_drop_empty.webp",
-      "before": 145183,
-      "after": 103602,
-      "lossless": true,
-      "source_sha256": "e88afb27de71cea6b7d75152512a536e74ba2abe73e4e6f595492b7434df69a3",
-      "sha256": "946f3174815cf0603322b9653f1656daae8b6ede332734300fd1523745e837eb"
-    },
-    {
-      "source": "assets/ui/icon_hint.png",
-      "target": "assets/ui/icon_hint.webp",
-      "before": 54126,
-      "after": 40066,
-      "lossless": true,
-      "source_sha256": "6fa3324c4cf5da3d4a78c3854094e977af89935813ebdaffd53cb4bea2b7abfb",
-      "sha256": "249a4301c2ba8336fc839b763f8c2c75343ab3ae12f0dd7f5a83f11321e1aefd"
-    },
-    {
-      "source": "assets/ui/icon_lock.png",
-      "target": "assets/ui/icon_lock.webp",
-      "before": 74163,
-      "after": 54584,
-      "lossless": true,
-      "source_sha256": "f1e96a8262d3fa6965169a6f1c46630cf1f1df1d053bb7cc8c2b0bd2f1b8c331",
-      "sha256": "06bcc55aaf00e8793b64ec460e40635a75d0d14e86c9eb18a2bd0e6402e5501a"
-    },
-    {
-      "source": "assets/ui/icon_lock_light.png",
-      "target": "assets/ui/icon_lock_light.webp",
-      "before": 58418,
-      "after": 35028,
-      "lossless": true,
-      "source_sha256": "037d9875868920c2aea2be9755e3932b574ab80a9a40fc810fa144d2ecdd8ef5",
-      "sha256": "4deb776e9ef00b0529808f64ece21c254d681afd50cb3093a974d2b721fc77df"
-    },
-    {
-      "source": "assets/ui/icon_question.png",
-      "target": "assets/ui/icon_question.webp",
-      "before": 53661,
-      "after": 37564,
-      "lossless": true,
-      "source_sha256": "2b0e464799eebf3989c7d035b3dfb0621badf0fd4cae7de60e8a780cce5054a6",
-      "sha256": "2a00dac095868f1bd9415a4a0688e043ae84f23a9d8842719cbf4bcfdb3576ff"
-    },
-    {
-      "source": "assets/ui/icon_question_light.png",
-      "target": "assets/ui/icon_question_light.webp",
-      "before": 42364,
-      "after": 24054,
-      "lossless": true,
-      "source_sha256": "b48d5ba116878a45401d90f12d192473f851c4591597ee97957f79a4471401c1",
-      "sha256": "c0dd49828581b684e633347c48471970af781b95ddb1f8e593d265ef05ed6fab"
-    },
-    {
-      "source": "assets/ui/icon_reset.png",
-      "target": "assets/ui/icon_reset.webp",
-      "before": 79621,
-      "after": 56664,
-      "lossless": true,
-      "source_sha256": "4757f5c5e2b49cc23732d89ef525ed91c179a68c769d824b1a80a26606233eee",
-      "sha256": "dd6b4a7c6b6585aaaa642394b354d5e4ca5c29ff83368db073229efe9cec0037"
-    },
-    {
-      "source": "assets/ui/icon_reset_light.png",
-      "target": "assets/ui/icon_reset_light.webp",
-      "before": 61030,
-      "after": 35650,
-      "lossless": true,
-      "source_sha256": "5a7f124772a1c37b2b95d9e18d4ea3409034aa1cdeb93307883c0990036618ef",
-      "sha256": "136bd9d7bc70d5dd4def3168750053b32e9a104f192b1c4117ad01b14ef41aa5"
-    },
-    {
-      "source": "assets/ui/icon_settings.png",
-      "target": "assets/ui/icon_settings.webp",
-      "before": 83274,
-      "after": 59150,
-      "lossless": true,
-      "source_sha256": "cec009b67d2b55bee38be8fbcb6433410a6f9703ae13c5d1d6bfbf290de817cf",
-      "sha256": "d9e0c05241428c3ad63a76de3ded3be50da161f00987ae44141ca293e0c05ffd"
-    },
-    {
-      "source": "assets/ui/icon_settings_light.png",
-      "target": "assets/ui/icon_settings_light.webp",
-      "before": 65747,
-      "after": 38466,
-      "lossless": true,
-      "source_sha256": "80f496f9eda803036ba6c8edccdda1352636d9e6a88ed673aaf2dad9536b8b0c",
-      "sha256": "e4611809ef4656799909c855ea67b64b42b689b2a61c0108888908c82b094bdd"
-    },
-    {
-      "source": "assets/ui/icon_shade.png",
-      "target": "assets/ui/icon_shade.webp",
-      "before": 73345,
-      "after": 54084,
-      "lossless": true,
-      "source_sha256": "674e9e533174c37b8ad45d6c6af3555826da277ecb7b4709db10029958827fa6",
-      "sha256": "3b0e4031c2b3980d45494df28a42318348fcb6143e4fd869fd37a2aa017d535c"
-    },
-    {
-      "source": "assets/ui/icon_sound_off.png",
-      "target": "assets/ui/icon_sound_off.webp",
-      "before": 90521,
-      "after": 62384,
-      "lossless": true,
-      "source_sha256": "c60e8ccab964fb61160191c192d9248b3246d1a90061dfd966a67d06c016220b",
-      "sha256": "eac1f23a8303f73b58db3801e9cbf5b15275394b1890e9f6ca325dc1592a4137"
-    },
-    {
-      "source": "assets/ui/icon_sound_off_light.png",
-      "target": "assets/ui/icon_sound_off_light.webp",
-      "before": 73348,
-      "after": 40362,
-      "lossless": true,
-      "source_sha256": "5947e194d49cc0f1ea63cc0cf4875200f38ffb801cd98ea388e7ea0401c60d72",
-      "sha256": "2b3e0866336866ae0daa7e0c227f04b744f75887f8d354c4d3f966814cb64768"
-    },
-    {
-      "source": "assets/ui/icon_sound_on.png",
-      "target": "assets/ui/icon_sound_on.webp",
-      "before": 74628,
-      "after": 52568,
-      "lossless": true,
-      "source_sha256": "706fec8d8c6396683a39367f4094289873d76c623c6539e6912ef62b3710d841",
-      "sha256": "e6949ad93a83a2f505d66e9149c2142872c6ea3214a22698233f9c638440bae1"
-    },
-    {
-      "source": "assets/ui/icon_sound_on_light.png",
-      "target": "assets/ui/icon_sound_on_light.webp",
-      "before": 58838,
-      "after": 34128,
-      "lossless": true,
-      "source_sha256": "140be03ffbacaf86454664c623fa6107c0d7950cc0432105260c7157db40d160",
-      "sha256": "821678a0d44aeaf42fa5bafd732f093138949da664b8a2ea3120c2e0651c4fe2"
-    },
-    {
-      "source": "assets/ui/icon_star.png",
-      "target": "assets/ui/icon_star.webp",
-      "before": 73582,
-      "after": 54020,
-      "lossless": true,
-      "source_sha256": "e11de10c2e8da10670b4f580260b2f4e234be62c6806c3d2711e852d4caa6087",
-      "sha256": "0adaa2603e1200602c3740b0978186ee94be106cf22ea800bb6b5f742dd12af2"
-    },
-    {
-      "source": "assets/ui/icon_star_empty.png",
-      "target": "assets/ui/icon_star_empty.webp",
-      "before": 65884,
-      "after": 46260,
-      "lossless": true,
-      "source_sha256": "bb708d564b372e1e92f0d7ba64bc80e958c0897947bd305369aadf498d2a1662",
-      "sha256": "99895c92c1480b582f11dd60ab96b29fa0b751a1709114fa41184a61b68d2d94"
-    },
-    {
-      "source": "assets/ui/icon_star_empty_light.png",
-      "target": "assets/ui/icon_star_empty_light.webp",
-      "before": 54136,
-      "after": 30652,
-      "lossless": true,
-      "source_sha256": "264a1fe1482a77f5be0d1979699cfd4ee46fb1ed88b0d6ca09f2b25d26b8f79d",
-      "sha256": "b427cccf5b38f07a1a946d87503ce586756be6241c6384211d98a555119f319a"
-    },
-    {
-      "source": "assets/ui/icon_sun.png",
-      "target": "assets/ui/icon_sun.webp",
-      "before": 74332,
-      "after": 54380,
-      "lossless": true,
-      "source_sha256": "7b316ed40fbba16986d99d89a08881516d40953ad2d44df5736b3f8f60d8d81d",
-      "sha256": "b7d9b5c8251aaac530c70f1944dd4f5b3d3c06dd0957a40715c7bee7f8c8aeb4"
-    },
-    {
-      "source": "assets/ui/icon_undo.png",
-      "target": "assets/ui/icon_undo.webp",
-      "before": 74723,
-      "after": 51906,
-      "lossless": true,
-      "source_sha256": "887e737075db40180dc04b9244e57b9ecd5008d2b2085f859005d566bdc81fe2",
-      "sha256": "80ede117f920b07944f31b3ec0a2520a58238fea770ecb417955db6d5a318616"
-    },
-    {
-      "source": "assets/ui/icon_undo_light.png",
-      "target": "assets/ui/icon_undo_light.webp",
-      "before": 60069,
-      "after": 34242,
-      "lossless": true,
-      "source_sha256": "a6488926c2ec96bcf39ee96a02620aab10b3b5a1b52b1893f4bd2d5d8cd3cafa",
-      "sha256": "3bf926c53432741355c663f9799ce5417c8b90f46a6321364fcc520919839191"
-    },
-    {
-      "source": "assets/ui/icon_watering_can.png",
-      "target": "assets/ui/icon_watering_can.webp",
-      "before": 205100,
-      "after": 140682,
-      "lossless": true,
-      "source_sha256": "a0cbb18f7ec3eccb63f2fcac316333f6b0a15238d7807c0bc791d720f624b942",
-      "sha256": "e9e8b83a76ec9a72d0de2c54315e18ea1335c7472217f54cab97561c62a8c064"
-    },
-    {
-      "source": "assets/ui/icon_watering_can_pour.png",
-      "target": "assets/ui/icon_watering_can_pour.webp",
-      "before": 216668,
-      "after": 147476,
-      "lossless": true,
-      "source_sha256": "103e630fccf837448472051e3ed9ecd76b7a8aa3156d41c289a845f80bf399dd",
-      "sha256": "6b5dd6be0cf3947a1b123d5813acd50a0f4de7aecefd98f1acce7cd19761f4b5"
-    },
-    {
-      "source": "assets/ui/ui_bubble.png",
-      "target": "assets/ui/ui_bubble.webp",
-      "before": 100780,
-      "after": 77516,
-      "lossless": true,
-      "source_sha256": "302dbab9f95a71d8af81773624aa22039cbe85cff090878ace3bd23fc4fbbf47",
-      "sha256": "1dc1ceb7cb988af5e3d11018b6c9594213d40e8f134463ed1718e285a3c064d9"
-    },
-    {
-      "source": "assets/ui/ui_button.png",
-      "target": "assets/ui/ui_button.webp",
-      "before": 170128,
-      "after": 131122,
-      "lossless": true,
-      "source_sha256": "6ada5b1a8553d4cfbe256c27c1436e847d08f04a5f5e48b754acaba218187c4e",
-      "sha256": "cbde29059a7cfe8b35548259ea1289c3d0952c65604ddaf224a411e4dc1a7f78"
-    },
-    {
-      "source": "assets/ui/ui_button_gold.png",
-      "target": "assets/ui/ui_button_gold.webp",
-      "before": 163523,
-      "after": 125608,
-      "lossless": true,
-      "source_sha256": "d5ab1d322109181df45bb06b509e7c167530b9cc96a6c61c923c1d0a538db949",
-      "sha256": "42855d899b05f4d27c8126a3482c6a29018aec36211c7fba98bd01318679757c"
-    },
-    {
-      "source": "assets/ui/ui_button_green.png",
-      "target": "assets/ui/ui_button_green.webp",
-      "before": 215229,
-      "after": 166564,
-      "lossless": true,
-      "source_sha256": "3ad0258ddeb12c34520ad015a04d84a515ced7b4542525ed668d10faa3246a4f",
-      "sha256": "e74530e812a20da95b49886c82489d08a78b53ade80104ca1e19458c4b2ff7ff"
-    },
-    {
-      "source": "assets/ui/ui_button_round.png",
-      "target": "assets/ui/ui_button_round.webp",
-      "before": 110492,
-      "after": 81942,
-      "lossless": true,
-      "source_sha256": "23e8c2400adae2a44bd37597e4b2fe3af0e63dcca30862fcd470841f9f82bbb7",
-      "sha256": "04fd65e6218488074651e56e72a3ff8c23e2283073b380527c573c88d238cb0e"
-    },
-    {
-      "source": "assets/ui/ui_card.png",
-      "target": "assets/ui/ui_card.webp",
-      "before": 69785,
-      "after": 54330,
-      "lossless": true,
-      "source_sha256": "1b15c7371b6bcfbb809c4e47f5279c28959ad673b3a5b462b1f2aaabd517928a",
-      "sha256": "2920f1e23d733603cc5967494d439ff1962e7afa6ecd06340f0d6ef9796ada99"
-    },
-    {
-      "source": "assets/ui/ui_panel.png",
-      "target": "assets/ui/ui_panel.webp",
-      "before": 293045,
-      "after": 229148,
-      "lossless": true,
-      "source_sha256": "45f07d2d8faf5a5c3cd5064210b7b849ee797539d5f4894b8b791b6effa86078",
-      "sha256": "49241643d165004014946839af57db750da2684cdee15df4110b162f1b6fd486"
+      "source": "assets/soil_shade_1.png",
+      "target": "assets/soil_shade_1.webp",
+      "before": 620320,
+      "previous_bytes": 434800,
+      "after": 131682,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "fb1b0d0da7c76ff67e104b4c00b510da11566acf6c99d5425577ccf15ff273d3",
+      "sha256": "16c2d2240844d7db8c27156848600f4c877f11349dbb5aaf0f5fa22dacf861b2"
     },
     {
       "source": "assets/ui/ui_sign.png",
       "target": "assets/ui/ui_sign.webp",
       "before": 449756,
-      "after": 346012,
-      "lossless": true,
+      "previous_bytes": 346012,
+      "after": 77934,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        1187,
+        245
+      ],
+      "alpha_exact": true,
       "source_sha256": "d49c7e1cf72f1bf3426febb35cf89a0ff6b6be45d1ee936afb150ab74485132f",
-      "sha256": "df1d8372e42f7efa8b984a51b7ac6971f7508b4d7e2bb9aff26f4699a7d9e989"
+      "sha256": "714f9f5d0685242a315d0791e807ce76ebd591b983d5ea8a225e97464c2067ff"
+    },
+    {
+      "source": "assets/bed_frame.png",
+      "target": "assets/bed_frame.webp",
+      "before": 450796,
+      "previous_bytes": 341606,
+      "after": 102164,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        824,
+        775
+      ],
+      "alpha_exact": true,
+      "source_sha256": "cc4bc6b8d21d166abd00665d5c427bea979674bd0efc6ccb793049ecc7fb7c37",
+      "sha256": "d33ef1334c0dfdc1219f5c49e0100818a13d0f5d42907565f0031d7339afdf9f"
+    },
+    {
+      "source": "assets/seed_drawer.png",
+      "target": "assets/seed_drawer.webp",
+      "before": 341764,
+      "previous_bytes": 263970,
+      "after": 64724,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        870,
+        259
+      ],
+      "alpha_exact": true,
+      "source_sha256": "5bce44fbd72fc13b9991e9825a2fb4016a057db87c510a8e4d8834cebe11aac8",
+      "sha256": "897c5bf87a77975315b739788b4e79c50498ffb2619e60d599cd1db31861427e"
+    },
+    {
+      "source": "assets/ui/ui_panel.png",
+      "target": "assets/ui/ui_panel.webp",
+      "before": 293045,
+      "previous_bytes": 229148,
+      "after": 36644,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        403,
+        496
+      ],
+      "alpha_exact": true,
+      "source_sha256": "45f07d2d8faf5a5c3cd5064210b7b849ee797539d5f4894b8b791b6effa86078",
+      "sha256": "b05027c79d8d0b277eec5d2cef9c4ffcca245cf4ec6714673997b9e1c888a9ae"
+    },
+    {
+      "source": "assets/plants/peas_adult.png",
+      "target": "assets/plants/peas_adult.webp",
+      "before": 260025,
+      "previous_bytes": 194282,
+      "after": 57600,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "73c10d4ae6396fe469aee62679c02608f96a7b393809ae4a0c96f85b85eabe30",
+      "sha256": "a675bd3ea8712ab013739986972d98044d41b5fc1c046de530c1e33540168ea8"
+    },
+    {
+      "source": "assets/plants/tomato_adult.png",
+      "target": "assets/plants/tomato_adult.webp",
+      "before": 243837,
+      "previous_bytes": 185344,
+      "after": 57292,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "51e318a3eee152cf4fb5e2bc13973a2a6ada5665a4fac63c4d6e2e49e4456d15",
+      "sha256": "534684d48cad35a79c950336840b5c585e3a6861829814adacb3536f0f04426a"
+    },
+    {
+      "source": "assets/plants/pumpkin_adult.png",
+      "target": "assets/plants/pumpkin_adult.webp",
+      "before": 228785,
+      "previous_bytes": 173862,
+      "after": 51228,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "23813776db7e5cea9c034655350dcfdbd86db2ff2893db30d00fb0fc8a10a5f9",
+      "sha256": "e9f17e29bdd57c8372501831d6d5da3aa31fe7e474f6d3968268e83221daed6a"
+    },
+    {
+      "source": "assets/ui/ui_button_green.png",
+      "target": "assets/ui/ui_button_green.webp",
+      "before": 215229,
+      "previous_bytes": 166564,
+      "after": 34160,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        682,
+        222
+      ],
+      "alpha_exact": true,
+      "source_sha256": "3ad0258ddeb12c34520ad015a04d84a515ced7b4542525ed668d10faa3246a4f",
+      "sha256": "6b726ae74a0043d73492412443310043511e07611c9cd759b90470d5b5552a43"
+    },
+    {
+      "source": "assets/plants/lettuce_adult.png",
+      "target": "assets/plants/lettuce_adult.webp",
+      "before": 209300,
+      "previous_bytes": 158578,
+      "after": 43140,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "0a48c1cc06f0d09c72c9b3bd994f9789d2c81dcf8f3b13c6507e0a6721a48a53",
+      "sha256": "bbb05ac775bf82985a8456b265d1bf166902c44e972fdc03ba595ddc9d208091"
+    },
+    {
+      "source": "assets/plants/beans_adult.png",
+      "target": "assets/plants/beans_adult.webp",
+      "before": 197475,
+      "previous_bytes": 147944,
+      "after": 45412,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "157b73789fe1fe3e00992338f54fb79fa0517692c9bee1256931a61f067e8d6d",
+      "sha256": "900ae39b7394c25a2a00da834726e41feba07567cdc099c1c7dab838f3b08010"
+    },
+    {
+      "source": "assets/ui/icon_watering_can_pour.png",
+      "target": "assets/ui/icon_watering_can_pour.webp",
+      "before": 216668,
+      "previous_bytes": 147476,
+      "after": 47308,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "103e630fccf837448472051e3ed9ecd76b7a8aa3156d41c289a845f80bf399dd",
+      "sha256": "274938ee061ab63c885fb66c39b2942c1163e98f4a424d87b7c49129a0c777af"
+    },
+    {
+      "source": "assets/ui/icon_watering_can.png",
+      "target": "assets/ui/icon_watering_can.webp",
+      "before": 205100,
+      "previous_bytes": 140682,
+      "after": 40196,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "a0cbb18f7ec3eccb63f2fcac316333f6b0a15238d7807c0bc791d720f624b942",
+      "sha256": "24be01b65e0194a915eeded94c7b2cd0c9cf1d6379024f7d41251e8a2bb52d03"
+    },
+    {
+      "source": "assets/plants/peas_wilted.png",
+      "target": "assets/plants/peas_wilted.webp",
+      "before": 187369,
+      "previous_bytes": 138920,
+      "after": 49576,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "a0d959df1f56cec5dcd1a33c888a990b8eb653a98dd2cd9b6d0d560543c0e617",
+      "sha256": "055fe5785ca36dba40e2dfd345608511baa9ae55516ea74e11392daa2c346ac1"
+    },
+    {
+      "source": "assets/plants/mint_adult.png",
+      "target": "assets/plants/mint_adult.webp",
+      "before": 181664,
+      "previous_bytes": 136174,
+      "after": 44614,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "d641bcb0113e11ad5a097ca2dc20d5ddfe429f06a28f71d977d8f5ff408bcb19",
+      "sha256": "dfdf4d2ea66a8dd695d200de8353d089884f8ecf8065491b71d4ac29f0172732"
+    },
+    {
+      "source": "assets/ui/ui_button.png",
+      "target": "assets/ui/ui_button.webp",
+      "before": 170128,
+      "previous_bytes": 131122,
+      "after": 29972,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        610,
+        182
+      ],
+      "alpha_exact": true,
+      "source_sha256": "6ada5b1a8553d4cfbe256c27c1436e847d08f04a5f5e48b754acaba218187c4e",
+      "sha256": "66018eac2777d4a1990089efce4f4d0abd80d436f48997c5439f6a1afbe70488"
+    },
+    {
+      "source": "assets/plants/basil_adult.png",
+      "target": "assets/plants/basil_adult.webp",
+      "before": 167769,
+      "previous_bytes": 126300,
+      "after": 39144,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "57ca40540379f7f367bf62c53af7ad8ca6f09d521338bb710ac4752d21702ac8",
+      "sha256": "557978e8d293503b9b35edb7a88d41a8442592fed19969ea0efe397fb727df75"
+    },
+    {
+      "source": "assets/ui/ui_button_gold.png",
+      "target": "assets/ui/ui_button_gold.webp",
+      "before": 163523,
+      "previous_bytes": 125608,
+      "after": 27132,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        610,
+        184
+      ],
+      "alpha_exact": true,
+      "source_sha256": "d5ab1d322109181df45bb06b509e7c167530b9cc96a6c61c923c1d0a538db949",
+      "sha256": "0fa21ca3ded7976045b9386242193a3f82a96fcfa99a241b2499ca4408f60c99"
+    },
+    {
+      "source": "assets/plants/tomato_wilted.png",
+      "target": "assets/plants/tomato_wilted.webp",
+      "before": 155339,
+      "previous_bytes": 113844,
+      "after": 41044,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "a47205a0b85d7f25571d35f98ab653eea2990be08a2f9652a23bbfb3907bc5f5",
+      "sha256": "ba9cc5b782560fa775b47ec4a771ada17291b9b65f6dbb7c455e81bd0c13fc15"
+    },
+    {
+      "source": "assets/ui/icon_drop.png",
+      "target": "assets/ui/icon_drop.webp",
+      "before": 160437,
+      "previous_bytes": 112738,
+      "after": 28498,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "b092df8391d3c3b827917980cd3612e630a5535de90d68b79fc5a48403ce20f2",
+      "sha256": "f11c46b698fe9fd6e5da65f1797ecb740e9af87502d95ee73904f83e87238f3f"
+    },
+    {
+      "source": "assets/plants/lettuce_wilted.png",
+      "target": "assets/plants/lettuce_wilted.webp",
+      "before": 146902,
+      "previous_bytes": 110022,
+      "after": 31876,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "f659cdd739addcedab6e78f182a4d15db293798dad86fe0a258f8721ba82bb49",
+      "sha256": "2e00096e32ea87181809101df71cee64e4d6aecf2ae90b4dddaf4aac52add092"
+    },
+    {
+      "source": "assets/ui/icon_arrow_down.png",
+      "target": "assets/ui/icon_arrow_down.webp",
+      "before": 166650,
+      "previous_bytes": 109402,
+      "after": 27190,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "649ba79e6ce7bbb045f79b67aba70b4df3a1c0d3ca59a257bac493a459dded5a",
+      "sha256": "4e44e8356777dedb759c4482f7a60b32f3b06786fbcd29518824a58f58598b09"
+    },
+    {
+      "source": "assets/ui/icon_drop_empty.png",
+      "target": "assets/ui/icon_drop_empty.webp",
+      "before": 145183,
+      "previous_bytes": 103602,
+      "after": 32446,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "e88afb27de71cea6b7d75152512a536e74ba2abe73e4e6f595492b7434df69a3",
+      "sha256": "75c5e15c95c00e966ad9bfcf48a53321820416e078ba04616022c86d90b978a3"
+    },
+    {
+      "source": "assets/plants/pumpkin_wilted.png",
+      "target": "assets/plants/pumpkin_wilted.webp",
+      "before": 140037,
+      "previous_bytes": 102826,
+      "after": 34694,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "3d6c054007df64a6b535b6ab9b06714e0709760afb25ed34de793885480f54e7",
+      "sha256": "7c89568d31511303c0d00ee447a0d76e8c5a7b633137493699219524ab88d1b3"
+    },
+    {
+      "source": "assets/plants/peas_young.png",
+      "target": "assets/plants/peas_young.webp",
+      "before": 134312,
+      "previous_bytes": 98788,
+      "after": 34268,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "3b024c37bcf8fd97b3dbe1f497e46d900589a34085a1154e1164a85fe5c8e893",
+      "sha256": "bbbf4ace9851f1a73de54b0e5278573c09440dca28f52da61777341910f6d8ca"
+    },
+    {
+      "source": "assets/plants/onion_adult.png",
+      "target": "assets/plants/onion_adult.webp",
+      "before": 133772,
+      "previous_bytes": 98368,
+      "after": 31666,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "f52884857afd786343dc9198994fd30d71ed3cace512701980fc55b7fc7c802e",
+      "sha256": "9e597edc2a32c535889666489897e495ad4c593d8f0605631684ee837949be56"
+    },
+    {
+      "source": "assets/plants/tomato_young.png",
+      "target": "assets/plants/tomato_young.webp",
+      "before": 129944,
+      "previous_bytes": 97562,
+      "after": 36506,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "0cbc452d5761a9eada57d13d8fc8c31001ffbe94dd541b58118f663baccbdddd",
+      "sha256": "ab8e35afa0b55409a94c51b12328438fd1655ebc4e63079664060460a679094b"
+    },
+    {
+      "source": "assets/plants/beans_wilted.png",
+      "target": "assets/plants/beans_wilted.webp",
+      "before": 129125,
+      "previous_bytes": 94940,
+      "after": 35912,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "066404c71993f3f2d33e66027f39e28e854cd2e87520b7f9fadc6f3110c54bc5",
+      "sha256": "119c2b8cb24933632e21ecfb68fbf31749bef5c77a359f9a0d0bc2310eb393c4"
+    },
+    {
+      "source": "assets/plants/onion_wilted.png",
+      "target": "assets/plants/onion_wilted.webp",
+      "before": 120595,
+      "previous_bytes": 90042,
+      "after": 32672,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "6d86267ea184d092f3ad26282e0f1f2fc242e1e41a108e4d371648bab7890e21",
+      "sha256": "52fb7a92464126794e01ed1e9cff7e3974b5c8483a3fa010d6d479ce19a434ae"
+    },
+    {
+      "source": "assets/plants/pumpkin_young.png",
+      "target": "assets/plants/pumpkin_young.webp",
+      "before": 117675,
+      "previous_bytes": 87780,
+      "after": 30184,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "dc5e6ac6492b8faf5c82ed5497e65b6409b30f84c0bf2bd1eb426375b780ce64",
+      "sha256": "a4288b0fcbc54a69518b339f97bdde9b70522942ce2b203ddf21155637c2ad62"
+    },
+    {
+      "source": "assets/plants/seed.png",
+      "target": "assets/plants/seed.webp",
+      "before": 115364,
+      "previous_bytes": 82438,
+      "after": 28446,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "10fd6ccd856c864c0ca7df9016c6bf449238e6a030684271470e34cc729ffae2",
+      "sha256": "3ea107de6f5619694d81a84f6e3377a8930bb74ebde644ca9c196a8033755aca"
+    },
+    {
+      "source": "assets/ui/ui_button_round.png",
+      "target": "assets/ui/ui_button_round.webp",
+      "before": 110492,
+      "previous_bytes": 81942,
+      "after": 25344,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        259,
+        258
+      ],
+      "alpha_exact": true,
+      "source_sha256": "23e8c2400adae2a44bd37597e4b2fe3af0e63dcca30862fcd470841f9f82bbb7",
+      "sha256": "715712b2614284ad7b4c4b56a696bc2dd73687b16de3697014dab56538b3de0d"
+    },
+    {
+      "source": "assets/plants/basil_wilted.png",
+      "target": "assets/plants/basil_wilted.webp",
+      "before": 107724,
+      "previous_bytes": 78288,
+      "after": 28456,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "141c7333e8b11e41cbb8bd144547ce656e0e36fa2454013bc44cd0b202625f84",
+      "sha256": "58c4388bd5d61c1fdd4e82c789a376fef92378600874985c94a6efc0dcd0b476"
+    },
+    {
+      "source": "assets/ui/ui_bubble.png",
+      "target": "assets/ui/ui_bubble.webp",
+      "before": 100780,
+      "previous_bytes": 77516,
+      "after": 19096,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        350,
+        219
+      ],
+      "alpha_exact": true,
+      "source_sha256": "302dbab9f95a71d8af81773624aa22039cbe85cff090878ace3bd23fc4fbbf47",
+      "sha256": "3f4fc7297998538ada364d9b845a2e46207716b5900e8aff3fd8730fd95f614d"
+    },
+    {
+      "source": "assets/plants/mint_wilted.png",
+      "target": "assets/plants/mint_wilted.webp",
+      "before": 104954,
+      "previous_bytes": 76246,
+      "after": 28650,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "2d39d46bbfa2baaab400d4861060c3170a2c7b0c862c673c85a6816cab9bb749",
+      "sha256": "e5fd034d9b16ab385a6a26e428852d6c7d2f00907f47b07f409964179372db00"
+    },
+    {
+      "source": "assets/plants/beans_young.png",
+      "target": "assets/plants/beans_young.webp",
+      "before": 100818,
+      "previous_bytes": 74468,
+      "after": 26918,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "6b49f5bf3e87311f924c3fd74fbed6096c4dbecbe420d290a1469728c4f3f00d",
+      "sha256": "41a7da8d0ad070f71e5cd70db55371417e2a2c36d5556e7f7d16a5d06736a39c"
+    },
+    {
+      "source": "assets/ui/fx_sparkle.png",
+      "target": "assets/ui/fx_sparkle.webp",
+      "before": 104632,
+      "previous_bytes": 73224,
+      "after": 22530,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "c5dfc082b56d938c72dd6b29debdc1252f247f0c418a23c7c0880b244afd258e",
+      "sha256": "ced401fc03fffab867733c62f0057b6542064e8c0770d0136320d0e7213f398e"
+    },
+    {
+      "source": "assets/ui/icon_sound_off.png",
+      "target": "assets/ui/icon_sound_off.webp",
+      "before": 90521,
+      "previous_bytes": 62384,
+      "after": 21524,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        256,
+        256
+      ],
+      "alpha_exact": true,
+      "source_sha256": "c60e8ccab964fb61160191c192d9248b3246d1a90061dfd966a67d06c016220b",
+      "sha256": "6faa50f7c7bb655fbadd732987c7f4b8802be7d8e0ec8b7fcc4e93af68c178a4"
+    },
+    {
+      "source": "assets/ui/icon_settings.png",
+      "target": "assets/ui/icon_settings.webp",
+      "before": 83274,
+      "previous_bytes": 59150,
+      "after": 20354,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        256,
+        256
+      ],
+      "alpha_exact": true,
+      "source_sha256": "cec009b67d2b55bee38be8fbcb6433410a6f9703ae13c5d1d6bfbf290de817cf",
+      "sha256": "efe1d7492976df95d210c0a7c2363f85dc7ec50a5f4403a4f7adfc805a5c26c9"
+    },
+    {
+      "source": "assets/plants/lettuce_young.png",
+      "target": "assets/plants/lettuce_young.webp",
+      "before": 78179,
+      "previous_bytes": 57572,
+      "after": 18372,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "d24c7fbcbb3eb4bb4e55a8bba4ae5336e0358cce0526d6e16ef87922dc6d1609",
+      "sha256": "9d70356e257c430f9bc6ba645286be49320c213ba6abe6dfa1e26fad2de72c74"
+    },
+    {
+      "source": "assets/ui/icon_reset.png",
+      "target": "assets/ui/icon_reset.webp",
+      "before": 79621,
+      "previous_bytes": 56664,
+      "after": 22264,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        256,
+        256
+      ],
+      "alpha_exact": true,
+      "source_sha256": "4757f5c5e2b49cc23732d89ef525ed91c179a68c769d824b1a80a26606233eee",
+      "sha256": "d45b605a0a2d8380b53f5b84ddfc057242dce591738869db1ba5ed215a76b631"
+    },
+    {
+      "source": "assets/ui/icon_lock.png",
+      "target": "assets/ui/icon_lock.webp",
+      "before": 74163,
+      "previous_bytes": 54584,
+      "after": 16736,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        256,
+        256
+      ],
+      "alpha_exact": true,
+      "source_sha256": "f1e96a8262d3fa6965169a6f1c46630cf1f1df1d053bb7cc8c2b0bd2f1b8c331",
+      "sha256": "0faa567988f04c15e8d4d251aca766d3262c69291673de9dba4b8698c4068622"
+    },
+    {
+      "source": "assets/ui/icon_sun.png",
+      "target": "assets/ui/icon_sun.webp",
+      "before": 74332,
+      "previous_bytes": 54380,
+      "after": 23972,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        256,
+        256
+      ],
+      "alpha_exact": true,
+      "source_sha256": "7b316ed40fbba16986d99d89a08881516d40953ad2d44df5736b3f8f60d8d81d",
+      "sha256": "e566606bbbb2f51a7075110c062e4071f067206a2a9685b8c5512b413490fcb3"
+    },
+    {
+      "source": "assets/ui/ui_card.png",
+      "target": "assets/ui/ui_card.webp",
+      "before": 69785,
+      "previous_bytes": 54330,
+      "after": 12896,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        214,
+        219
+      ],
+      "alpha_exact": true,
+      "source_sha256": "1b15c7371b6bcfbb809c4e47f5279c28959ad673b3a5b462b1f2aaabd517928a",
+      "sha256": "4d99875d1bdf38b16686e2ea2896e07d2d91c44f20d6aca8dd189925b3e3307b"
+    },
+    {
+      "source": "assets/ui/icon_shade.png",
+      "target": "assets/ui/icon_shade.webp",
+      "before": 73345,
+      "previous_bytes": 54084,
+      "after": 17778,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        256,
+        256
+      ],
+      "alpha_exact": true,
+      "source_sha256": "674e9e533174c37b8ad45d6c6af3555826da277ecb7b4709db10029958827fa6",
+      "sha256": "b8ee9aca602d02aa62a4e3e299e76bac4bdd2bdafc729438d91010771e2a25ff"
+    },
+    {
+      "source": "assets/ui/icon_star.png",
+      "target": "assets/ui/icon_star.webp",
+      "before": 73582,
+      "previous_bytes": 54020,
+      "after": 17068,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        256,
+        256
+      ],
+      "alpha_exact": true,
+      "source_sha256": "e11de10c2e8da10670b4f580260b2f4e234be62c6806c3d2711e852d4caa6087",
+      "sha256": "d2ff1f3f25ce416032ff6b35c92312c835b47476fc3a89f148a3a8f6dba98194"
+    },
+    {
+      "source": "assets/plants/basil_young.png",
+      "target": "assets/plants/basil_young.webp",
+      "before": 74461,
+      "previous_bytes": 54018,
+      "after": 18818,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "275d4cb8b2e1d1871795ce955040e9193e61cef6fc5dc7aa3922631dbcd25287",
+      "sha256": "8e7ae7f1d496dd304ccaeb77d1320da1d7912ef9cbbb3001dcadfd524dedabd6"
+    },
+    {
+      "source": "assets/plants/mint_young.png",
+      "target": "assets/plants/mint_young.webp",
+      "before": 72610,
+      "previous_bytes": 53738,
+      "after": 21196,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "af962bae8f770e6c4f9f14125b3527127def57579db042a918bdc8202ba7c7d5",
+      "sha256": "74a84c0c6a995f551fd96d18c1d186a968040283a798165125f559eef97eb30b"
+    },
+    {
+      "source": "assets/ui/icon_sound_on.png",
+      "target": "assets/ui/icon_sound_on.webp",
+      "before": 74628,
+      "previous_bytes": 52568,
+      "after": 18778,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        256,
+        256
+      ],
+      "alpha_exact": true,
+      "source_sha256": "706fec8d8c6396683a39367f4094289873d76c623c6539e6912ef62b3710d841",
+      "sha256": "729ae8b6f4cbd4d524bb3f9474e00e53b4907363830bfa3eccd6971097654af4"
+    },
+    {
+      "source": "assets/ui/icon_undo.png",
+      "target": "assets/ui/icon_undo.webp",
+      "before": 74723,
+      "previous_bytes": 51906,
+      "after": 18676,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        256,
+        256
+      ],
+      "alpha_exact": true,
+      "source_sha256": "887e737075db40180dc04b9244e57b9ecd5008d2b2085f859005d566bdc81fe2",
+      "sha256": "52864c4214bd184467c50819da592ba7c7291d8173ae37bcb01990280440fad1"
+    },
+    {
+      "source": "assets/ui/icon_back.png",
+      "target": "assets/ui/icon_back.webp",
+      "before": 65761,
+      "previous_bytes": 47132,
+      "after": 14350,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        256,
+        256
+      ],
+      "alpha_exact": true,
+      "source_sha256": "987a6d92bd16668c7f03c28d390f149694b1e12d93a46a355612e166e23f8b02",
+      "sha256": "2f0bef64abfc949cbde530168ee912f5a8c8be1f524e63c402a6cdf478a58117"
+    },
+    {
+      "source": "assets/ui/icon_check.png",
+      "target": "assets/ui/icon_check.webp",
+      "before": 70308,
+      "previous_bytes": 46994,
+      "after": 16366,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        256,
+        256
+      ],
+      "alpha_exact": true,
+      "source_sha256": "f78e037e7cd52494e1bb4ffaa655cc74e536ddf8e1ffdf97b8f63ee3479bd1e9",
+      "sha256": "fd76623e705c16770469f0ce7bb7ed391de49dee23834657fd8b1ea3e5c88e1e"
+    },
+    {
+      "source": "assets/ui/icon_star_empty.png",
+      "target": "assets/ui/icon_star_empty.webp",
+      "before": 65884,
+      "previous_bytes": 46260,
+      "after": 20764,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        256,
+        256
+      ],
+      "alpha_exact": true,
+      "source_sha256": "bb708d564b372e1e92f0d7ba64bc80e958c0897947bd305369aadf498d2a1662",
+      "sha256": "8b7c619cbae81f65030f94c1233bd0ae86b0fc97247477fb7e7d52b11b937271"
+    },
+    {
+      "source": "assets/ui/icon_sound_off_light.png",
+      "target": "assets/ui/icon_sound_off_light.webp",
+      "before": 73348,
+      "previous_bytes": 40362,
+      "after": 19720,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        256,
+        256
+      ],
+      "alpha_exact": true,
+      "source_sha256": "5947e194d49cc0f1ea63cc0cf4875200f38ffb801cd98ea388e7ea0401c60d72",
+      "sha256": "e2542a253ebe2465c76536bd9882a5a556735167a3c1bfca6eaa17cfa1c7f9f1"
+    },
+    {
+      "source": "assets/ui/icon_hint.png",
+      "target": "assets/ui/icon_hint.webp",
+      "before": 54126,
+      "previous_bytes": 40066,
+      "after": 16926,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        256,
+        256
+      ],
+      "alpha_exact": true,
+      "source_sha256": "6fa3324c4cf5da3d4a78c3854094e977af89935813ebdaffd53cb4bea2b7abfb",
+      "sha256": "9fd5aca7a214087f8ad23636b59b601e39c701eabb229fc5bb4f6aaabac32660"
+    },
+    {
+      "source": "assets/plants/onion_young.png",
+      "target": "assets/plants/onion_young.webp",
+      "before": 52960,
+      "previous_bytes": 39350,
+      "after": 14430,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "501384325121c7022a7f605867d3ac8d2c215b80c912eebf3aec7fbc21316662",
+      "sha256": "f2f741f00842e8d2d5dcea383756f19cd0682b695ba5121e688cd5ffbe0af68d"
+    },
+    {
+      "source": "assets/ui/icon_settings_light.png",
+      "target": "assets/ui/icon_settings_light.webp",
+      "before": 65747,
+      "previous_bytes": 38466,
+      "after": 17256,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        256,
+        256
+      ],
+      "alpha_exact": true,
+      "source_sha256": "80f496f9eda803036ba6c8edccdda1352636d9e6a88ed673aaf2dad9536b8b0c",
+      "sha256": "a05014f62a94e9c900ca0d3052a955a0668f412739e504827ee6b42d81d78df1"
+    },
+    {
+      "source": "assets/ui/icon_question.png",
+      "target": "assets/ui/icon_question.webp",
+      "before": 53661,
+      "previous_bytes": 37564,
+      "after": 14138,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        256,
+        256
+      ],
+      "alpha_exact": true,
+      "source_sha256": "2b0e464799eebf3989c7d035b3dfb0621badf0fd4cae7de60e8a780cce5054a6",
+      "sha256": "fb5ced50ddb12abb745ef40495385c549a897171e9a833ee5de38bf286b2be9a"
+    },
+    {
+      "source": "assets/ui/icon_reset_light.png",
+      "target": "assets/ui/icon_reset_light.webp",
+      "before": 61030,
+      "previous_bytes": 35650,
+      "after": 18502,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        256,
+        256
+      ],
+      "alpha_exact": true,
+      "source_sha256": "5a7f124772a1c37b2b95d9e18d4ea3409034aa1cdeb93307883c0990036618ef",
+      "sha256": "8334c943f777f5ba538127e0dac6e4546e4135435c0bbfc4af53467f1c532e11"
+    },
+    {
+      "source": "assets/ui/icon_lock_light.png",
+      "target": "assets/ui/icon_lock_light.webp",
+      "before": 58418,
+      "previous_bytes": 35028,
+      "after": 15014,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        256,
+        256
+      ],
+      "alpha_exact": true,
+      "source_sha256": "037d9875868920c2aea2be9755e3932b574ab80a9a40fc810fa144d2ecdd8ef5",
+      "sha256": "dba0faf30c6d56017c17bdb0924a3332385a5f87c8b50c847061ff21b02c4cb4"
+    },
+    {
+      "source": "assets/ui/icon_undo_light.png",
+      "target": "assets/ui/icon_undo_light.webp",
+      "before": 60069,
+      "previous_bytes": 34242,
+      "after": 15576,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        256,
+        256
+      ],
+      "alpha_exact": true,
+      "source_sha256": "a6488926c2ec96bcf39ee96a02620aab10b3b5a1b52b1893f4bd2d5d8cd3cafa",
+      "sha256": "ef7111d531b5f86a93b663b623cc3093d61c2057bd7082a5528be080369b3150"
+    },
+    {
+      "source": "assets/ui/icon_sound_on_light.png",
+      "target": "assets/ui/icon_sound_on_light.webp",
+      "before": 58838,
+      "previous_bytes": 34128,
+      "after": 16168,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        256,
+        256
+      ],
+      "alpha_exact": true,
+      "source_sha256": "140be03ffbacaf86454664c623fa6107c0d7950cc0432105260c7157db40d160",
+      "sha256": "13f324b019d567bfd8dead846c45468e23765eba18262eec45c5fcce0a78350c"
+    },
+    {
+      "source": "assets/ui/icon_star_empty_light.png",
+      "target": "assets/ui/icon_star_empty_light.webp",
+      "before": 54136,
+      "previous_bytes": 30652,
+      "after": 17974,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        256,
+        256
+      ],
+      "alpha_exact": true,
+      "source_sha256": "264a1fe1482a77f5be0d1979699cfd4ee46fb1ed88b0d6ca09f2b25d26b8f79d",
+      "sha256": "04d32265c544a3c053f320d258ef7f9b8b45cfa533df462b03c291783b8fb041"
+    },
+    {
+      "source": "assets/ui/icon_back_light.png",
+      "target": "assets/ui/icon_back_light.webp",
+      "before": 51965,
+      "previous_bytes": 30260,
+      "after": 12064,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        256,
+        256
+      ],
+      "alpha_exact": true,
+      "source_sha256": "ae23568dd82e5b2d531e2b0ebe7c0528502bd64afc914b41e8fc2505dbb73794",
+      "sha256": "c3e9f52182abf3df31c580abdc61e2bedbb47ed75638f5ad01316cbc4092578e"
+    },
+    {
+      "source": "assets/plants/peas_sprout.png",
+      "target": "assets/plants/peas_sprout.webp",
+      "before": 40096,
+      "previous_bytes": 28300,
+      "after": 10716,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "2cbed029f5d98c0fabf2893f5fbdace0386a6afca835b93eac91cd110632e433",
+      "sha256": "405a47b1c6836185162550228eb55fde561b1418f707d4adf4fc52422f15e411"
+    },
+    {
+      "source": "assets/plants/tomato_sprout.png",
+      "target": "assets/plants/tomato_sprout.webp",
+      "before": 37823,
+      "previous_bytes": 26644,
+      "after": 9812,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "732c49b9bc6a5689701ff74ed992a845a203b4e2671d5350ed6ff800141444d0",
+      "sha256": "0c4f605112f21f839f95c1ee24a0c751816a4a20d70bdb4b25fd4ca60d2315bc"
+    },
+    {
+      "source": "assets/ui/icon_question_light.png",
+      "target": "assets/ui/icon_question_light.webp",
+      "before": 42364,
+      "previous_bytes": 24054,
+      "after": 11702,
+      "lossless": false,
+      "quality": 90,
+      "dimensions": [
+        256,
+        256
+      ],
+      "alpha_exact": true,
+      "source_sha256": "b48d5ba116878a45401d90f12d192473f851c4591597ee97957f79a4471401c1",
+      "sha256": "109ada34bded16d7699e4ea26b2c481fc7b5294dea85dccedc4bf9ceafeb269c"
+    },
+    {
+      "source": "assets/plants/pumpkin_sprout.png",
+      "target": "assets/plants/pumpkin_sprout.webp",
+      "before": 31670,
+      "previous_bytes": 21648,
+      "after": 8076,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "ce8974868374184675c4bc8d674afbbbfd32af5f1965df71b8ac432e0fc9e45a",
+      "sha256": "85334924977f350a52cf233d21c6fa51a8e1e15e8ba6946605fb700586fb8021"
+    },
+    {
+      "source": "assets/plants/lettuce_sprout.png",
+      "target": "assets/plants/lettuce_sprout.webp",
+      "before": 27641,
+      "previous_bytes": 19050,
+      "after": 7442,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "f25ce27aeec8f127322fb1bfd4faae15e897623d2323750cd095acf15ee1f479",
+      "sha256": "ca631f716adca8484b33ca2ffbfb66f1875fbc57ba1944b9dcb01ac0ed90526e"
+    },
+    {
+      "source": "assets/plants/beans_sprout.png",
+      "target": "assets/plants/beans_sprout.webp",
+      "before": 27167,
+      "previous_bytes": 18806,
+      "after": 7368,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "168e6ab9d90c3b98f1cef4fdf1ab50b77edd93a34e60170c8cc5352a6a7ec6f5",
+      "sha256": "1702cc5a9ab76b30e740ce938832f56b6d54f9c65cb2a4c15fa04f0d4511c0be"
+    },
+    {
+      "source": "assets/plants/basil_sprout.png",
+      "target": "assets/plants/basil_sprout.webp",
+      "before": 25525,
+      "previous_bytes": 17724,
+      "after": 6768,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "d1786b58d9766d91606bf27b90a5c53dff9991a7247d8aec2eee1f478156485d",
+      "sha256": "021a9d9ad6a28364a245cea3d75660648d9ce459ae8a3e2919f88233c6e550ef"
+    },
+    {
+      "source": "assets/plants/mint_sprout.png",
+      "target": "assets/plants/mint_sprout.webp",
+      "before": 18390,
+      "previous_bytes": 12288,
+      "after": 5332,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "fa37cc45c88f7d84a9af7dcf44c6d7ad9c06a4fc769ac2729917975beb04064d",
+      "sha256": "84e113cb8de43e29a639e34a65715870885a57a4d6d06eecefcd59cb1fe117c0"
+    },
+    {
+      "source": "assets/plants/onion_sprout.png",
+      "target": "assets/plants/onion_sprout.webp",
+      "before": 17489,
+      "previous_bytes": 12270,
+      "after": 5658,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        512,
+        512
+      ],
+      "alpha_exact": true,
+      "source_sha256": "ab0923b9b44d3b5511ee85ed80c002d16c5ddf44ae8ded8be7c8b1abc71c7bde",
+      "sha256": "741cc5b67be7183a3df6f1d890584326e545d9ac89f60f3b0f6b2eb29c2cc92b"
+    },
+    {
+      "source": "assets/bg_game_landscape.jpg",
+      "target": "assets/bg_game_landscape.webp",
+      "before": 480694,
+      "previous_bytes": 480694,
+      "after": 345934,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "alpha_exact": true,
+      "source_sha256": "77529f7b0614b5bc15d16d2a973a596a447f4cdf87c9fe8bc4ace23096cea877",
+      "sha256": "be3d5a4898a854089a6e35a7915d0a0a0ec3e7bc4898d63d5d3e5c9487babaf5"
+    },
+    {
+      "source": "assets/bg_game_portrait.jpg",
+      "target": "assets/bg_game_portrait.webp",
+      "before": 506383,
+      "previous_bytes": 506383,
+      "after": 368374,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        941,
+        1672
+      ],
+      "alpha_exact": true,
+      "source_sha256": "e874f264bbc851774a70f88eb40b50633484f83939b8dc3e0a5fedcb1e85c32f",
+      "sha256": "49448df0a77905f04e5b98f233df385e1f16ba91fc65ac7efaa22f7fb20ed4b7"
+    },
+    {
+      "source": "assets/bg_start_landscape.jpg",
+      "target": "assets/bg_start_landscape.webp",
+      "before": 507566,
+      "previous_bytes": 507566,
+      "after": 386322,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "alpha_exact": true,
+      "source_sha256": "7abd2684d8bb6206b8d695ba7aac2e8064e2bc9cf5e6526d6285a12b78fb1aed",
+      "sha256": "13bacad05023662fcee931139c4447d0252e796f98af320ad9a14a0e4309affe"
+    },
+    {
+      "source": "assets/bg_start_portrait.jpg",
+      "target": "assets/bg_start_portrait.webp",
+      "before": 529934,
+      "previous_bytes": 529934,
+      "after": 400314,
+      "lossless": false,
+      "quality": 88,
+      "dimensions": [
+        941,
+        1672
+      ],
+      "alpha_exact": true,
+      "source_sha256": "a86bebadd0bbd7d351effc3885e2f37f0aafea61915a2aae67e9753602d7e544",
+      "sha256": "c8239e25ca0d9ba3835d2596bb4f2de0997df0ff867362b271a23f2b0524b577"
     }
   ],
-  "image_conversion": "lossless WebP; identical RGBA pixels and dimensions verified before integration",
-  "originals": "Original PNG and MP3 source assets retained in development repository; excluded from optimized delivery."
+  "image_conversion": "WebP quality 88 artwork/backgrounds, 90 interface. Original dimensions preserved; alpha pixels exact. Slight lossy RGB compression, visually reviewed at game size.",
+  "originals": "Original PNG/JPG/WAV/MP3 retained in development; previous lossless WebP retained under work/media-optimization/originals. Production excludes editing masters.",
+  "effects": [
+    {
+      "name": "sfx_button.wav",
+      "source": "assets/audio/sfx_button.wav",
+      "target": "assets/audio/sfx_button.m4a",
+      "bitrate_kbps": 96,
+      "before": 8424,
+      "after": 2456,
+      "duration": 0.09501133786848072,
+      "decoded_samples": 5120,
+      "source_samples": 4190,
+      "onset_delta_ms": 0.022675736961451247,
+      "correlation_lag_samples": 0,
+      "waveform_correlation": 0.9821138473758035,
+      "snr_db": 13.516589714551534,
+      "source_sha256": "84a798ab6684aeaabd7744a2147acf375fe4298c5ac4ab1537047aedc3c0db21",
+      "sha256": "3cad6ef16257169d1197ae7e5ee0438cd31e9841684caf575ff4ccc8eacafb21"
+    },
+    {
+      "name": "sfx_fruit.wav",
+      "source": "assets/audio/sfx_fruit.wav",
+      "target": "assets/audio/sfx_fruit.m4a",
+      "bitrate_kbps": 96,
+      "before": 46788,
+      "after": 7622,
+      "duration": 0.5299773242630386,
+      "decoded_samples": 23552,
+      "source_samples": 23372,
+      "onset_delta_ms": -0.06802721088435375,
+      "correlation_lag_samples": 0,
+      "waveform_correlation": 0.9771074953256847,
+      "snr_db": 13.37035544920138,
+      "source_sha256": "056cb9e36f655060510949cf4e6f9984c69530dab94dd613d74b5219b42c2648",
+      "sha256": "f2f51ec722b92ebd38f395a613ee1380c53d24e9c76867ed07bddf774cee3de3"
+    },
+    {
+      "name": "sfx_harvest.wav",
+      "source": "assets/audio/sfx_harvest.wav",
+      "target": "assets/audio/sfx_harvest.m4a",
+      "bitrate_kbps": 96,
+      "before": 48554,
+      "after": 8158,
+      "duration": 0.55,
+      "decoded_samples": 24576,
+      "source_samples": 24255,
+      "onset_delta_ms": -0.045351473922902494,
+      "correlation_lag_samples": 0,
+      "waveform_correlation": 0.9869128596997487,
+      "snr_db": 15.848232558601737,
+      "source_sha256": "9a1109da389d2f4d781cba6079689baaf25bde2eb426a6b7892b95994c83d020",
+      "sha256": "11a6ea25bbc00f9cc7aef9ab8398bd8bc544f444acdfaede53becaae05f28c23"
+    },
+    {
+      "name": "sfx_hint.wav",
+      "source": "assets/audio/sfx_hint.wav",
+      "target": "assets/audio/sfx_hint.m4a",
+      "bitrate_kbps": 96,
+      "before": 154394,
+      "after": 22785,
+      "duration": 1.75,
+      "decoded_samples": 77824,
+      "source_samples": 77175,
+      "onset_delta_ms": -0.06802721088435375,
+      "correlation_lag_samples": 0,
+      "waveform_correlation": 0.9993494476864593,
+      "snr_db": 28.767989482590394,
+      "source_sha256": "e2043aac178de51b0b7d95084921051fe4cc01943b4230e45eeaec9d2aa11a41",
+      "sha256": "062089b6e07611e4bfc67984c856a56711a15440899af1e80f4fa80759dede6d"
+    },
+    {
+      "name": "sfx_pickup.wav",
+      "source": "assets/audio/sfx_pickup.wav",
+      "target": "assets/audio/sfx_pickup.m4a",
+      "bitrate_kbps": 96,
+      "before": 48160,
+      "after": 7953,
+      "duration": 0.5455328798185941,
+      "decoded_samples": 24576,
+      "source_samples": 24058,
+      "onset_delta_ms": 0.0,
+      "correlation_lag_samples": 0,
+      "waveform_correlation": 0.9731565030314198,
+      "snr_db": 12.491333229073858,
+      "source_sha256": "e2d9d9821b76048543d4948cce75d389bbddf8cacf1614fab8d7de5f0afa90f7",
+      "sha256": "f85735d568e3d36c84441e63793cea56f89d38068e608e81e1f21fb6a2b880ea"
+    },
+    {
+      "name": "sfx_pop_1.wav",
+      "source": "assets/audio/sfx_pop_1.wav",
+      "target": "assets/audio/sfx_pop_1.m4a",
+      "bitrate_kbps": 96,
+      "before": 7756,
+      "after": 2298,
+      "duration": 0.08743764172335601,
+      "decoded_samples": 4096,
+      "source_samples": 3856,
+      "onset_delta_ms": -0.045351473922902494,
+      "correlation_lag_samples": 0,
+      "waveform_correlation": 0.9995691475088152,
+      "snr_db": 30.64726896278632,
+      "source_sha256": "d763c507cd735363207c05956fc7941026babbe27bdf4da0919ac4d5f3412863",
+      "sha256": "b6af1bdb0ad02b442c6a4ab35247ae8a02cab052cc087fa8305e892ffb3e043d"
+    },
+    {
+      "name": "sfx_pop_2.wav",
+      "source": "assets/audio/sfx_pop_2.wav",
+      "target": "assets/audio/sfx_pop_2.m4a",
+      "bitrate_kbps": 96,
+      "before": 15270,
+      "after": 3443,
+      "duration": 0.17263038548752835,
+      "decoded_samples": 8192,
+      "source_samples": 7613,
+      "onset_delta_ms": 0.0,
+      "correlation_lag_samples": 0,
+      "waveform_correlation": 0.99866955349368,
+      "snr_db": 25.751767818933114,
+      "source_sha256": "3adc00da0518579fad1fba0b81855211c36284dfbe1fe2b81b1a00fb9791a7bf",
+      "sha256": "263a86efbd4db79b758b761b542223e1fbb9989f7be431a792d60677abf20ea8"
+    },
+    {
+      "name": "sfx_return.wav",
+      "source": "assets/audio/sfx_return.wav",
+      "target": "assets/audio/sfx_return.m4a",
+      "bitrate_kbps": 96,
+      "before": 27704,
+      "after": 5093,
+      "duration": 0.31360544217687075,
+      "decoded_samples": 14336,
+      "source_samples": 13830,
+      "onset_delta_ms": -1.5419501133786848,
+      "correlation_lag_samples": 0,
+      "waveform_correlation": 0.970580080733456,
+      "snr_db": 11.532961722090956,
+      "source_sha256": "a7f913af9e2ba2ac16346ba23943f87cdf4759245469c11624d3d0afb4892884",
+      "sha256": "1765c67cc72420ede619f1866d5c073e64e72b9626d8740966938af96848760c"
+    },
+    {
+      "name": "sfx_star.wav",
+      "source": "assets/audio/sfx_star.wav",
+      "target": "assets/audio/sfx_star.m4a",
+      "bitrate_kbps": 96,
+      "before": 12392,
+      "after": 2885,
+      "duration": 0.14,
+      "decoded_samples": 7168,
+      "source_samples": 6174,
+      "onset_delta_ms": -1.473922902494331,
+      "correlation_lag_samples": 0,
+      "waveform_correlation": 0.9921657868545973,
+      "snr_db": 17.995259481332024,
+      "source_sha256": "e394348437b149cd645cf721018e1e33aac0f312ce6cc1da7c6a420e69c40014",
+      "sha256": "a696a6eace610082c7cefc1e5f180d9d493d4532fa67799562840adaa6b69a2f"
+    },
+    {
+      "name": "sfx_unlock.wav",
+      "source": "assets/audio/sfx_unlock.wav",
+      "target": "assets/audio/sfx_unlock.m4a",
+      "bitrate_kbps": 96,
+      "before": 76494,
+      "after": 11921,
+      "duration": 0.8667800453514739,
+      "decoded_samples": 38912,
+      "source_samples": 38225,
+      "onset_delta_ms": -0.06802721088435375,
+      "correlation_lag_samples": 0,
+      "waveform_correlation": 0.9880631470905781,
+      "snr_db": 16.11377213565354,
+      "source_sha256": "d392afdfa80f84ca290b19751225d589cf353fd8b4839086453631a37afac3f8",
+      "sha256": "f9fd600b3a980d8ce43e76a678882ff8790d4c37197b7e6d263e2146328ac480"
+    },
+    {
+      "name": "sfx_water.wav",
+      "source": "assets/audio/sfx_water.wav",
+      "target": "assets/audio/sfx_water.m4a",
+      "bitrate_kbps": 96,
+      "before": 229364,
+      "after": 33845,
+      "duration": 2.6,
+      "decoded_samples": 114688,
+      "source_samples": 114660,
+      "onset_delta_ms": 0.0,
+      "correlation_lag_samples": 0,
+      "waveform_correlation": 0.971973185059126,
+      "snr_db": 12.561826255533209,
+      "source_sha256": "e4b56783801f2c23299b2c54cd3f80e71c5658d1b1bda7d84fdc4dd783aed01d",
+      "sha256": "047bb4ec50661c30d94b780539eb0269119390fad8c24e56e415e7e1affc8307"
+    },
+    {
+      "name": "sfx_win.wav",
+      "source": "assets/audio/sfx_win.wav",
+      "target": "assets/audio/sfx_win.m4a",
+      "bitrate_kbps": 96,
+      "before": 24740,
+      "after": 4658,
+      "duration": 0.28,
+      "decoded_samples": 13312,
+      "source_samples": 12348,
+      "onset_delta_ms": -0.022675736961451247,
+      "correlation_lag_samples": 0,
+      "waveform_correlation": 0.9986796229272326,
+      "snr_db": 25.742500560768534,
+      "source_sha256": "5277371b70099173c27be087e64e852d276124c500477445187c639620064250",
+      "sha256": "9716ffd0ceb1283a846405999634a69bd48c93648541aa9d92577eba3baa98b0"
+    },
+    {
+      "name": "sfx_drop_1.wav",
+      "source": "assets/audio/sfx_drop_1.wav",
+      "target": "assets/audio/sfx_drop_1.m4a",
+      "bitrate_kbps": 128,
+      "before": 45906,
+      "after": 9767,
+      "sha256": "9bca07a6b985b8c770fed32cf64554e478071bfb5da0875c8fbf75785d3cf797",
+      "duration": 0.5199773242630386,
+      "decoded_samples": 23552,
+      "source_samples": 22931,
+      "onset_delta_ms": -5.238095238095238,
+      "correlation_lag_samples": 0,
+      "waveform_correlation": 0.9658610364078872,
+      "snr_db": 11.693268243606381,
+      "source_sha256": "626386b66f9c37b60d95bfbecf0610417b82782b529e75c041925690c3a3adec"
+    },
+    {
+      "name": "sfx_drop_2.wav",
+      "source": "assets/audio/sfx_drop_2.wav",
+      "target": "assets/audio/sfx_drop_2.m4a",
+      "bitrate_kbps": 128,
+      "before": 66194,
+      "after": 14337,
+      "sha256": "e36cce44175987bc1e7a540cc85652f59c41c04735aed2cb67d653adcef125e0",
+      "duration": 0.75,
+      "decoded_samples": 33792,
+      "source_samples": 33075,
+      "onset_delta_ms": 0.0,
+      "correlation_lag_samples": 0,
+      "waveform_correlation": 0.9744671569563615,
+      "snr_db": 12.965624602266839,
+      "source_sha256": "f302e53e854fb63d546c19a0298143fe75db8d26aef3406766e622a2cda2e155"
+    },
+    {
+      "name": "sfx_grow.wav",
+      "source": "assets/audio/sfx_grow.wav",
+      "target": "assets/audio/sfx_grow.m4a",
+      "bitrate_kbps": 128,
+      "before": 28268,
+      "after": 5964,
+      "sha256": "5346a90aac61ca13ec9dbd427516f30fce06b30c436bed458f4d8d6b6967b292",
+      "duration": 0.32,
+      "decoded_samples": 14336,
+      "source_samples": 14112,
+      "onset_delta_ms": -0.18140589569160998,
+      "correlation_lag_samples": 0,
+      "waveform_correlation": 0.9712063548077862,
+      "snr_db": 12.429579317329063,
+      "source_sha256": "72154fb23058ed5f0ae2ff48103f8afce308bbfd83d0e6bf1a5535f02b5db984"
+    },
+    {
+      "name": "sfx_wilt.wav",
+      "source": "assets/audio/sfx_wilt.wav",
+      "target": "assets/audio/sfx_wilt.m4a",
+      "bitrate_kbps": 128,
+      "before": 70304,
+      "after": 14966,
+      "sha256": "36c005b2355eb7225f3957c6dcceeaed2b2f88b21d67b83ee9a5d3422a5d1515",
+      "duration": 0.7965986394557824,
+      "decoded_samples": 35840,
+      "source_samples": 35130,
+      "onset_delta_ms": -0.4308390022675737,
+      "correlation_lag_samples": 0,
+      "waveform_correlation": 0.9881489133329904,
+      "snr_db": 16.277271893482983,
+      "source_sha256": "958f27ec3e1513555b0d7fce8493d7a7e3fbee7ecb44a9a2d60b772d02448ba9"
+    }
+  ],
+  "media_optimization": {
+    "images_before": 10716493,
+    "images_after": 4198696,
+    "effects_before": 910712,
+    "effects_after": 158151,
+    "music_unchanged": true,
+    "unneeded_initial_music_bytes_avoided": 943787
+  }
 }

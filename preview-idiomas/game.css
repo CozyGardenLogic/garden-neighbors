@@ -99,7 +99,7 @@ html,body{height:100%;overflow:hidden}body{background:var(--bg-game-landscape,va
 .parcel-field{background:transparent!important}
 .parcel .plot-bed-slot{z-index:1;perspective:760px;perspective-origin:50% 40%}
 .plot-bed-slot .map-mini-frame{position:absolute;bottom:12px;transform:rotateX(32deg)!important;transform-origin:50% 100%;filter:drop-shadow(0 12px 5px #26331360);border-radius:3px}
-.plot-bed-slot .map-mini-frame:after{content:'';position:absolute;left:1px;right:1px;bottom:-13px;height:16px;z-index:2;pointer-events:none;background:#825029 url('assets/ui/ui_sign.webp') center 62%/100% 340%;border:1px solid #56351c;border-top:2px solid #c08a49;border-radius:1px 1px 5px 5px;box-shadow:0 6px 6px #24341555}
+.plot-bed-slot .map-mini-frame:after{content:'';position:absolute;left:1px;right:1px;bottom:-13px;height:16px;z-index:2;pointer-events:none;background:#825029 url('assets/ui/ui_sign.webp?v=media-2') center 62%/100% 340%;border:1px solid #56351c;border-top:2px solid #c08a49;border-radius:1px 1px 5px 5px;box-shadow:0 6px 6px #24341555}
 .parcel .map-stake{position:absolute!important;top:calc(var(--parcel-bed-height) - 40px);left:50%;transform:translateX(-50%) rotate(-.8deg);width:66px;min-width:66px;height:48px;min-height:48px;margin:0;z-index:7}
 .parcel .map-stake strong{font-size:25px;line-height:30px}
 .parcel .map-bed-name{margin:12px 0 0;height:36px;min-height:36px;font-size:23px;line-height:21px;z-index:2}
